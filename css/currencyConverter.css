@@ -29,7 +29,7 @@
 }
 
 button {
-  background-color: #e65100;
+  background-color: #ff3d00;
   color: white;
   padding: 8px 12px;
   border: none;
@@ -38,11 +38,11 @@ button {
 }
 
 button:hover {
-  background-color: #ef6c00;
+  background-color: #dd2c00;
 }
 
 button:active {
-  background-color: #e65100;
+  background-color: #bf360c;
 }
 
 input {
