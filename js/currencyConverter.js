@@ -17,5 +17,5 @@ function convertToINR() {
   }
 
   convertedValuePara.innerHTML =
-    "$" + currencyInputValue + " = " + "Rs." + currencyInINR;
+    "$" + currencyInputValue + " = " + "₹" + currencyInINR;
 }
