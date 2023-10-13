@@ -3,19 +3,25 @@ function convertToINR() {
   const currencySelect = document.getElementById("currency");
   const convertedValuePara = document.getElementById("convertedValue");
 
-  const currency = currencySelect.value;
   const currencyInputValue = currencyInput.value;
+  const currency = currencySelect.value;
 
   let currencyInINR;
 
   if (currency === "USD") {
-    currencyInINR = (currencyInputValue * 83.17).toFixed(2);
+    currencyInINR = convert(currencyInputValue, 83.17);
   } else if (currency === "CAD") {
-    currencyInINR = (currencyInputValue * 61.21).toFixed(2);
+    currencyInINR = convert(currencyInputValue, 61.21);
+  } else if (currency === "KWD") {
+    currencyInINR = convert(currencyInputValue, 269.05);
   } else {
     currencyInINR = currencyInputValue;
   }
 
   convertedValuePara.innerHTML =
     "$" + currencyInputValue + " = " + "₹" + currencyInINR;
+}
+
+function convert(inputValue, conversionFactor) {
+  return (inputValue * conversionFactor).toFixed(2);
 }
