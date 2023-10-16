@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Currency Converter</title>
+    <title>Guess the Number</title>
     <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/currencyConverter.css" />
-    <script src="/js/currencyConverter.js"></script>
+    <link rel="stylesheet" href="../css/guessTheNumber.css" />
+    <script src="/js/guessTheNumber.js"></script>
   </head>
   <body>
     <nav>
@@ -30,16 +30,18 @@
     <div class="container">
       <div id="wrapper">
         <div id="content">
+          <div id="scoreBar">
+            <p id="attempts">Attempts: 0</p>
+            <p id="score">Score: 0</p>
+          </div>
           <div id="form">
-            <select name="currency" id="currency">
-              <option value="USD">USD</option>
-              <option value="CAD">CAD</option>
-              <option value="KWD">KWD</option>
-            </select>
-            <input type="text" id="currencyInput" />
-            <button onclick="convertToINR()">Convert to INR</button>
+            <input type="number" id="numberInput" />
+            <button onclick="checkTheGuess()">Guess the Number</button>
           </div>
           <p id="output" style="display: none"></p>
+          <button id="resetBtn" onclick="reset()" style="display: none">
+            Reset
+          </button>
         </div>
       </div>
     </div>

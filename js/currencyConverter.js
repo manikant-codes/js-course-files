@@ -1,12 +1,10 @@
 function convertToINR() {
   const currencyInput = document.getElementById("currencyInput");
   const currencySelect = document.getElementById("currency");
-  const convertedValuePara = document.getElementById("convertedValue");
+  const outputPara = document.getElementById("output");
 
   const currencyInputValue = currencyInput.value;
   const currency = currencySelect.value;
-
-  let currencyInINR;
 
   if (currency === "USD") {
     currencyInINR = convert(currencyInputValue, 83.17);
@@ -18,8 +16,8 @@ function convertToINR() {
     currencyInINR = currencyInputValue;
   }
 
-  convertedValuePara.innerHTML =
-    "$" + currencyInputValue + " = " + "₹" + currencyInINR;
+  outputPara.style.display = "block";
+  outputPara.innerHTML = "$" + currencyInputValue + " = " + "₹" + currencyInINR;
 }
 
 function convert(inputValue, conversionFactor) {
