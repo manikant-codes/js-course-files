@@ -1,3 +1,5 @@
+// Example 1
+
 const rank = 1;
 
 switch (rank) {
@@ -13,6 +15,8 @@ switch (rank) {
   default:
     console.log("No Medal");
 }
+
+// Example 2
 
 // switch (rank) {
 //   case 1:
