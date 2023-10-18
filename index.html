@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css" />
-    <script src="/js/concepts/index.js"></script>
+    <script src="/js/concepts/objects.js"></script>
   </head>
   <body>
     <nav>
@@ -29,5 +29,14 @@
         </ul>
       </div>
     </nav>
+    <div>
+      <!-- In an event, this refers to the element that received the event. -->
+      <button
+        style="display: block; margin: auto; margin-top: 128px"
+        onclick="this.innerHTML = 'You Clicked Me'"
+      >
+        Click Me
+      </button>
+    </div>
   </body>
 </html>
