@@ -1,24 +1,38 @@
-// const myScootyName = "Activa";
-// const myScootyModel = "6G";
-// const myScootyColor = "Gray";
-// const myScootyAverage = "55km/l";
-// const myScootyMaxSpeed = "85km/h";
+"use strict";
 
-// function myScootyStart() {
-//   console.log("Scooty has started");
-// }
+// const student1 = {
+//   fName: "Meet",
+//   lName: "Jasoliya",
+//   rollNumber: 1,
+//   result: "pass",
+//   isFeesPaid: true,
+//   hobbies: ["Eating", "Sleeping"],
+//   address: {
+//     addLine1: "Somewhere",
+//     addLine2: "Somewhere",
+//     city: "Surat",
+//     state: "Gujarat",
+//   },
+//   getFullName: function (a) {
+//     console.log("fn called " + a);
+//   },
+// };
 
-// function myScootyBreak() {
-//   console.log("Applying breaks");
-// }
+// let x = student1.getFullName;
+// x("from x");
 
-// function myScootyAccelerate() {
-//   console.log("Accelerating");
-// }
+// console.log(student1.getFullName("from no where"));
 
-// function myScootyStop() {
-//   console.log("Scooty has stopped");
-// }
+// const greetings = function (name) {
+//   console.log("Hello ", name);
+// };
+
+// greetings("Manikant");
+
+// student1.mobileNumber = "+91 45654 45986";
+// student1.mobileNumber2 = "+91 45896 45986";
+
+// console.log(student1);
 
 // The name:values pairs in JavaScript objects are called properties.
 
@@ -101,3 +115,78 @@
 // obj.guessThis();
 
 // ---------- End "this" Examples ----------
+
+// const student = {
+//   firstName: "Manikant",
+//   lastName: "Jha",
+//   hobbies: ["reading", "singing", "sleeping"],
+//   address: {},
+//   fullName: function () {
+//     // console.log(this.firstName + " " + this.lastName);
+//     console.log(this);
+//   },
+// };
+
+// function aWhosThis() {
+//   console.log(this);
+// }
+// console.log(this);
+
+// // student.fullName();
+
+// aWhosThis();
+
+// student.fullName();
+
+// const studentNew = new Object();
+
+// const studentArray = new Array();
+// const studentNumber = new Number();
+// const studentBoolean = new Boolean();
+// console.log("student", student);
+// console.log("studentNew", studentNew);
+
+// const stud1Name = "John Doe";
+// const stud1Roll = 12;
+// const stud1Add = "Surat";
+// const stud1Phone = "9865236545";
+// const stud1Math = 43;
+// const stud1Sci = 49;
+// const stud1Comp = 48;
+
+// function calcAvg(m1, m2, m3) {
+//   return (m1 + m2 + m3) / 3;
+// }
+
+const stud1 = {
+  name: "John",
+  rollNo: 12,
+  addres: {
+    firstline: "asd",
+    city: "Surat",
+  },
+  phone: "9865236545",
+  math: 43,
+  sci: 49,
+  comp: 48,
+  "full name": "John Doe",
+  average: function () {
+    console.log(this);
+  },
+};
+
+stud1.name;
+stud1.average;
+stud1.average();
+
+stud1["name"];
+
+// console.log(this);
+
+// function aWhosThis() {
+//   console.log(this);
+// }
+
+// aWhosThis();
+
+// stud1.average();

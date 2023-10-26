@@ -3,13 +3,14 @@ let numberOfAttempts = 0;
 let score = 0;
 
 function checkTheGuess() {
-  const numberInput = document.getElementById("numberInput");
+  const numberInput = document.getElementById("number-input");
   const outputPara = document.getElementById("output");
   const attemptsPara = document.getElementById("attempts");
   const scorePara = document.getElementById("score");
   const resetBtn = document.getElementById("resetBtn");
 
   const guessedNumber = Number(numberInput.value);
+
   const tooBig = randomNumber + 5;
   const stillBig = randomNumber + 3;
   const tooSmall = randomNumber - 5;
