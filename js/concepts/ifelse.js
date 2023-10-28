@@ -1,9 +1,21 @@
 // Example 1
 
-// const isHungry = true;
-// const hasDesireToEat = true;
+// const age = 19;
 
-// if (isHungry && hasDesireToEat) {
+// if (age < 18) {
+//   console.log("Less than 18");
+// } else if (age === 18) {
+//   console.log("18");
+// } else {
+//   console.log("Greater than 18");
+// }
+
+// console.log("Next line");
+
+// const isHungry = true;
+// const hasDesireToEat = false;
+
+// if (!isHungry) {
 //   console.log("Eat!");
 // } else {
 //   console.log("Don't eat!");

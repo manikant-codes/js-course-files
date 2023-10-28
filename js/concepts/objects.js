@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // const student1 = {
 //   fName: "Meet",
@@ -158,28 +158,28 @@
 //   return (m1 + m2 + m3) / 3;
 // }
 
-const stud1 = {
-  name: "John",
-  rollNo: 12,
-  addres: {
-    firstline: "asd",
-    city: "Surat",
-  },
-  phone: "9865236545",
-  math: 43,
-  sci: 49,
-  comp: 48,
-  "full name": "John Doe",
-  average: function () {
-    console.log(this);
-  },
-};
+// const stud1 = {
+//   name: "John",
+//   rollNo: 12,
+//   addres: {
+//     firstline: "asd",
+//     city: "Surat",
+//   },
+//   phone: "9865236545",
+//   math: 43,
+//   sci: 49,
+//   comp: 48,
+//   "full name": "John Doe",
+//   average: function () {
+//     console.log(this);
+//   },
+// };
 
-stud1.name;
-stud1.average;
-stud1.average();
+// stud1.name;
+// stud1.average;
+// stud1.average();
 
-stud1["name"];
+// stud1["name"];
 
 // console.log(this);
 
@@ -190,3 +190,21 @@ stud1["name"];
 // aWhosThis();
 
 // stud1.average();
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function () {
+    return this.firstName;
+  },
+};
+
+console.log(person.fullName());
+// console.log(this);
+
+function asd() {
+  console.log(this);
+}
+
+// window.asd();
