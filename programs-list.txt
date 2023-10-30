@@ -1,0 +1,10 @@
+# Assigned
+1. Currency Converter
+2. Simple Calculator
+3. Greatest of 3 Numbers
+4. Positive Negative or Zero
+5. Odd Even
+6. Guess The Number Game
+
+# Pending
+1. Rock Paper Scisor Game
