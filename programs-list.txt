@@ -8,3 +8,29 @@
 
 # Pending
 1. Rock Paper Scisor Game
+
+# String
+Link: https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php
+
+1. Write a JavaScript function to check whether an 'input' is a string or not.
+2. Write a JavaScript function to check whether a string is blank or not.
+3. Write a JavaScript function to split a string and convert it into an array of words.
+4. Write a JavaScript function to extract a specified number of characters from a string.
+5. Write a JavaScript function to convert a string into abbreviated form.
+    input: "Robin Singh"
+    output: "Robin S."
+6. Write a JavaScript function that hides email addresses to prevent unauthorized access.
+    input: "robin_singh@example.com"
+    output: "robin...@example.com"
+7. Write a JavaScript function to capitalize the first letter of a string.
+    input: "js string exercises"
+    output: "Js string exercises"
+8. Write a JavaScript function to capitalize the first letter of each word in a string.
+    input: "js string exercises"
+    output: "Js String Exercises"
+9. Write a JavaScript function to truncate a string if it is longer than the specified number of characters. Truncated strings will end with a translatable ellipsis sequence ("...") (by default) or specified characters.
+    input: textTruncate('We are doing JS string exercises.', 19);
+    output: "We are doing JS ..."
+    input: textTruncate('We are doing JS string exercises.', 15, '!!');
+    output: "We are doing !!"
+
