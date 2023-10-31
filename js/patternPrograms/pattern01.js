@@ -8,8 +8,8 @@ let pattern = "";
 
 let n = 5;
 
-for (let i = 0; i < n; i++) {
-  for (let j = 0; j <= i; j++) {
+for (let row = 0; row < n; row++) {
+  for (let col = 0; col <= row; col++) {
     pattern += "*";
   }
   pattern += "\n";

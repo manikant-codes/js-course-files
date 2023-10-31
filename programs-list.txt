@@ -6,8 +6,10 @@
 5. Odd Even
 6. Guess The Number Game
 
+
 # Pending
 1. Rock Paper Scisor Game
+2. Guess The Alphabet Game
 
 # String
 Link: https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php

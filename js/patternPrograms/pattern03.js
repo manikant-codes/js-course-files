@@ -6,11 +6,11 @@
 
 let pattern = "";
 
-let n = 5;
+let n = 11;
 
-for (let i = 1; i <= n; i++) {
-  for (let j = 1; j <= n * 2 - 1; j++) {
-    if (j <= n - i || j >= n + i) {
+for (let row = 1; row <= n; row++) {
+  for (let col = 1; col <= n * 2 - 1; col++) {
+    if (col <= n - row || col >= n + row) {
       pattern += " ";
     } else {
       pattern += "*";
@@ -19,4 +19,6 @@ for (let i = 1; i <= n; i++) {
   pattern += "\n";
 }
 
-console.log(pattern);
+document.getElementById("demo").innerHTML = pattern;
+
+// console.log(pattern);
