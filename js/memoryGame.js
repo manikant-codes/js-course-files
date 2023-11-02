@@ -27,14 +27,30 @@ function shuffle(array) {
 
 function handleReveal(id) {
   const card = document.getElementById(id);
-  const visibleCards =
-    Array.from(document.getElementsByClassName("visible")) || [];
-  console.log(visibleCards.map((item) => item.children[1].innerHTML.trim()));
   if (!card.classList.contains("visible")) {
     card.classList.add("visible");
   } else {
     card.classList.remove("visible");
   }
+
+  const visibleCards =
+    Array.from(document.getElementsByClassName("visible")) || [];
+  const visibleCardsContent = visibleCards.map((item) =>
+    item.children[1].innerHTML.trim()
+  );
+
+  setTimeout(() => {
+    console.log(visibleCardsContent);
+    if (visibleCards.length >= 2) {
+      if (visibleCardsContent[0] !== visibleCardsContent[1]) {
+        visibleCards[0].classList.remove("visible");
+        visibleCards[1].classList.remove("visible");
+      } else {
+        visibleCards[0].classList.replace("visible", "correct");
+        visibleCards[1].classList.replace("visible", "correct");
+      }
+    }
+  }, 600);
 }
 
 function renderGame() {
