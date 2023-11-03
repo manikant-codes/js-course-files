@@ -32,17 +32,57 @@
       </div>
     </nav>
     <div>
-      <pre id="demo">
-      </pre>
-      <!-- In an event, this refers to the element that received the event. -->
-      <button
-        id="btn"
-        style="display: block; margin: auto; margin-top: 128px"
-        onclick="this.innerHTML = 'You Clicked Me'"
-      >
-        Click Me
-      </button>
+      <script>
+        let arr = [40, 1, 5, 25, 10, 100];
+
+        Array.prototype.mySort = function (callback) {
+          for(let i = this.length - 1; i > 0; i--) {
+            console.log("i", i)
+            for(let j = 0; j <= i; j++) {
+              console.log("j", j)
+              if(callback(this[j], this[j+1]) > 0) {
+                let temp = this[j];
+                this[j] = this[j + 1];
+                this[j + 1] = temp;
+                console.log(this)
+              }
+            }
+          }
+        }
+
+        arr.mySort(function (a, b) {return a - b})
+
+        console.log("arr", arr);
+
+        function getMinMax() {
+          let min = arr[0];
+          let max = arr[0];
+          for(let i = 0; i < arr.length; i++) {
+            if(arr[i] < min) {
+              min = arr[i]
+            }
+            if(arr[i] > max) {
+              max = arr[i]
+            }
+          }
+          return [min, max]
+        }
+
+
+        // console.log("min", min)
+        // console.log("max", max)
+        
+        // function sort(callback) {
+        //   callback(40, 100)
+        // }
+
+        // sort(function(a, b) { return a - b})
+
+        // const callback = function(a, b) { return a - b};
+        // callback();
+        
+      </script>
     </div>
-    <script src="/js/patternPrograms//pattern03.js"></script>
+    <!-- <script src="/js/patternPrograms//pattern03.js"></script> -->
   </body>
 </html>

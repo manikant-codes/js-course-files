@@ -35,4 +35,15 @@ Link: https://www.w3resource.com/javascript-exercises/javascript-string-exercise
     output: "We are doing JS ..."
     input: textTruncate('We are doing JS string exercises.', 15, '!!');
     output: "We are doing !!"
+10. padStart, padEnd
+    - lopeoverseas@gmail.com
+    - manikantjha@yahoo.com
+    - lopeoverseas@website.in
+
+    - lop*********@gmail.com
+    - man********@yahoo.com
+    - lop*********@website.in
+
+    - +91-9865985452
+    - +91-*******452
 
