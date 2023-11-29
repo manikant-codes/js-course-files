@@ -191,20 +191,38 @@
 
 // stud1.average();
 
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  id: 5566,
-  fullName: function () {
-    return this.firstName;
-  },
-};
+// const person = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   id: 5566,
+//   fullName: function () {
+//     return this.firstName;
+//   },
+// };
 
-console.log(person.fullName());
+// console.log(person.fullName());
 // console.log(this);
 
-function asd() {
-  console.log(this);
-}
+// function asd() {
+//   console.log(this);
+// }
 
 // window.asd();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
