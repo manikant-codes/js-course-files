@@ -31,18 +31,18 @@
         </ul>
       </div>
     </nav>
-    <div>
-      <pre id="demo">
-      </pre>
-      <!-- In an event, this refers to the element that received the event. -->
-      <button
-        id="btn"
-        style="display: block; margin: auto; margin-top: 128px"
-        onclick="this.innerHTML = 'You Clicked Me'"
-      >
-        Click Me
-      </button>
-    </div>
-    <script src="/js/concepts/arraySorting.js"></script>
+    <input type="text" id="input-field">
+    <button onclick="checkType()">Check Type</button>
+    <script>
+      // function checkType() {
+      //   const inputType = typeof document.getElementById("input-field").value;
+      //   if(inputType === "string") {
+      //     console.log("Is A String")
+      //   } else {
+      //     console.log("Is Not A String")
+      //   }
+      // }
+    </script>
+    <script src="/js/concepts/arrayMethods.js"></script>
   </body>
 </html>

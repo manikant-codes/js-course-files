@@ -51,3 +51,23 @@
 // const s2 = new Monitor("Chintan", "Vaghani", 11, true);
 
 // console.log(s1, s2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
