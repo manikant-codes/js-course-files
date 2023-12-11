@@ -104,3 +104,20 @@ select:focus {
   text-align: center;
   margin-top: 32px;
 }
+
+.box {
+  padding: 16px;
+  background-color: beige;
+  margin-top: 16px;
+}
+
+.boxflex {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxflex-box {
+  background-color: orange;
+  padding: 16px;
+  margin-right: 16px;
+}
