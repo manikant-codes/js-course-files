@@ -96,7 +96,7 @@
 
 // console.log(res, numbers);
 
-const numbers = [45, 4, 9, 16, 25];
+// const numbers = [45, 4, 9, 16, 25];
 // const oddEven = [];
 // function myFunction() {}
 
@@ -108,9 +108,9 @@ const numbers = [45, 4, 9, 16, 25];
 
 // console.log(oddEven, numbers);
 
-const result = numbers.map(function (value, index, array) {
-  let result = value % 2 === 0 ? "even" : "odd";
-  return result;
-});
+// const result = numbers.map(function (value, index, array) {
+//   let result = value % 2 === 0 ? "even" : "odd";
+//   return result;
+// });
 
-console.log(result, numbers);
+// console.log(result, numbers);
