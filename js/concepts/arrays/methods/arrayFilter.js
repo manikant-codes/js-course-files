@@ -7,8 +7,24 @@
 const numbers = [45, 4, 9, 16, 25];
 
 function myFunction(value, index, array) {
-  return value > 18;
+  return value < 18;
 }
+
+// function myFilter(callbackFn, array) {
+//   const temp = [];
+//   for (let i = 0; i < array.length; i++) {
+//     const result = callbackFn(array[i], i, array);
+//     if (result) {
+//       temp.push(array[i]);
+//     }
+//   }
+
+//   return temp;
+// }
+
+// const over18 = myFilter((value, index, array) => {
+//   return value > 18;
+// }, numbers);
 
 const over18 = numbers.filter(myFunction);
 

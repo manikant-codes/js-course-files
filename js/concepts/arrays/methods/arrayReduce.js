@@ -13,12 +13,77 @@
 // 3. index: value me jo element store hua hai uska index.
 // 4. array: Jis array pe hamne reduce method call kiya hoo wo array.
 
-const numbers = [45, 4, 9, 16, 25];
+// const numbers = [45, 4, 9, 16, 25];
 
-function myFunction(accumulator, value, index, array) {
-  return accumulator + value;
+const users = [
+  { firstName: "john", lastName: "Biden", age: 26 },
+  { firstName: "jimmy", lastName: "cob", age: 75 },
+  { firstName: "sam", lastName: "lewis", age: 50 },
+  { firstName: "Ronald", lastName: "Mathew", age: 26 },
+];
+
+[
+  {
+    users: [
+      { firstName: "john", lastName: "Biden" },
+      { firstName: "Ronald", lastName: "Mathew" },
+    ],
+    age: 26,
+  },
+];
+
+// function myFunction(collector, value, index, array) {
+//   return collector + value;
+// }
+
+// let sum = numbers.reduce(myFunction, 0);
+
+// console.log(
+//   users.map((value) => {
+//     return value.firstName + " " + value.lastName;
+//   })
+// );
+
+// const res = users
+//   .map((v) => {
+//     return { age: v.age, users: [{ firstName: v.firstName }] };
+//   })
+//   .reduce((acc, value) => {
+//     const temp = {};
+//     for (const a of acc) {
+//       if (a.age === value.age) {
+//         a.users = [...a.users, { firstName: value.firstName }];
+//       }
+//     }
+//     return acc.push();
+//   }, []);
+
+// console.log("res", res);
+
+const b = 10;
+
+const drives = [5, 8, 12];
+const keyboards = [40, 50, 60];
+
+function response() {
+  let max = 0;
+  let keyboard = "";
+  let drive = "";
+  for (const d of drives) {
+    for (const k of keyboards) {
+      if (d + k > max && d + k < b) {
+        max = d + k;
+        keyboard = `${k} Keyboard`;
+        drive = `${d} Drive`;
+      }
+    }
+  }
+
+  if (!max) {
+    return -1;
+  }
+
+  return `Max: ${max}, ${keyboard}, ${drive}`;
 }
 
-let sum = numbers.reduce(myFunction, 0);
-
-console.log(sum);
+console.log(response());
