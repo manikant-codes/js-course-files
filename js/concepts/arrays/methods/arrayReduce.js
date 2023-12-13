@@ -15,22 +15,22 @@
 
 // const numbers = [45, 4, 9, 16, 25];
 
-const users = [
-  { firstName: "john", lastName: "Biden", age: 26 },
-  { firstName: "jimmy", lastName: "cob", age: 75 },
-  { firstName: "sam", lastName: "lewis", age: 50 },
-  { firstName: "Ronald", lastName: "Mathew", age: 26 },
-];
+// const users = [
+//   { firstName: "john", lastName: "Biden", age: 26 },
+//   { firstName: "jimmy", lastName: "cob", age: 75 },
+//   { firstName: "sam", lastName: "lewis", age: 50 },
+//   { firstName: "Ronald", lastName: "Mathew", age: 26 },
+// ];
 
-[
-  {
-    users: [
-      { firstName: "john", lastName: "Biden" },
-      { firstName: "Ronald", lastName: "Mathew" },
-    ],
-    age: 26,
-  },
-];
+// [
+//   {
+//     users: [
+//       { firstName: "john", lastName: "Biden" },
+//       { firstName: "Ronald", lastName: "Mathew" },
+//     ],
+//     age: 26,
+//   },
+// ];
 
 // function myFunction(collector, value, index, array) {
 //   return collector + value;
@@ -59,3 +59,46 @@ const users = [
 //   }, []);
 
 // console.log("res", res);
+
+// const numbers = [45, 4, 9, 16, 25];
+
+// numbers.reduce(function (accumulator, value, index, array) {}, 0);
+
+// const sum = numbers.reduce(function (sum, value, index, array) {
+//   return sum * value;
+// }, 0);
+// const product = numbers.reduce(function (product, value, index, array) {
+//   return product * value;
+// }, 1);
+
+// const result = numbers.reduce(
+//   function (collector, value, index, array) {
+//     return { sum: collector.sum + value, product: collector.product * value };
+//   },
+//   { sum: 0, product: 1 }
+// );
+
+// const result = numbers.reduce(
+//   function (acc, value, index, array) {
+//     return { sum: acc.sum + value, product: acc.product * value };
+//   },
+//   { sum: 0, product: 1 }
+// );
+
+// console.log(result);
+
+const numbers = [45, 4, 9, 16, 25];
+
+// let collector = { sum: 0, product: 1 };
+// let product = 1;
+
+// for (const n of numbers) {
+//   collector = { sum: collector.sum + n, product: collector.product * n };
+// }
+
+// for (const n of numbers) {
+//   product = product * n;
+// }
+
+// console.log(sum);
+// console.log(product);
