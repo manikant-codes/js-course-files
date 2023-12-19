@@ -31,5 +31,23 @@
       </div>
      </nav>
     <script src="/js/concepts/arrays/methods/arrayFind.js"></script>
+    <script>
+      const users = [
+        {firstName:"john", lastName:"Biden", age:26},
+        {firstName:"jimmy", lastName:"cob", age:75},
+        {firstName:"sam", lastName:"lewis", age:50},
+        {firstName:"Ronald", lastName:"Mathew", age:26},  
+      ];
+      const answer = users.reduce((acc, value) => {
+        if(!acc[value.age]) {
+            acc[value.age] = 1;
+        } else {
+            acc[value.age] = acc[value.age] + 1;
+        }
+        return acc;
+      }, {})
+
+      console.log(answer);
+    </script>
   </body>
 </html>

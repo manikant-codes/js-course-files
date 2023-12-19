@@ -63,3 +63,18 @@
 
 // const callback = function(a, b) { return a - b};
 // callback();
+
+function compare(a, b) {
+  if (a.year < b.year) return -1;
+  if (a.year > b.year) return 1;
+
+  if (a.language < b.language) return -1;
+  if (a.language > b.language) return 1;
+}
+
+const arr = [
+  { language: "C++", year: 1989 },
+  { language: "Python", year: 1991 },
+  { language: "Java", year: 1995 },
+  { language: "JavaScript", year: 1995 },
+];
