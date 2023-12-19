@@ -10,6 +10,8 @@
 # Pending
 1. Rock Paper Scisor Game
 2. Guess The Alphabet Game
+(Ek array banana hai, us me A - Z store karna hai. 0 - 25 position tak elements honge. Ab 0 - 25 tak ek random number generate karna hai. alphabets[randomNumber] ye aapka randomAlphabet hooga. User se input le ke check karna hai ke user ne jo alphabet guess kiya hai wo sahi hai ya nahi.)
+(Common mistake: User small alphabet input loo aur usko array ke capital alphabet se compare karao.)
 
 # String
 Link: https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php
