@@ -33,11 +33,36 @@
      <div id="list"></div>
      <button onclick="endLoop()">End Loop</button>
      <!-- <a href="javascript:void (function () {console.log(2 + 2)}())" onclick="">Useless Link</a> -->
-    <script src="/js/concepts/arrays/methods/arrayForEachRevision.js"></script>
+    <!-- <script src="/js/concepts/arrays/methods/arrayForEachRevision.js"></script> -->
     <!-- <script src="./js/interviewQuestions/movie.js"></script> -->
     <script>
       // console.log("b" + "a" + " " + "a")
       // console.log(("b" + "a" + + "a" + "a").toLowerCase())
+       function convertToBinary(number) {
+        let binary = number.toString(2);
+        binary = binary.padStart(4, "0");
+        return binary;
+      }
+
+      const readPermission = 4;
+      const writePermission = 2;
+      const executePermission = 1;
+      let myPermission = 0;
+      
+      // 0000
+      // 0010
+      // 0010
+      
+      // 0010
+      // 0100
+      // 0000
+      
+      myPermission = myPermission | writePermission;
+
+      let message = (myPermission & readPermission) ? "Yes" : "No";
+
+      console.log(message);
+
     </script>
   </body>
 </html>
