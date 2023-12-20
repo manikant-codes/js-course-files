@@ -143,3 +143,92 @@
 //   //   for (let j = 1; j < 10000; j++) {}
 //   // }
 // }
+
+// while
+// do while
+// for
+
+let i = 1;
+
+// do {
+//   console.log(i);
+//   i++;
+// } while (i <= 10);
+
+// i = 1;
+
+// while (i <= 10) {
+//   console.log(i);
+//   i++;
+// }
+
+// for (let i = 1; i <= 10; i++) {
+//   console.log(i);
+// }
+
+// for (;;) {
+//   if (i > 10) {
+//     break;
+//   }
+//   i++;
+//   console.log(i);
+// }
+
+// for in object/array
+// for of array
+
+// console.log(obj.name);
+
+// console.log(obj);
+// for(let i = 0; )
+
+// for (const property in object) {
+// }
+
+const obj = {
+  name: "Shinchan Nohara",
+  fatherName: "Harry Nohara",
+  motherName: "Mitsy Nohara",
+  petName: "Shero",
+  age: "5",
+  favourites: ["Choco Chips", "Action Kamen"],
+  city: "Kasukabe",
+  country: "Japan",
+};
+
+const obj1 = {
+  0: "Shinchan Nohara",
+  1: "Harry Nohara",
+  2: "Mitsy Nohara",
+  3: "Shero",
+  4: "5",
+  5: ["Choco Chips", "Action Kamen"],
+  6: "Kasukabe",
+  7: "Japan",
+};
+
+// obj.name;
+// obj["name"];
+
+// let o = "name";
+// console.log(obj["name"]);
+// console.log(obj[o]);
+
+// for (const o in obj) {
+//   if (o === "fatherName") {
+//     console.log(o, obj[o]);
+//     break;
+//   }
+// }
+
+// const arr = ["Shinchan", "Harry", "Misty", "Shero", ["Choco Chips"]];
+
+// console.log(arr);
+
+// for (const a in arr) {
+//   console.log(a, arr[a]);
+// }
+
+// for (const a of arr) {
+//   console.log(a);
+// }
