@@ -185,27 +185,27 @@ let i = 1;
 // for (const property in object) {
 // }
 
-const obj = {
-  name: "Shinchan Nohara",
-  fatherName: "Harry Nohara",
-  motherName: "Mitsy Nohara",
-  petName: "Shero",
-  age: "5",
-  favourites: ["Choco Chips", "Action Kamen"],
-  city: "Kasukabe",
-  country: "Japan",
-};
+// const obj = {
+//   name: "Shinchan Nohara",
+//   fatherName: "Harry Nohara",
+//   motherName: "Mitsy Nohara",
+//   petName: "Shero",
+//   age: "5",
+//   favourites: ["Choco Chips", "Action Kamen"],
+//   city: "Kasukabe",
+//   country: "Japan",
+// };
 
-const obj1 = {
-  0: "Shinchan Nohara",
-  1: "Harry Nohara",
-  2: "Mitsy Nohara",
-  3: "Shero",
-  4: "5",
-  5: ["Choco Chips", "Action Kamen"],
-  6: "Kasukabe",
-  7: "Japan",
-};
+// const obj1 = {
+//   0: "Shinchan Nohara",
+//   1: "Harry Nohara",
+//   2: "Mitsy Nohara",
+//   3: "Shero",
+//   4: "5",
+//   5: ["Choco Chips", "Action Kamen"],
+//   6: "Kasukabe",
+//   7: "Japan",
+// };
 
 // obj.name;
 // obj["name"];
@@ -232,3 +232,75 @@ const obj1 = {
 // for (const a of arr) {
 //   console.log(a);
 // }
+
+// area 2pirr
+// diameter 2r
+// circumference 2pir
+
+// for (let i = 0; i < 4; i++) {
+//   console.log("Diameter", radius[i] * 2);
+// }
+
+// for (let i = 0; i < 4; i++) {
+//   console.log("Circumference", radius[i] * 2 * Math.PI);
+// }
+
+// for (let i = 0; i < 4; i++) {
+//   console.log("Area", radius[i] * radius[i] * 2 * Math.PI);
+// }
+
+// function add(n1, n2) {
+//   return n1 + n2;
+// }
+
+// add(2, 3);
+
+// function myForEach(func, array) {
+//   for (let i = 0; i < array.length; i++) {
+//     func(array[i]);
+//   }
+// }
+
+// myForEach(function func(value) {
+//   console.log("Diameter", value * 2);
+// }, radius);
+
+// myForEach(function func(value) {
+//   console.log("Circumference", value * 2 * Math.PI);
+// }, radius);
+
+// myForEach(function func(value) {
+//   console.log("Area", value * value * 2 * Math.PI);
+// }, radius);
+
+const radius = [45, 4, 9, 16, 25];
+
+// function myForEach(func, array) {
+//   for (let i = 0; i < array.length; i++) {
+//     func(array[i], i, array);
+//   }
+// }
+
+// function func(value) {
+//   console.log("Diameter", value * 2);
+// }
+
+// myForEach(function (value) {
+//   console.log("Diameter", value * 2);
+// }, radius);
+
+// const x = radius.forEach((value, index, array) => {
+//   console.log("Area", value * value * 2 * Math.PI);
+// });
+
+// console.log("x", x);
+
+// myForEach(func, radius);
+
+// radius.forEach((value, index, array) => {
+//   console.log("Circumference", value * 2 * Math.PI);
+// });
+
+// radius.forEach((value, index, array) => {
+//   console.log("Diameter", value * 2);
+// });
