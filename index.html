@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
     <nav>
-      <DIV>
+      <div>
         <h1>Learning JavaScript</h1>
-      </DIV>
+      </div>
       <div>
         <ul>
           <li>
@@ -31,12 +31,66 @@
       </div>
      </nav>
      <div id="list"></div>
-     <button onclick="endLoop()">End Loop</button>
+     <div id="classRoom">
+      
+     </div>
+
      <!-- <a href="javascript:void (function () {console.log(2 + 2)}())" onclick="">Useless Link</a> -->
     <script src="/js/concepts/arrays/methods/arrayForEachRevision.js"></script>
     <!-- <script src="./js/interviewQuestions/movie.js"></script> -->
     <script>
+      const classRoom = document.getElementById("classRoom");
+      let seats = "";
+      const arrCols = ["A", "B", "C"];
+      const lastCol = arrCols[length-1]      
+      let benchesPerCol = 6;
+      let arrSeats = [];
+
+      for(let i = 0; i < arrCols.length; i++) {
+        for(let j = 1; j <= 18; j++) {
+          arrSeats.push(arrCols[i]+"-"+j)
+        }
+      }
+
       
+      arrSeats = arrSeats.reverse()
+      arrSeats.forEach((seat) => {
+        if(seat.match(/-18$/)) {
+          if(seat[0] === lastCol) {
+            seats += `
+            <div id="col${seat[0]}">
+              <ul>
+                <ul class="row">
+                  <li id="${seat}">${seat}</li>
+              `
+          } else {
+            seats += `
+            </ul>
+            </div>
+            <div id="col${seat[0]}">
+              <ul>
+                <ul class="row">
+                  <li id="${seat}">${seat}</li>
+              `
+          }
+        } else {
+          if(seat.match(/(-18$)|(-15$)|(-12$)|(-9$)|(-6$)|(-3$)/)) {
+            seats +=`</ul><ul class="row"><li id="${seat}">${seat}</li>`
+          } else {
+            seats += `<li id="${seat}">${seat}</li>`
+          }
+        }
+      })
+
+      classRoom.innerHTML = seats;
+
+      function getRandomSeat() {
+        const random = Math.floor(Math.random() * arrSeats.length) + 1;
+        const randomSeat = arrSeats[random];
+        document.getElementById(randomSeat).setAttribute("class", "active");
+      }
+
+      getRandomSeat()
     </script>
   </body>
 </html>

@@ -8,15 +8,26 @@
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 16px;
   background-color: #ffd54f;
   padding: 16px;
 }
 
+nav div:first-child {
+  flex-grow: 1;
+  flex-basis: content;
+  /* flex-shrink: 0; */
+}
+
+nav div:last-child {
+  flex-basis: auto;
+}
+
 nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -120,4 +131,43 @@ select:focus {
   background-color: orange;
   padding: 16px;
   margin-right: 16px;
+}
+
+#classRoom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+#classRoom div {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#classRoom div ul {
+  list-style-type: none;
+}
+
+#classRoom div ul .row {
+  display: flex;
+  gap: 22px;
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+
+#classRoom div ul .row li {
+  width: 75px;
+  height: 75px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.active {
+  background-color: #ff3d00 !important;
+  color: white !important;
 }
