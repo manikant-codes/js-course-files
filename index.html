@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css" />
   </head>
+  <body>
     <nav>
       <div>
         <h1>Learning JavaScript</h1>
@@ -29,40 +30,37 @@
           </li>
         </ul>
       </div>
-     </nav>
-     <div id="list"></div>
-     <div id="classRoom">
-      
-     </div>
+    </nav>
+    <div id="list"></div>
+    <div id="classRoom"></div>
 
-     <!-- <a href="javascript:void (function () {console.log(2 + 2)}())" onclick="">Useless Link</a> -->
+    <!-- <a href="javascript:void (function () {console.log(2 + 2)}())" onclick="">Useless Link</a> -->
     <script src="/js/concepts/arrays/methods/arrayForEachRevision.js"></script>
     <!-- <script src="./js/interviewQuestions/movie.js"></script> -->
     <script>
       const classRoom = document.getElementById("classRoom");
       let seats = "";
       const arrCols = ["A", "B", "C"];
-      const lastCol = arrCols[length-1]      
+      const lastCol = arrCols[length - 1];
       let benchesPerCol = 6;
       let arrSeats = [];
 
-      for(let i = 0; i < arrCols.length; i++) {
-        for(let j = 1; j <= 18; j++) {
-          arrSeats.push(arrCols[i]+"-"+j)
+      for (let i = 0; i < arrCols.length; i++) {
+        for (let j = 1; j <= 18; j++) {
+          arrSeats.push(arrCols[i] + "-" + j);
         }
       }
 
-      
-      arrSeats = arrSeats.reverse()
+      arrSeats = arrSeats.reverse();
       arrSeats.forEach((seat) => {
-        if(seat.match(/-18$/)) {
-          if(seat[0] === lastCol) {
+        if (seat.match(/-18$/)) {
+          if (seat[0] === lastCol) {
             seats += `
             <div id="col${seat[0]}">
               <ul>
                 <ul class="row">
                   <li id="${seat}">${seat}</li>
-              `
+              `;
           } else {
             seats += `
             </ul>
@@ -71,16 +69,16 @@
               <ul>
                 <ul class="row">
                   <li id="${seat}">${seat}</li>
-              `
+              `;
           }
         } else {
-          if(seat.match(/(-18$)|(-15$)|(-12$)|(-9$)|(-6$)|(-3$)/)) {
-            seats +=`</ul><ul class="row"><li id="${seat}">${seat}</li>`
+          if (seat.match(/(-18$)|(-15$)|(-12$)|(-9$)|(-6$)|(-3$)/)) {
+            seats += `</ul><ul class="row"><li id="${seat}">${seat}</li>`;
           } else {
-            seats += `<li id="${seat}">${seat}</li>`
+            seats += `<li id="${seat}">${seat}</li>`;
           }
         }
-      })
+      });
 
       classRoom.innerHTML = seats;
 
@@ -90,7 +88,7 @@
         document.getElementById(randomSeat).setAttribute("class", "active");
       }
 
-      getRandomSeat()
+      getRandomSeat();
     </script>
   </body>
 </html>
