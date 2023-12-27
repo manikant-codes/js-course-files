@@ -91,7 +91,7 @@
 
 // console.log(res, numbers);
 
-// const numbers = [45, 4, 9, 16, 25];
+// const numbers = ["liche", "mango", "black-current", "orange", "masala"];
 // const oddEven = [];
 // function myFunction() {}
 
@@ -110,6 +110,77 @@
 
 // console.log(result, numbers);
 
+// ["licehe soda", "mango soda", "blck-current soda"];
 
+// DRY
+// Don't Repeat Yourself
 
+// Higher Order Functions
+// function sodaMachine(order, flavoursContainer) {
+//   for (let i = 0; i < flavours.length; i++) {
+//     if (flavoursContainer[i] === "mango" || flavoursContainer[i] === "orange") {
+//       continue;
+//     }
+//     order(flavoursContainer[i]);
+//   }
+// }
 
+// sodaMachine(function (flavour) {
+//   console.log(flavour + " soda");
+// }, flavours);
+
+// sodaMachine(function (flavour) {
+//   console.log(flavour + " sing soda");
+// }, flavours);
+
+// sodaMachine(function (flavour) {
+//   console.log(flavour + " masala soda");
+// }, flavours);
+
+// for (let i = 0; i < 3; i++) {
+//   console.log(f + " soda");
+// }
+// for (let i = 0; i < 3; i++) {
+//   console.log(f + " drink");
+// }
+// for (let i = 0; i < 3; i++) {
+//   console.log(f + " sing soda");
+// }
+// for (let i = 0; i < 3; i++) {
+//   console.log(f + " masala sing soda");
+// }
+
+// const tray = [];
+
+// const x = flavours.forEach(function (flavour, index, array) {
+//   tray.push(flavour + " soda");
+//   //   console.log(element + " soda");
+// });
+
+// const x = flavours.map(function (flavour, index, array) {
+//   return flavour + " soda";
+// });
+
+// orange, mango, sprite
+
+const flavours = [
+  "liche",
+  "mango",
+  "black-current",
+  "orange",
+  "masala",
+  "coca-cola",
+  "pine-apple",
+  "sprite",
+  "limca",
+];
+
+const x = flavours.filter(function (flavour, index, array) {
+  if (flavour === "mango" || flavour === "orange" || flavour === "sprite") {
+    return flavour;
+  }
+  //   return undefined;
+});
+
+console.log("x: ", x);
+// console.log("tray: ", tray);

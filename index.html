@@ -35,25 +35,26 @@
     <div id="classRoom"></div>
 
     <!-- <a href="javascript:void (function () {console.log(2 + 2)}())" onclick="">Useless Link</a> -->
-    <script src="/js/concepts/arrays/methods/arrayForEachRevision.js"></script>
+    <!-- <script src="/js/concepts/arrays/methods/arrayMap.js"></script> -->
     <!-- <script src="./js/interviewQuestions/movie.js"></script> -->
-    <script>
+    <!-- <script>
       const classRoom = document.getElementById("classRoom");
       let seats = "";
-      const arrCols = ["A", "B", "C"];
+      // const arrCols = ["A", "B", "C"];
+      const arrCols = ["A", "B"];
       const lastCol = arrCols[length - 1];
-      let benchesPerCol = 6;
+      let benchesPerCol = 3;
       let arrSeats = [];
 
       for (let i = 0; i < arrCols.length; i++) {
-        for (let j = 1; j <= 18; j++) {
+        for (let j = 1; j <= 9; j++) {
           arrSeats.push(arrCols[i] + "-" + j);
         }
       }
 
       arrSeats = arrSeats.reverse();
       arrSeats.forEach((seat) => {
-        if (seat.match(/-18$/)) {
+        if (seat.match(/-9$/)) {
           if (seat[0] === lastCol) {
             seats += `
             <div id="col${seat[0]}">
@@ -89,6 +90,8 @@
       }
 
       getRandomSeat();
-    </script>
+    </script> -->
+
+    <script src="./js/arrayReduce.js"></script>
   </body>
 </html>
