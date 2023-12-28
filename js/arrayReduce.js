@@ -28,13 +28,23 @@ const arr = [45, 4, 9, 16, 25];
 
 // console.log("product", product);
 
-const sum = arr.reduce(function (acc, value, index, array) {
-  return acc + value;
-}, 0);
+// const sum = arr.reduce(function (acc, value, index, array) {
+//   return acc + value;
+// }, 0);
 
-const product = arr.reduceRight(function (acc, value, index, array) {
-  return acc * value;
-}, 1);
+// const product = arr.reduceRight(function (acc, value, index, array) {
+//   return acc * value;
+// }, 1);
 
-console.log("sum", sum);
-console.log("product", product);
+// console.log("sum", sum);
+// console.log("product", product);
+
+const numbers = [45, 4, 9, 16, 25];
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+
+const over18 = numbers.filter(myFunction);
+
+console.log(over18);

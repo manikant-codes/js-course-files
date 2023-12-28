@@ -1,18 +1,18 @@
 // "use strict";
-// try {
-//   const num = 0;
-//   obj.forEach(function (o) {
-//     console.log(o);
-//   });
-//   if (num === 0) throw new Error("Can't divide by zero!");
-//   console.log(10 / num);
-// } catch (error) {
-//   console.log(error.name);
-//   console.log(error.message);
-//   alert("Something went wrong!");
-// } finally {
-//   alert("Sorry for inconvinience!");
-// }
+try {
+  const num = 1;
+  obj.forEach(function (o) {
+    console.log(o);
+  });
+  if (num === 0) throw new Error("Can't divide by zero!");
+  console.log(10 / num);
+} catch (error) {
+  console.log(error.name);
+  console.log(error.message);
+  alert("Something went wrong!");
+} finally {
+  alert("Thank you!");
+}
 
 // Arrow Function
 
@@ -41,12 +41,12 @@
 // }
 
 // var a = 3.14;
-// delete a; 
+// delete a;
 
 // console.log(a);
 
 // function a(p1, p2) {};
 // a();
-// delete window.a; 
+// delete window.a;
 // debugger;
 // console.log(a);
