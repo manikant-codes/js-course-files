@@ -1,3 +1,18 @@
+// call
+// Har function me this hota hai, aur wo kisi object ko refer (point) karta hai.
+// call ek function method hai. JS me functions objects hain, unki bhi kuch properties aur methods hoti hain. Unhi me se ek method call hai.
+// Agar aap ko koi function call karwana hoo, uske this ki binding (this kis object ko point kar raha hai) change kar ke, to app call method ka use karo ge.
+
+// apply
+// apply ek function method hai.
+// Agar aap ko koi function call karwana hoo, uske this ki binding (this kis object ko point kar raha hai) change kar ke, aur arguments me array pass karna hoo, to app apply method ka use karo ge.
+
+// bind
+// bind ek function method hai.
+// Agar aap ko koi function ki nayi copy chahiye ho, uske this ki binding (this kis object ko point kar raha hai) change kar ke, to app bind method ka use karo ge.
+// Bind method us function ko call nahi kare ga, app ko us function ki body/code return karega.
+// Baad me aap usko call kara sakte hoo.
+
 // console.log("outside", this);
 
 // function thisFunction() {
@@ -107,3 +122,39 @@
 // add();
 // obj.getThis();
 // obj.getThisWrapper();
+
+// const studentA = {
+//   fname: "Shinchan",
+//   lname: "Nohara",
+//   getFullName: function (age, likes, favColor) {
+//     return (
+//       this.fname +
+//       " " +
+//       this.lname +
+//       " is " +
+//       age +
+//       " years old!" +
+//       " Likes " +
+//       likes +
+//       ", favourite color " +
+//       favColor
+//     );
+//   },
+// };
+
+// const studentB = {
+//   fname: "Himawari",
+//   lname: "Nohara",
+// };
+
+// console.log(studentA.getFullName());
+
+// call
+// console.log(studentA.getFullName.call(studentB, 2, "flowers", "yellow"));
+
+// apply
+// console.log(studentA.getFullName.apply(studentB, [2, "flowers", "yellow"]));
+
+// bind
+// const newFn = studentA.getFullName.bind(studentB);
+// console.log(newFn(2, "flowers", "yellow"));
