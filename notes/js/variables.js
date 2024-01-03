@@ -109,6 +109,3 @@ debugger;
 // Block scope hoota hai.
 // Re-declaration nahi kar sakte hoo.
 // Re-initialization nahi kar sakte hoo.
-
-// carName = "Saab";
-// let carName = "Volvo";
