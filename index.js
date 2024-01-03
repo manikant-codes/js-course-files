@@ -55,3 +55,23 @@
 // test(x);
 
 // console.log("outside x", x.num);
+
+// function c() {
+//   console.log("c");
+// }
+
+function a() {
+  console.log("a");
+}
+
+function b() {
+  console.log("b");
+}
+
+a();
+
+setTimeout(function myCallback() {
+  console.log("Callback Function");
+}, 5000);
+
+b();

@@ -10,6 +10,7 @@ function rockPaperScisor(userChoice) {
   console.log(userChoice, computerChoice);
 
   let message;
+
   if (userChoice === computerChoice) {
     message = "DRAW";
   } else if (userChoice === 0) {
