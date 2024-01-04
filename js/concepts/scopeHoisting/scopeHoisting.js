@@ -15,13 +15,13 @@
 // const fname = "Mitsy";
 // const lname = "Nohara";
 
-const objStudent = {
-  fname: "Shinchan",
-  lname: "Nohara",
-  getFullName: function () {
-    console.log(this.fname + " " + this.lname);
-  },
-};
+// const objStudent = {
+//   fname: "Shinchan",
+//   lname: "Nohara",
+//   getFullName: function () {
+//     console.log(this.fname + " " + this.lname);
+//   },
+// };
 
 // console.log(this);
 
@@ -43,10 +43,10 @@ const objStudent = {
 // let a = "abc";
 // console.log(a);
 
-function abc() {
-  console.log(this);
-}
+// function abc() {
+//   console.log(this);
+// }
 
-abc();
+// abc();
 
 // console.log(this);

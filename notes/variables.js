@@ -1,24 +1,114 @@
-// Variables containers hai (dabbe hain) jinme aap data store kar sakte hoo. Aur baad me jab jarurat pade us variable (dabbe) me se aap vo data access karsakte hoo.
+debugger;
 
-// JavaScript me variable declare karne (banane) ke 4 tarike hai.
+// hoisting differences
 
-// 1. Automatic Declaration
-// Is method me aap bina kisi keyword ka use kiye variable ko declare karte hoo.
-// E.g.
-a = 10;
-// Upar vali line me mai ek variable "a" bana raha hun aur usme 10 assign (store) kar raha hun.
-// Automatic declaration me variable declare karne (banane) ke saath usme value assign (store) karna zaruri hai warna error milega.
-// Automatic declaration se banaye gaye variables ko code-execution phase me memory allocate hooti hai, yane memory me jagah milti hai.
-// Automatic declaration se banaye gaye variables ka global scope hoota hai.
-// Inka koi block scope nahi hoota.
-// Inhe use karne se pehle initialize karna padta hai.
+// console.log(a);
 
-// 2. var Declaration
-// Is method me aap var keyword ka use kar ke variables declare karte (banate) hoo.
-// var keyword ka use karke banayegaye variables ka bhi global scope hota hai.
-// E.g.
-var b = 20;
-// var keyword se declared (banaye)
+// a = 10;
 
-// 3. let Declaration
-// 4. const Declaration
+// console.log(a);
+
+// var a = 15;
+
+// console.log(a);
+
+// let a = 20;
+
+// console.log(a);
+
+// const a = 25;
+
+// scope differences
+
+// {
+//   a = 10;
+// }
+
+// var a = 20;
+
+// {
+//   var a = 10;
+//   console.log(a);
+// }
+
+// console.log(a);
+
+// let a = 20;
+
+// {
+//   let a = 10;
+//   console.log(a);
+// }
+
+// console.log(a);
+
+// let a = 20;
+
+// {
+//   const a = 10;
+//   console.log(a);
+// }
+
+// console.log(a);
+
+// var vs let vs const
+
+// var a = 10;
+// var a = 20;
+// a = 20;
+// console.log(a);
+
+// let a = 10;
+// let a = 20; // Not possible.
+// a = 20;
+// console.log(a);
+
+// const a = 10;
+// const a = 10; // Not possible.
+// a = 20; // Not possible.
+// console.log(a);
+
+// Notes:
+
+// automatic declaration
+
+// a = 10;
+
+// Hoisting nahi hooti. (Yane program execute hoo us se pehle variable ko memory me jagah nahi milti.)
+// Global scope me window object me jagah milti hai.
+// Koi block scope nahi hoota.
+// Re-declaration kar sakte hoo.
+// Re-initialization kar sakte hoo.
+
+// var declaration
+
+// var a = 10;
+
+// Hoisting hooti hai aur initial value undefined hoti hai. (Yane program execute hoo us se pehle variable ko memory me jagah milti hai.)
+// Global scope me window object me jagah milti hai.
+// Koi block scope nahi hoota.
+// Re-declaration kar sakte hoo.
+// Re-initialization kar sakte hoo.
+// Pehle sirf variable declare kar sakte hai baad use initialize kar sakte hai.
+
+// let declaration
+
+// let a = 10;
+
+// Hoisting hooti hai lekin koi initial value nahi hooti. (Yane program execute hoo us se pehle variable ko memory me jagah milti hai.)
+// Global scope me jagah milti hai, lekin window object ke andar nahi.
+// Block scope hoota hai.
+// Re-declaration nahi kar sakte hoo.
+// Re-initialization kar sakte hoo.
+// Pehle sirf variable declare kar sakte hai baad use initialize kar sakte hai.
+
+// const declaration
+
+// const a = 10;
+
+// Hoisting hooti hai lekin koi initial value nahi hooti. (Yane program execute hoo us se pehle variable ko memory me jagah milti hai.)
+// Global scope me jagah milti hai, lekin window object ke andar nahi.
+// Block scope hoota hai.
+// Re-declaration nahi kar sakte hoo.
+// Re-initialization nahi kar sakte hoo.
+// Aur jab variable declare karo tabhi use initialize karna padta hai.
