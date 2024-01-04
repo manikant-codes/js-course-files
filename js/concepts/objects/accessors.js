@@ -9,21 +9,63 @@
 //   lname: "Kaushal",
 //   age: 35,
 //   address: { city: "Mumbai", pincode: 456235 },
-//   get fullName() {
-//     return this.fname + " " + this.lname;
-//   },
-//   set fullName(name) {
-//     const arr = name.split(" ");
-//     this.fname = arr[0];
-//     this.lname = arr[1];
+// getFullName: function () {
+//   console.log(this.fname + " " + this.lname);
+//   return this.fname + " " + this.lname;
+// },
+// setFullName: function (fname, lname) {
+//   this.fname = fname;
+//   this.lname = lname;
+// },
+// get fullName() {
+//   console.log(this.fname + " " + this.lname);
+//   return this.fname + " " + this.lname;
+// },
+// set fullName(name) {
+//   this.fname = name.fname;
+//   this.lname = name.lname;
+// const arr = name.split(" ");
+// this.fname = arr[0];
+// this.lname = arr[1];
 //   },
 // };
 
 // console.log(person);
 
-function add(a, b) {
-  console.log(a + b);
-  add(4, 5);
-}
+// function add(a, b) {
+//   console.log(a + b);
+//   add(4, 5);
+// }
 
-add(4, 5);
+// add(4, 5);
+
+// person.getFullName();
+// person.fullName;
+
+// person.setFullName("Manikant", "Jha");
+// person.getFullName();
+
+// person.fullName;
+// person.fullName = { fname: "Manikant", lname: "Jha" };
+// person.fullName;
+
+// counter
+
+// const counter = {
+//   count: 0,
+//   get reset() {
+//     this.count = 0;
+//   },
+//   get increment() {
+//     this.count++;
+//   },
+//   get decrement() {
+//     this.count--;
+//   },
+//   set incrementBy(value) {
+//     this.count += value;
+//   },
+//   set decrementBy(value) {
+//     this.count -= value;
+//   },
+// };
