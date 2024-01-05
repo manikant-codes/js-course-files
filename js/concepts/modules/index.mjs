@@ -1,12 +1,10 @@
-import { add, subtract, multiply, divide } from "./math.mjs";
+import { add, subtract } from "./math.mjs";
 import remainder from "./math.mjs";
 
 console.log(add(2, 2));
-console.log(subtract(2, 2));
-console.log(multiply(2, 2));
-console.log(divide(2, 2));
+console.log(subtract(23, 2));
 
-console.log(remainder(5, 5));
+console.log(remainder(11, 5));
 
 // const student = {
 //   name: "John",
