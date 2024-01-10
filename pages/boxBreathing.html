@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <title>Box Breathing</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/boxBreathing.css" />
   </head>
   <body>
     <nav>
@@ -34,11 +35,13 @@
         </ul>
       </div>
     </nav>
-    <input type="text" id="myInput" style="border: solid 1px black" />
-    <button id="submitBtn" onclick="handleSubmit()">Submit</button>
-    <button id="executeBtn" onclick="handleExecute()">Execute Function</button>
-    <script src="./js/concepts/functions/functionsBasic.js"></script>
-    <script src="./rollNo.js"></script>
-    <script></script>
+    <div id="containerMain">
+      <div id="outerCircle">
+        <div id="innerCircle">
+          <p id="instructionText">Inhale</p>
+        </div>
+      </div>
+    </div>
+    <script src="../js/boxBreathing.js"></script>
   </body>
 </html>

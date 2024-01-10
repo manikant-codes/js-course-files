@@ -1,0 +1,34 @@
+#containerMain {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#outerCircle {
+  width: 310px;
+  height: 310px;
+  background-color: #075446;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#innerCircle {
+  width: 100px;
+  height: 100px;
+  background-color: #f8bf2d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s linear;
+}
+
+#instructionText {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #db2a20;
+}
