@@ -1,32 +1,57 @@
 let isExhaling = false;
-// let holdSeconds = 0;
+let holdTime = 0;
+let isHolding = false;
 
-function inhale(innerCircle, height, instructionText) {
-  if (height >= 287) {
-    // holdSeconds = 4;
-    isExhaling = true;
-    instructionText.innerHTML = "Exhale";
-    return;
-  }
-  innerCircle.style.height = height + 50 + "px";
-  innerCircle.style.width = height + 50 + "px";
+function initHold() {
+  isHolding = true;
+  holdTime = 4;
+  instructionText.innerHTML = "Hold";
 }
 
-// function hold(instructionText) {
-//   if (holdSeconds > 0) {
-//   }
-//   instructionText.innerHTML = "Hold";
-// }
+function resizeCircle(resize, innerCircle) {
+  innerCircle.style.height = resize() + "px";
+  innerCircle.style.width = resize() + "px";
+}
 
-function exhale(innerCircle, height, instructionText) {
-  if (height <= 103) {
-    // holdSeconds = 4;
-    isExhaling = false;
-    instructionText.innerHTML = "Inhale";
-    return;
+function inhale(innerCircle, height) {
+  if (height >= 287) {
+    initHold();
+  } else {
+    resizeCircle(function () {
+      return height + 50;
+    }, innerCircle);
+    // innerCircle.style.height = height + 50 + "px";
+    // innerCircle.style.width = height + 50 + "px";
   }
-  innerCircle.style.height = height - 50 + "px";
-  innerCircle.style.width = height - 50 + "px";
+}
+
+function hold(instructionText, height) {
+  holdTime--;
+  if (holdTime) {
+    instructionText.innerHTML = holdTime;
+  } else {
+    holdTime = 0;
+    isHolding = false;
+    if (height >= 287) {
+      instructionText.innerHTML = "Exhale";
+      isExhaling = true;
+    } else {
+      instructionText.innerHTML = "Inhale";
+      isExhaling = false;
+    }
+  }
+}
+
+function exhale(innerCircle, height) {
+  if (height <= 103) {
+    initHold();
+  } else {
+    resizeCircle(function () {
+      return height - 50;
+    }, innerCircle);
+    // innerCircle.style.height = height - 50 + "px";
+    // innerCircle.style.width = height - 50 + "px";
+  }
 }
 
 function boxBreathing() {
@@ -34,14 +59,13 @@ function boxBreathing() {
   let height = Number(getComputedStyle(innerCircle).height.split("px")[0]);
   const instructionText = document.getElementById("instructionText");
 
-  console.log("boxBreathing");
-
-  if (isExhaling) {
-    exhale(innerCircle, height, instructionText);
+  if (isExhaling && !isHolding) {
+    exhale(innerCircle, height);
+  } else if (isHolding) {
+    hold(instructionText, height);
   } else {
-    inhale(innerCircle, height, instructionText);
+    inhale(innerCircle, height);
   }
 }
 
-const temp = setInterval(boxBreathing, 1000);
-// clearInterval(temp);
+setInterval(boxBreathing, 1000);
