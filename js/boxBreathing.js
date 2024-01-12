@@ -5,7 +5,7 @@ let isHolding = false;
 const CIRCLE_MIN_SIZE = 103;
 const CIRCLE_MAX_SIZE = 287;
 const MAX_HOLD_TIME = 4;
-7;
+
 function initHold() {
   isHolding = true;
   holdTime = MAX_HOLD_TIME;
