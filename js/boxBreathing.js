@@ -2,9 +2,13 @@ let isExhaling = false;
 let holdTime = 0;
 let isHolding = false;
 
+const CIRCLE_MIN_SIZE = 103;
+const CIRCLE_MAX_SIZE = 287;
+const MAX_HOLD_TIME = 4;
+7;
 function initHold() {
   isHolding = true;
-  holdTime = 4;
+  holdTime = MAX_HOLD_TIME;
   instructionText.innerHTML = "Hold";
 }
 
@@ -14,43 +18,41 @@ function resizeCircle(resize, innerCircle) {
 }
 
 function inhale(innerCircle, height) {
-  if (height >= 287) {
+  if (height >= CIRCLE_MAX_SIZE) {
     initHold();
   } else {
     resizeCircle(function () {
       return height + 50;
     }, innerCircle);
-    // innerCircle.style.height = height + 50 + "px";
-    // innerCircle.style.width = height + 50 + "px";
   }
 }
 
-function hold(instructionText, height) {
+function hold(instructionText, height, innerCircle) {
   holdTime--;
   if (holdTime) {
     instructionText.innerHTML = holdTime;
   } else {
     holdTime = 0;
     isHolding = false;
-    if (height >= 287) {
+    if (height >= CIRCLE_MAX_SIZE) {
       instructionText.innerHTML = "Exhale";
       isExhaling = true;
+      exhale(innerCircle, height);
     } else {
       instructionText.innerHTML = "Inhale";
       isExhaling = false;
+      inhale(innerCircle, height);
     }
   }
 }
 
 function exhale(innerCircle, height) {
-  if (height <= 103) {
+  if (height <= CIRCLE_MIN_SIZE) {
     initHold();
   } else {
     resizeCircle(function () {
       return height - 50;
     }, innerCircle);
-    // innerCircle.style.height = height - 50 + "px";
-    // innerCircle.style.width = height - 50 + "px";
   }
 }
 
@@ -62,7 +64,7 @@ function boxBreathing() {
   if (isExhaling && !isHolding) {
     exhale(innerCircle, height);
   } else if (isHolding) {
-    hold(instructionText, height);
+    hold(instructionText, height, innerCircle);
   } else {
     inhale(innerCircle, height);
   }
