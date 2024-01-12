@@ -7,36 +7,8 @@
     <link rel="stylesheet" href="../css/index.css" />
   </head>
   <body>
-    <nav>
-      <div>
-        <h1>Learning JavaScript</h1>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/pages/currencyConverter.html">Currency Converter</a>
-          </li>
-          <li>
-            <a href="/pages/guessTheNumber.html">Guess the Number</a>
-          </li>
-          <li>
-            <a href="/pages/rockPaperScisor.html">Rock Paper Scisor</a>
-          </li>
-          <li>
-            <a href="/pages/memoryGame.html">Memory Game</a>
-          </li>
-          <li>
-            <a href="/pages/boxBreathing.html">Box Breathing</a>
-          </li>
-          <li>
-            <a href="/pages/areaCalculator.html">Area Calculator</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div id="navigation"></div>
+    <script src="../index.js"></script>
     <section
       style="
         width: 100vw;
@@ -48,10 +20,16 @@
     >
       <div
         style="
-          border: solid 1px gray;
-          border-radius: 8px;
+          /* border: solid 1px gray; */
+          border-radius: 16px;
           width: fit-content;
           padding: 32px;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 202, 40, 1) 100%,
+            rgba(255, 213, 79, 1) 35%
+          );
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         "
       >
         <h2 style="margin-bottom: 8px">Circle</h2>
@@ -97,11 +75,7 @@
             r
           </p>
           <p>Radius</p>
-          <input
-            type="number"
-            style="border: solid 1px black"
-            id="radiusInput"
-          />
+          <input type="number" id="radiusInput" />
         </div>
         <button style="width: 100%; margin-top: 32px" onclick="calculate()">
           Calculate
