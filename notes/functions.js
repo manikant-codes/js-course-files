@@ -58,3 +58,23 @@ console.log(
 );
 
 console.log(minus(5, 4));
+
+// --------------------------------------------------
+// Declaration vs Assignment
+// --------------------------------------------------
+
+// Function Declaration
+
+function add(n1, n2) {
+  console.log(n1 + n2);
+}
+
+add();
+
+// Function Assignment
+
+const minus = function (ni, n2) {
+  console.log(n1 - n2);
+};
+
+minus();
