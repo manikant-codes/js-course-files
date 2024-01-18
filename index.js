@@ -29,6 +29,9 @@ navigation.innerHTML = `<nav>
     <li>
       <a href="/pages/events.html">Events</a>
     </li>
+    <li>
+      <a href="/pages/dom.html">DOM</a>
+    </li>
   </ul>
 </div>
 </nav>`;
