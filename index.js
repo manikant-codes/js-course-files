@@ -26,6 +26,9 @@ navigation.innerHTML = `<nav>
     <li>
       <a href="/pages/areaCalculator.html">Area Calculator</a>
     </li>
+    <li>
+      <a href="/pages/events.html">Events</a>
+    </li>
   </ul>
 </div>
 </nav>`;

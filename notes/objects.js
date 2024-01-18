@@ -141,31 +141,31 @@
 // console.log(person.getFullName());
 // console.log(person.calcAge());
 
-const fan = {
-  price: 1500,
-  brand: "Crompton",
-  modelNo: 1121,
-  isOn: false,
-  maxSpeed: 5,
-  minSpeed: 1,
-  currentSpeed: 1,
-  toggleFan: function () {
-    if (this.isOn === false) {
-      this.isOn = true;
-    } else {
-      this.isOn = false;
-    }
-    console.log("isOn", this.isOn);
-  },
-  increaseSpeed: function () {
-    if (this.currentSpeed < this.maxSpeed) {
-      this.currentSpeed++;
-      console.log("fanCurrentSpeed", this.currentSpeed);
-    } else {
-      console.log("Already at Max Speed");
-    }
-  },
-};
+// const fan = {
+//   price: 1500,
+//   brand: "Crompton",
+//   modelNo: 1121,
+//   isOn: false,
+//   maxSpeed: 5,
+//   minSpeed: 1,
+//   currentSpeed: 1,
+//   toggleFan: function () {
+//     if (this.isOn === false) {
+//       this.isOn = true;
+//     } else {
+//       this.isOn = false;
+//     }
+//     console.log("isOn", this.isOn);
+//   },
+//   increaseSpeed: function () {
+//     if (this.currentSpeed < this.maxSpeed) {
+//       this.currentSpeed++;
+//       console.log("fanCurrentSpeed", this.currentSpeed);
+//     } else {
+//       console.log("Already at Max Speed");
+//     }
+//   },
+// };
 
 // toggleFan();
 // increaseSpeed();
@@ -173,10 +173,10 @@ const fan = {
 // console.log("fan.toggleFan", fan.toggleFan());
 // console.log("fan.toggleFan", fan.toggleFan());
 
-fan.toggleFan();
-fan.toggleFan();
-fan.increaseSpeed();
-fan.increaseSpeed();
+// fan.toggleFan();
+// fan.toggleFan();
+// fan.increaseSpeed();
+// fan.increaseSpeed();
 
 // --------------------------------------------------
 // Tasks
@@ -205,4 +205,72 @@ fan.increaseSpeed();
 // Uske andar ye methods rahenge:
 // accelerate: Iske call pe speed badhani hai, zada se zada maxSpeed tak jana hai. Aur distanceTravelled bhi badhana hai, aur fuel ghatana hai.
 // break: Iske call pe speed ghatani hai, last 0 tak ghategi.
-// fillFuel: Iske call pe fuel badhana hai, utne se jitna fuel dalaya hoo, fuel ko liter me maan lena. Max fuel capacity se jada fuel jana chahiye nahi. 
+// fillFuel: Iske call pe fuel badhana hai, utne se jitna fuel dalaya hoo. Max fuel capacity se jada fuel jana chahiye nahi.
+
+const car = {
+  fuel: 10,
+  maxFuelCapacity: 10,
+  currentSpeed: 0,
+  maxSpeed: 100,
+  distanceTravelled: 0,
+  accelerate: function () {
+    // agar speed max speed se kam hoo to speed badhani hai
+    // distance travelled bhi badhana hai
+    // agar fuel 0 se zada hoo to fuel ghatana hai
+    if (this.fuel > 0) {
+      if (this.currentSpeed < this.maxSpeed) {
+        this.currentSpeed = this.currentSpeed + 10;
+      }
+      this.distanceTravelled += 10;
+      this.fuel--;
+    } else {
+      this.currentSpeed = 0;
+      console.log("Out of fuel!");
+    }
+
+    console.log("this.distanceTravelled", this.distanceTravelled);
+    console.log("this.currentSpeed", this.currentSpeed);
+    console.log("this.fuel", this.fuel);
+  },
+  break: function () {
+    // Decrease speed if speed more than 0;
+    if (this.currentSpeed > 0) {
+      this.currentSpeed -= 10;
+      console.log("this.currentSpeed", this.currentSpeed);
+    } else {
+      console.log("Car has stopped!");
+    }
+  },
+  fillFuel: function (addedFuel) {
+    // Jitne se kaha hoo utne se fuel badhana hai.
+    // Fuel badhana hai agar fuel max capacity se kam hoo.
+    const totalFuel = this.fuel + addedFuel;
+    if (totalFuel <= this.maxFuelCapacity) {
+      this.fuel = totalFuel;
+      console.log("this.fuel", this.fuel);
+    } else {
+      console.log("Sorry can't fill fuel!");
+      console.log("Current fuel is ", this.fuel);
+      console.log("Maximum fuel capacity is ", this.maxFuelCapacity);
+    }
+  },
+};
+
+car.fillFuel(1);
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.fillFuel(10);
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
+car.accelerate();
