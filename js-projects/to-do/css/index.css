@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: #ffd54f;
+  padding: 16px;
+}
+
+nav div:first-child {
+  flex-grow: 1;
+  flex-basis: content;
+  /* flex-shrink: 0; */
+}
+
+nav div:last-child {
+  flex-basis: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 16px;
+}
+
+button {
+  background-color: #336ff5;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2a5fd2;
+}
+
+button:active {
+  background-color: #214ba8;
+}
+
+input {
+  border-radius: 32px;
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  outline: solid 2px #336ff5 !important;
+  outline-offset: -4px;
+}
+
+select {
+  border-radius: 0px;
+  padding: 4px 6px;
+  border: solid 1px #e65100;
+  outline: none;
+}
+
+select:focus {
+  border: solid 2px #e65100;
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(84vh);
+}
+
+#content {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 202, 40, 1) 100%,
+    rgba(255, 213, 79, 1) 35%
+  );
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#form {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#output {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.box {
+  padding: 16px;
+  background-color: beige;
+  margin-top: 16px;
+}
+
+.boxflex {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxflex-box {
+  background-color: orange;
+  padding: 16px;
+  margin-right: 16px;
+}
+
+#classRoom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+#classRoom div {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#classRoom div ul {
+  list-style-type: none;
+}
+
+#classRoom div ul .row {
+  display: flex;
+  gap: 22px;
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+
+#classRoom div ul .row li {
+  width: 75px;
+  height: 75px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.active {
+  background-color: #ff3d00 !important;
+  color: white !important;
+}
