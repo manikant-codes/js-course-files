@@ -13,13 +13,21 @@ window.onload = function () {
 };
 
 function loadTasksList() {
-  tasks.forEach((task) => {
+  const sortedList = tasks.sort((a, b) => {
+    if (a.priority > b.priority) return 1;
+    if (a.priority === b.priority) return 0;
+    return -1;
+  });
+  const tasksList = document.getElementById("tasks-list");
+  tasksList.innerHTML = "";
+  sortedList.forEach((task) => {
     createTask(task);
   });
 }
 
 function updateTasksInLocalStorage(tasks) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
+  loadTasksList();
 }
 
 function toggleError(isHidden) {
@@ -31,6 +39,13 @@ function toggleError(isHidden) {
     errorPara.style.display = "block";
     errorPara.innerHTML = "* Task cannot be empty!";
   }
+}
+
+function Task(task, isCompleted, priority) {
+  this.id = new Date();
+  this.task = task;
+  this.isCompleted = isCompleted;
+  this.priority = priority;
 }
 
 // Create Task
@@ -57,6 +72,41 @@ function handleChange(id, para) {
   para.classList.toggle("checked");
   // Local storage me naye tasks ki list wapas set kar rahe hain;
   updateTasksInLocalStorage(tasks);
+}
+
+function handleSelect(id, option) {
+  tasks = tasks.map((task) => {
+    if (task.id === id) {
+      return { ...task, priority: option };
+    } else {
+      return task;
+    }
+  });
+  updateTasksInLocalStorage(tasks);
+}
+
+function getBackgroundColor(priority) {
+  if (priority === "A") {
+    return "#ff3838";
+  } else if (priority === "B") {
+    return "#fce83a";
+  } else if (priority === "C") {
+    return "#56f000";
+  } else {
+    return "#2dccff";
+  }
+}
+
+function setPriority(priority, optionA, optionB, optionC, optionD) {
+  if (priority === "A") {
+    optionA.selected = true;
+  } else if (priority === "B") {
+    optionB.selected = true;
+  } else if (priority === "C") {
+    optionC.selected = true;
+  } else {
+    optionD.selected = true;
+  }
 }
 
 function createElement(tag, children) {
@@ -98,8 +148,35 @@ function createTask(task) {
     handleChange(task.id, para);
   };
 
+  // Select
+  const optionA = createElement("option", "A");
+  optionA.value = "A";
+  optionA.style.backgroundColor = "#ff3838";
+  const optionB = createElement("option", "B");
+  optionB.value = "B";
+  optionB.style.backgroundColor = "#fce83a";
+  const optionC = createElement("option", "C");
+  optionC.value = "C";
+  optionC.style.backgroundColor = "#56f000";
+  const optionD = createElement("option", "D");
+  optionD.value = "D";
+  optionD.style.backgroundColor = "#2dccff";
+
+  setPriority(task.priority, optionA, optionB, optionC, optionD);
+
+  const select = createElement("select", [optionA, optionB, optionC, optionD]);
+  select.classList.add("priority");
+  select.name = "priority";
+  select.style.backgroundColor = getBackgroundColor(task.priority);
+  select.onchange = function (e) {
+    setPriority(e.target.value, optionA, optionB, optionC, optionD);
+    handleSelect(task.id, e.target.value);
+  };
+  const selectDiv = createElement("div", [select]);
+  selectDiv.classList.add("custom-select");
+
   // Div
-  const div = createElement("div", [input, para, button]);
+  const div = createElement("div", [input, para, selectDiv, button]);
 
   const tasksList = document.getElementById("tasks-list");
   tasksList.appendChild(div);
@@ -109,14 +186,19 @@ function createTask(task) {
 
 function addTask() {
   const searchInput = document.getElementById("search-input");
+  const selectInput = document.getElementById("priority");
+  const priority = selectInput.value;
+
   const task = searchInput.value;
 
   if (task.trim() !== "") {
     toggleError(true);
-    const objTask = { id: new Date(), task: task, isCompleted: false };
+    const objTask = new Task(task, false, priority);
     tasks.push(objTask);
     createTask(objTask);
     updateTasksInLocalStorage(tasks);
+    searchInput.value = "";
+    selectInput.value = "A";
   } else {
     toggleError(false);
   }

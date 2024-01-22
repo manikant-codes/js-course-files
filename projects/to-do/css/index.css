@@ -45,12 +45,13 @@ nav ul li a:hover {
 }
 
 button {
-  background-color: #336ff5;
   color: white;
   padding: 8px 12px;
   border: none;
   border-radius: 32px;
   cursor: pointer;
+
+  /* From https://css.glass */
 }
 
 button:hover {
