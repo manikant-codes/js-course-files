@@ -36,6 +36,29 @@
           <button onclick="addTask()" id="btn-add" class="glass-blue">
             Add Task <i class="fa-solid fa-plus"></i>
           </button>
+          <button
+            id="btn-collapse"
+            class="glass-blue"
+            onclick="toggleSearchBar()"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <div id="filter-container" class="glass-white">
+          <input type="text" id="filter-input" oninput="search()" />
+          <div class="custom-select">
+            <select id="filter-select" class="priority" onchange="search()">
+              <option value="">None</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+          </div>
+          <!-- <button class="glass-blue" onclick="search()">
+            Search
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button> -->
         </div>
         <div id="tasks-list" class="glass-white"></div>
         <p id="error-message" style="display: none" class="glass-red"></p>

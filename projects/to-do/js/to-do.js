@@ -1,4 +1,5 @@
 let tasks = [];
+let backupTasks = [];
 
 window.onload = function () {
   try {
@@ -202,4 +203,42 @@ function addTask() {
   } else {
     toggleError(false);
   }
+}
+
+function toggleSearchBar() {
+  const div = document.getElementById("filter-container");
+  div.classList.toggle("show");
+}
+
+function search() {
+  const filterInput = document.getElementById("filter-input");
+  const filterSelect = document.getElementById("filter-select");
+  const filterText = filterInput.value.trim();
+  const filterPriority = filterSelect.value;
+  if (filterText) {
+    const filteredTasks = tasks.filter((task) => {
+      console.log(task);
+      return task.task.includes(filterText);
+    });
+    if (tasks.length && !backupTasks.length) {
+      backupTasks = tasks;
+    }
+    tasks = filteredTasks;
+  } else if (filterPriority) {
+    if (backupTasks.length) {
+      tasks = backupTasks;
+    }
+    const filteredTasks = tasks.filter((task) => {
+      return task.priority === filterPriority;
+    });
+    if (tasks.length && !backupTasks.length) {
+      backupTasks = tasks;
+    }
+    tasks = filteredTasks;
+  } else {
+    if (backupTasks.length) {
+      tasks = backupTasks;
+    }
+  }
+  loadTasksList();
 }

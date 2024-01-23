@@ -218,3 +218,25 @@ select {
   border-top: var(--size) solid black;
   top: 50%;
 }
+
+#filter-container {
+  display: none;
+  align-items: center;
+  padding: 16px;
+  gap: 16px;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+#filter-container > input {
+  flex-grow: 1;
+}
+
+.show {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+#filter-select {
+  min-width: 90px;
+}
