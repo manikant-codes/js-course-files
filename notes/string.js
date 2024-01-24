@@ -13,3 +13,24 @@ const str1 = "Hello";
 const str2 = "Hello";
 const str3 = new String("Hello");
 const str4 = new String("Hello");
+
+const email1 = "johndoe@gmail.com";
+const email2 = "support@johndoe.com";
+const email3 = "johndoeinternational@yahoo.com";
+
+// const email1 = "joh****@gmail.com";
+// const email2 = "sup****@johndoe.com";
+// const email3 = "joh****************@yahoo.com";
+
+// padEnd(maxCharacters, "*") // 7, 7, 19
+
+function padEmail(email) {
+  const arr = email.split("@");
+  const userName = arr[0];
+  const emailProvider = arr[1];
+  const maxCharacters = userName.length;
+  const first3Characters = userName.slice(0, 3);
+  const paddedUserName = first3Characters.padEnd(maxCharacters, "*");
+
+  return paddedUserName.concat("@", emailProvider);
+}
