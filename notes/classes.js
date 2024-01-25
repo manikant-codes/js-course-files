@@ -100,10 +100,26 @@ class Car extends Vehicle {
     this.mileage = mileage;
     this.airbags = airbags;
   }
+
+  playMusic() {
+    console.log("Playing music...");
+  }
+
+  get carName() {
+    return this.brand + " " + this.model;
+  }
+
+  set carName(name) {
+    this.brand = name.brand;
+    this.model = name.model;
+  }
+
+  static dailyProductionLimit() {
+    console.log("Daily production limit: 10");
+  }
 }
 
-// class Bike extends Vehicle {}
-
 const c = new Car("Maruti", "800", 1980, 5, 20, 2);
+// class Bike extends Vehicle {}
 
 console.log(c);
