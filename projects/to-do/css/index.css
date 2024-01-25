@@ -39,9 +39,9 @@ input:focus {
 .glass-white {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -280,3 +280,51 @@ select {
 #filter-select {
   min-width: 90px;
 }
+
+.task-list-item-div {
+  padding: 16px;
+  border-radius: 16px;
+}
+
+/* Subtask Styling */
+
+.sub-tasks-list > li > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sub-tasks-list > li > div > p {
+  flex-grow: 1;
+}
+
+.sub-tasks-list > li > div > input {
+  flex-shrink: 0;
+}
+
+.sub-tasks-list > li > div > button {
+  font-size: 12px;
+  flex-shrink: 0;
+  padding: 4px;
+  width: 26px;
+  height: 26px;
+  color: #d32f2f;
+}
+
+.sub-tasks-list > li > div > button:hover {
+  background-color: #cfcfcf;
+}
+
+.sub-tasks-list {
+  background: rgba(67, 67, 67, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 16px;
+  list-style-type: none;
+  gap: 8px;
+}
+
+/* End Subtask Styling */
