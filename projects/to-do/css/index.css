@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+:root {
+  --primary: #448aff;
+  --primary-hover: #2979ff;
+  --primary-active: #2962ff;
+  --gray: #f5f5f5;
+  --gray-hover: #eeeeee;
+  --gray-active: #bdbdbd;
+}
+
 * {
   box-sizing: border-box;
   padding: 0px;
@@ -8,22 +17,49 @@
   font-weight: normal;
 }
 
+/* Buttons */
 button {
-  color: white;
   padding: 8px 12px;
   border: none;
   border-radius: 32px;
+  background-color: var(--primary);
+  color: white;
   cursor: pointer;
 }
 
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--gray);
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 button:hover {
-  background-color: #2a5fd2;
+  background-color: var(--primary-hover);
+}
+
+.icon-btn:hover {
+  background-color: var(--gray-hover);
 }
 
 button:active {
-  background-color: #214ba8;
+  background-color: var(--primary-active);
 }
 
+.icon-btn:active {
+  background-color: var(--gray-active);
+}
+/* End Buttons */
+
+/* Inputs */
 input {
   border-radius: 32px;
   padding: 8px 12px;
@@ -32,10 +68,17 @@ input {
 }
 
 input:focus {
-  outline: solid 2px #336ff5 !important;
+  outline: solid 2px var(--primary) !important;
   outline-offset: -4px;
 }
 
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+/* End Inputs */
+
+/* Glass Effects */
 .glass-white {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
@@ -62,7 +105,9 @@ input:focus {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgb(252, 207, 207, 0.5);
 }
+/* End Glass Effects */
 
+/* Outer & Inner Containers */
 #outer-container {
   width: 100vw;
   height: 100vh;
@@ -73,13 +118,6 @@ input:focus {
   background-color: #121212;
 }
 
-#title {
-  font-size: 2.75rem;
-  color: #e0e0e0;
-  margin-bottom: 32px;
-  font-weight: 600;
-}
-
 #inner-container {
   display: flex;
   flex-direction: column;
@@ -87,6 +125,15 @@ input:focus {
   padding: 32px;
 }
 
+#title {
+  font-size: 2.75rem;
+  color: #e0e0e0;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+/* End Outer & Inner Containers */
+
+/* Searchbar */
 #search-bar-container {
   display: flex;
   align-items: center;
@@ -94,38 +141,48 @@ input:focus {
   gap: 16px;
 }
 
-#search-input {
+#search-bar-container > * {
   height: 36px;
+}
+
+#btn-collapse {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-input {
   flex-grow: 1 !important;
 }
+/* End Searchbar */
 
-#custom-select {
-  position: relative;
-}
-
-#priority,
-.priority {
-  border-radius: 32px;
-  height: 36px;
-  padding: 8px;
-}
-
-#priority > option:nth-child(1) {
-  background-color: #ff3838;
-}
-#priority > option:nth-child(2) {
-  background-color: #fce83a;
-}
-#priority > option:nth-child(3) {
-  background-color: #56f000;
-}
-#priority > option:nth-child(4) {
-  background-color: #2dccff;
+/* Filter Container */
+#filter-container {
+  padding: 16px;
+  display: none;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
 }
 
-#btn-add {
-  height: 36px;
+#filter-container > input {
+  flex-grow: 1;
 }
+
+#filter-select {
+  min-width: 90px;
+}
+
+.show {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+.hide {
+  display: none !important;
+}
+/* End Filter Container */
 
 #tasks-list {
   display: flex;
@@ -134,53 +191,6 @@ input:focus {
   padding: 24px;
   max-height: 300px;
   overflow-y: auto;
-  flex-grow: 1;
-}
-
-#tasks-list > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-#tasks-list > div > div:first-of-type {
-  flex-grow: 1;
-  color: rgb(43, 43, 43) !important;
-  max-width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-#tasks-list > div > button:last-child {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5;
-  color: #d32f2f;
-}
-#tasks-list > div > button:nth-child(4),
-#tasks-list > div > button:nth-child(5) {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5;
-  color: #2a5fd2;
-}
-
-#tasks-list > div > button:last-child:hover {
-  background-color: #e0e0e0;
-  color: #d32f2f;
-}
-#tasks-list > div > button:nth-child(4):hover,
-#tasks-list > div > button:nth-child(5):hover {
-  background-color: #e0e0e0;
-  color: #2a5fd2;
 }
 
 .checked {
@@ -196,11 +206,113 @@ input:focus {
   padding: 4px;
 }
 
-input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+.list-item-div {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Task Div */
+.task-div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  margin-bottom: 4px;
+}
+
+.task-div > p {
+  flex-grow: 1;
+}
+/* End Task Div */
+
+/* Subtask */
+.sub-tasks-list {
+  background: rgba(67, 67, 67, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 16px;
+  list-style-type: none;
+  gap: 8px;
+}
+
+.sub-tasks-list > li > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sub-tasks-list > li > div > p {
+  flex-grow: 1;
+}
+
+.sub-tasks-list > li > div > input[type="checkbox"] {
+  flex-shrink: 0;
+}
+
+.sub-tasks-list > li > div > button {
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+}
+/* End Subtask */
+
+/* Custom Select */
+.custom-select {
+  position: relative;
+  min-width: 60px;
+}
+
+.priority-select {
+  border-radius: 32px;
+  height: 36px;
+  padding-left: 12px;
+  box-shadow: none;
+}
+
+.priority-select > option:nth-child(1) {
+  background-color: #ff1744;
+}
+.priority-select > option:nth-child(2) {
+  background-color: #ffea00;
+}
+.priority-select > option:nth-child(3) {
+  background-color: #00e676;
+}
+.priority-select > option:nth-child(4) {
+  background-color: #00b0ff;
+}
+
+select {
+  appearance: none;
+  /*  safari  */
+  -webkit-appearance: none;
+  /*  other styles for aesthetics */
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.custom-select::after {
+  --size: 0.3rem;
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.custom-select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 47.5%;
+}
+/* End Custom Select */
+
+/* Custom Scrollbar */
 /* Width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -220,111 +332,4 @@ input[type="checkbox"] {
   background: rgba(80, 80, 80, 0.7);
   border-radius: 10px;
 }
-
-/* Custom Select */
-
-.custom-select {
-  min-width: 60px;
-  position: relative;
-  height: fit-content;
-}
-
-select {
-  appearance: none;
-  /*  safari  */
-  -webkit-appearance: none;
-  /*  other styles for aesthetics */
-  width: 100%;
-  font-size: 1rem;
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid #caced1;
-  border-radius: 0.25rem;
-  color: #000;
-  cursor: pointer;
-}
-
-.custom-select::after {
-  --size: 0.3rem;
-  content: "";
-  position: absolute;
-  right: 0.75rem;
-  pointer-events: none;
-}
-
-.custom-select::after {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-top: var(--size) solid black;
-  top: 50%;
-}
-
-#filter-container {
-  display: none;
-  align-items: center;
-  padding: 16px;
-  gap: 16px;
-  opacity: 0;
-  transition: all 1s ease;
-}
-
-#filter-container > input {
-  flex-grow: 1;
-}
-
-.show {
-  display: flex !important;
-  opacity: 1 !important;
-}
-
-#filter-select {
-  min-width: 90px;
-}
-
-.task-list-item-div {
-  padding: 16px;
-  border-radius: 16px;
-}
-
-/* Subtask Styling */
-
-.sub-tasks-list > li > div {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.sub-tasks-list > li > div > p {
-  flex-grow: 1;
-}
-
-.sub-tasks-list > li > div > input {
-  flex-shrink: 0;
-}
-
-.sub-tasks-list > li > div > button {
-  font-size: 12px;
-  flex-shrink: 0;
-  padding: 4px;
-  width: 26px;
-  height: 26px;
-  color: #d32f2f;
-}
-
-.sub-tasks-list > li > div > button:hover {
-  background-color: #cfcfcf;
-}
-
-.sub-tasks-list {
-  background: rgba(67, 67, 67, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: column;
-  padding: 12px;
-  border-radius: 16px;
-  list-style-type: none;
-  gap: 8px;
-}
-
-/* End Subtask Styling */
+/* End Custom Scrollbar */

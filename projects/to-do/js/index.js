@@ -40,7 +40,7 @@ function Task(task, isCompleted, priority) {
   this.priority = priority;
 }
 
-function SubTask(task, isCompleted) {
+function Subtask(task, isCompleted) {
   this.id = new Date();
   this.task = task;
   this.isCompleted = isCompleted;
@@ -103,69 +103,79 @@ function handleAdd(newTask) {
   updateTasksInLocalStorage(tasks);
 }
 
+// Handle Edit
+function handleEditSubtaskInputChange(id, taskText) {
+  if (taskText) {
+    tasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, task: taskText };
+      } else {
+        return task;
+      }
+    });
+  }
+  updateTasksInLocalStorage(tasks);
+}
+
+function handleEditSubtaskInputBlur(input) {
+  input.replaceWith(taskPara);
+}
+
 function handleEdit(id, taskPara) {
   const input = createElement("input");
-  input.value = para.innerText;
+  input.value = taskPara.innerText;
   input.onchange = function (e) {
-    const newTaskText = e.target.value.trim();
-    if (newTaskText) {
-      tasks = tasks.map((task) => {
-        if (task.id === id) {
-          return { ...task, task: newTaskText };
-        } else {
-          return task;
-        }
-      });
-    }
-    updateTasksInLocalStorage(tasks);
+    handleEditSubtaskInputChange(id, e.target.value.trim());
   };
   input.onblur = function () {
-    input.replaceWith(taskPara);
+    handleEditSubtaskInputBlur(input);
   };
   taskPara.replaceWith(input);
   input.focus();
 }
+// End Handle Edit
 
-function handleAddSubtask(id, taskDiv) {
-  const subTaskInput = createElement("input");
-  const subTaskListItem = createElement("li");
-  const subTasksList = taskDiv.children[1];
-  subTasksList.appendChild(subTaskInput);
+// Add Subtask
+function handleSubtaskInputChange(id, subtaskText) {
+  if (subtaskText) {
+    const subtaskListItem = createElement("li");
+    subtaskListItem.innerText = subtaskText;
 
-  subTaskInput.onchange = function (e) {
-    const subTaskText = e.target.value;
+    tasks = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          subtasks: [...(task.subtasks || []), new Subtask(subtaskText, false)],
+        };
+      } else {
+        return task;
+      }
+    });
 
-    if (subTaskText.trim() !== "") {
-      subTaskListItem.innerText = subTaskText;
-      console.log(subTaskListItem);
-      tasks = tasks.map((task) => {
-        if (task.id === id) {
-          return {
-            ...task,
-            subTasks: [
-              ...(task.subTasks || []),
-              new SubTask(subTaskText, false),
-            ],
-          };
-        } else {
-          return task;
-        }
-      });
-
-      updateTasksInLocalStorage(tasks);
-    }
-  };
-
-  subTaskInput.focus();
+    updateTasksInLocalStorage(tasks);
+  }
 }
 
-function handleSubTaskCheck(taskId, subTaskId) {
+function handleAddSubtask(id, subtasksDiv) {
+  const subtaskInput = createElement("input");
+  subtasksDiv.classList.remove("hide");
+  subtasksDiv.appendChild(subtaskInput);
+
+  subtaskInput.onchange = function (e) {
+    handleSubtaskInputChange(id, e.target.value.trim());
+  };
+
+  subtaskInput.focus();
+}
+// End Add Subtask
+
+function handleCheckSubTask(taskId, subtaskId) {
   tasks = tasks.map((task) => {
     if (task.id === taskId) {
       return {
         ...task,
-        subTasks: task.subTasks.map((t) => {
-          if (t.id === subTaskId) {
+        subtasks: task.subtasks.map((t) => {
+          if (t.id === subtaskId) {
             return { ...t, isCompleted: !t.isCompleted };
           } else {
             return t;
@@ -179,13 +189,13 @@ function handleSubTaskCheck(taskId, subTaskId) {
   updateTasksInLocalStorage(tasks);
 }
 
-function handleSubTaskDelete(taskId, subTaskId) {
+function handleDeleteSubTask(taskId, subtaskId) {
   tasks = tasks.map((task) => {
     if (task.id === taskId) {
       return {
         ...task,
-        subTasks: task.subTasks.filter((t) => {
-          return t.id !== subTaskId;
+        subtasks: task.subtasks.filter((t) => {
+          return t.id !== subtaskId;
         }),
       };
     } else {
@@ -199,13 +209,13 @@ function handleSubTaskDelete(taskId, subTaskId) {
 // Create Task
 function getBackgroundColor(priority) {
   if (priority === "A") {
-    return "#ff3838";
+    return "#ff1744";
   } else if (priority === "B") {
-    return "#fce83a";
+    return "#ffea00";
   } else if (priority === "C") {
-    return "#56f000";
+    return "#00e676";
   } else {
-    return "#2dccff";
+    return "#00b0ff";
   }
 }
 
@@ -236,17 +246,28 @@ function createElement(tag, children) {
   return element;
 }
 
-function createAndGetTaskDiv(task) {
+function createAndGetTaskPara(task) {
   const para = createElement("p", task.task);
-  const subTasksListItems = [];
 
-  if (Array.isArray(task.subTasks) && task.subTasks.length) {
-    for (const s of task.subTasks) {
+  if (task.isCompleted) {
+    para.classList.add("checked");
+  } else {
+    para.classList.remove("checked");
+  }
+
+  return para;
+}
+
+function createAndGetSubtasksDiv(task) {
+  const subtasksListItems = [];
+
+  if (Array.isArray(task.subtasks) && task.subtasks.length) {
+    for (const s of task.subtasks) {
       const input = createElement("input");
       input.type = "checkbox";
       input.checked = s.isCompleted;
       input.onchange = function () {
-        handleSubTaskCheck(task.id, s.id);
+        handleCheckSubTask(task.id, s.id);
       };
 
       const para = createElement("p", s.task);
@@ -257,35 +278,35 @@ function createAndGetTaskDiv(task) {
       }
 
       const button = createElement("button");
-      button.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+      button.innerHTML = `<i class="fa-solid fa-minus"></i>`;
+      button.classList.add("icon-btn");
       button.onclick = function () {
-        handleSubTaskDelete(task.id, s.id);
+        handleDeleteSubTask(task.id, s.id);
       };
 
       const div = createElement("div", [input, para, button]);
 
-      const subTaskListItem = createElement("li", [div]);
-      subTasksListItems.push(subTaskListItem);
+      const subtaskListItem = createElement("li", [div]);
+      subtasksListItems.push(subtaskListItem);
     }
   }
 
-  if (task.isCompleted) {
-    para.classList.add("checked");
+  const subtasksList = createElement("ul", subtasksListItems);
+  if (subtasksListItems.length === 0) {
+    subtasksList.classList.add("hide");
   } else {
-    para.classList.remove("checked");
+    subtasksList.classList.remove("hide");
   }
+  subtasksList.classList.add("sub-tasks-list");
+  subtasksList.classList.add("glass-white");
 
-  const subTasksList = createElement("ul", subTasksListItems);
-  subTasksList.classList.add("sub-tasks-list");
-  subTasksList.classList.add("glass-white");
-
-  const div = createElement("div", [para, subTasksList]);
-  return div;
+  return subtasksList;
 }
 
 function createAndGetDeleteButton(task) {
   const button = createElement("button");
   button.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+  button.classList.add("icon-btn");
   button.onclick = function () {
     handleDelete(task.id);
   };
@@ -293,12 +314,12 @@ function createAndGetDeleteButton(task) {
   return button;
 }
 
-function createAndGetEditButton(task, taskDiv) {
+function createAndGetEditButton(task, taskPara) {
   const button = createElement("button");
   button.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
+  button.classList.add("icon-btn");
   button.onclick = function () {
-    createElement("div");
-    handleEdit(task.id, taskDiv.children[0]);
+    handleEdit(task.id, taskPara);
   };
 
   return button;
@@ -307,6 +328,7 @@ function createAndGetEditButton(task, taskDiv) {
 function createAndGetAddSubtaskButton(task, taskDiv) {
   const button = createElement("button");
   button.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+  button.classList.add("icon-btn");
   button.onclick = function () {
     handleAddSubtask(task.id, taskDiv);
   };
@@ -343,8 +365,8 @@ function createAndGetOptions(task) {
 
 function createAndGetSelect(task, options) {
   const select = createElement("select", options);
-  select.classList.add("priority");
-  select.name = "priority";
+  select.classList.add("priority-select");
+  select.classList.add("glass-white");
   select.style.backgroundColor = getBackgroundColor(task.priority);
   select.onchange = function (e) {
     setPriority.apply(null, [e.target.value, ...options]);
@@ -361,32 +383,35 @@ function createAndGetSelectDiv(select) {
   return selectDiv;
 }
 
-function createAndGetTaskListItemDiv(elements) {
+function createAndGetTaskDiv(elements) {
   const div = createElement("div", elements);
   return div;
 }
 
 function createAndAddTaskToList(task) {
-  const taskDiv = createAndGetTaskDiv(task);
+  const taskPara = createAndGetTaskPara(task);
   const deleteBtn = createAndGetDeleteButton(task);
-  const editBtn = createAndGetEditButton(task, taskDiv);
-  const addSubtaskBtn = createAndGetAddSubtaskButton(task, taskDiv);
+  const editBtn = createAndGetEditButton(task, taskPara);
   const checkbox = createAndGetCheckbox(task);
   const options = createAndGetOptions(task);
   const select = createAndGetSelect(task, options);
   const selectDiv = createAndGetSelectDiv(select);
-  const taskListItemDiv = createAndGetTaskListItemDiv([
+  const subtasksDiv = createAndGetSubtasksDiv(task);
+  const addSubtaskBtn = createAndGetAddSubtaskButton(task, subtasksDiv);
+  const taskDiv = createAndGetTaskDiv([
     checkbox,
-    taskDiv,
+    taskPara,
     selectDiv,
     addSubtaskBtn,
     editBtn,
     deleteBtn,
   ]);
-  taskListItemDiv.classList.add(["task-list-item-div"]);
-  taskListItemDiv.classList.add(["glass-white"]);
+  taskDiv.classList.add(["task-div"]);
+  const listItemDiv = createElement("div", [taskDiv, subtasksDiv]);
+  listItemDiv.classList.add(["list-item-div"]);
+  listItemDiv.classList.add(["glass-white"]);
   const tasksListDiv = document.getElementById("tasks-list");
-  tasksListDiv.appendChild(taskListItemDiv);
+  tasksListDiv.appendChild(listItemDiv);
 }
 // End Create Task
 
