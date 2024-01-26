@@ -331,6 +331,19 @@ function createAndGetEditButton(task, taskPara) {
   return button;
 }
 
+function createAndGetExpandCollapseButton(task, subtasksDiv) {
+  const button = createElement("button");
+  button.innerHTML = `<i class="fa-solid fa-caret-down"></i>`;
+  button.classList.add("icon-btn");
+  button.onclick = function () {
+    if (task.subtasks.length !== 0) {
+      subtasksDiv.classList.toggle("hide");
+    }
+  };
+
+  return button;
+}
+
 function createAndGetAddSubtaskButton(task, taskDiv) {
   const button = createElement("button");
   button.innerHTML = `<i class="fa-solid fa-plus"></i>`;
@@ -403,6 +416,7 @@ function createAndAddTaskToList(task) {
   const select = createAndGetSelect(task, options);
   const selectDiv = createAndGetSelectDiv(select);
   const subtasksDiv = createAndGetSubtasksDiv(task);
+  const expandCollapseBtn = createAndGetExpandCollapseButton(task, subtasksDiv);
   const addSubtaskBtn = createAndGetAddSubtaskButton(task, subtasksDiv);
   const taskDiv = createAndGetTaskDiv([
     checkbox,
@@ -410,6 +424,7 @@ function createAndAddTaskToList(task) {
     selectDiv,
     addSubtaskBtn,
     editBtn,
+    expandCollapseBtn,
     deleteBtn,
   ]);
   taskDiv.classList.add(["task-div"]);
