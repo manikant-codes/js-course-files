@@ -32,23 +32,9 @@ navigation.innerHTML = `<nav>
     <li>
       <a href="/pages/dom.html">DOM</a>
     </li>
+    <li>
+      <a href="/pages/formValidation.html">Form Validation</a>
+    </li>
   </ul>
 </div>
 </nav>`;
-
-// const divA = document.getElementById("divA");
-// const fromTop = divA.offsetTop;
-
-// console.log("fromTop", fromTop);
-
-// document.body.onscroll = function (e) {
-//   console.log(this.document.body.scrollHeight, window.scrollY);
-//   console.log(fromTop);
-//   if (window.scrollY >= fromTop || window.scrollY === this.scrollHeight) {
-//     console.log("inside");
-//     divA.style.display = "block";
-//   } else {
-//     divA.style.display = "none";
-//   }
-//   // console.log(window.scrollY);
-// };

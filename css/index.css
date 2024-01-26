@@ -64,7 +64,7 @@ button:active {
 input {
   border-radius: 32px;
   padding: 8px 12px;
-  border: none;
+  border: solid 1px black;
   outline: none;
 }
 

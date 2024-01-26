@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <style>
+      .container {
+        width: "100vw";
+        height: calc(100vh - 60px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .wrapper {
+        background-color: bisque;
+        padding: 32px;
+        border-radius: 32px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      form > label {
+        text-align: left !important;
+        font-size: 0.9rem;
+      }
+
+      form > * {
+        width: 100%;
+      }
+
+      #error-para {
+        color: brown;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <form
+          name="my-form"
+          style="display: flex; align-items: center"
+          onsubmit="return validate(event)"
+          action="#"
+          method="post"
+        >
+          <label for="username">User Name</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="e.g. username"
+            disabled
+          />
+          <!-- required
+            min=""
+            max=""
+            minlength="6"
+            maxlength="14" -->
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="e.g. username@rmail.com"
+          />
+          <label for="weight">Weight</label>
+          <input
+            type="number"
+            name="weight"
+            id="weight"
+            placeholder="e.g. 65"
+            min="60"
+            max="70"
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="******"
+            minlength="6"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$"
+          />
+          <button type="submit">Log In</button>
+        </form>
+        <p id="error-para"></p>
+      </div>
+      <!-- <script>
+        function validate(e) {
+          e.preventDefault();
+
+          const errorPara = document.getElementById("error-para");
+          errorPara.innerText = "";
+
+          // const specialCharacters = [
+          //   "!",
+          //   "#",
+          //   "$",
+          //   "%",
+          //   "^",
+          //   "&",
+          //   "*",
+          //   "(",
+          //   ")",
+          // ];
+
+          // const userName = e.target["username"].value.trim();
+
+          const password = e.target["password"].value.trim();
+
+          const passwordRegEx =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/;
+          const result = passwordRegEx.test(password);
+
+          if (!result) {
+            errorPara.innerHTML =
+              "Password must have minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character:";
+            return false;
+          }
+
+          console.log(result);
+
+          //   if (userName === "") {
+          //     errorPara.innerText = "User name cannot be empty!";
+          //     return false;
+          //   }
+
+          //   if (userName.length < 6) {
+          //     errorPara.innerText = "User name cannot less than 6 characters!";
+          //     return false;
+          //   }
+
+          //   for (const s of specialCharacters) {
+          //     if (userName.includes(s)) {
+          //       errorPara.innerText = `User name cannot contain ${specialCharacters.toString()} !`;
+          //       return false;
+          //     }
+          //   }
+        }
+      </script> -->
+      <script>
+        // Home Made Iterable
+        // function getIterator() {
+        //   let n = 0;
+        //   return {
+        //     next: function () {
+        //       if (n >= 10) {
+        //         return { value: undefined, done: true };
+        //       }
+        //       n += 1;
+        //       return { value: n, done: false };
+        //     },
+        //   };
+        // }
+
+        // Create Iterable
+        // const myIterator = getIterator();
+
+        // while (true) {
+        //   const obj = myIterator.next();
+        //   if (obj.done === true) {
+        //     break;
+        //   }
+        //   console.log(obj.value);
+        // }
+
+        const obj = { 0: 1, 1: 2, 2: 3 };
+
+        obj[Symbol.iterator] = function () {
+          let i = 0;
+          return {
+            next: function () {
+              if (i >= 10) {
+                return { value: undefined, done: true };
+              }
+              return { value: ++i, done: false };
+            },
+          };
+        };
+
+        // const objIterator = obj[Symbol.iterator]();
+
+        // while (true) {
+        //   const obj = objIterator.next();
+        //   if (obj.done) {
+        //     break;
+        //   }
+        //   console.log(obj.value);
+        // }
+
+        for (const o of obj) {
+          console.log(o);
+        }
+      </script>
+    </div>
+  </body>
+</html>
