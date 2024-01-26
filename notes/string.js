@@ -34,3 +34,71 @@ function padEmail(email) {
 
   return paddedUserName.concat("@", emailProvider);
 }
+
+// --------------------------------------------------
+// Search Methods
+// --------------------------------------------------
+
+// indexOf method aap ke string me dhundhe gaye sub-string ki starting position return karega.
+// Agar string me wo sb-string nahi hoo to indexOf -1 return karega.
+// Ye do arguments leta hai, 1. Ke kya dhundhna hai, ("sub-string"). 2. Ke kaha se dhundhna hai, (starting position/index).
+
+// let text = "Please locate where 'locate' occurs!";
+// const result = text.indexOf("locate", 10);
+// console.log("result", result);
+
+// lastIndexOf indexOf jaisa hi hai, but wo end to start dhundhta hai.
+
+// let text = "Please locate where 'locate' occurs!";
+// const result = text.lastIndexOf("locate", 6);
+// console.log("result", result);
+
+// search me dusra argument, starting position nahi desakte hai.
+// search me aap regex de sakte hoo.
+
+// let text = "Please locate where 'locate' occurs!";
+// const result = text.search("locate");
+// console.log("result", result);
+
+// let text = "Please LoCaTE where 'locate' occurs!";
+// const result = text.search(/locate/i);
+// console.log("result", result);
+
+// match bhi string aur regex dono le sakta hai.
+// match se aap apne string me sare sub-strings dhund sakte hoo.
+// Agar match mil jata hai to ek array return karega, jisme pehle position/index pe aap ke matching string hooga.
+// Is array kuch extra properties hoti hai:
+// groups (ye regex me difine kiye gaye groups hai)
+// index (kon se position pe match mila hai)
+// input (jis string pe aap ne match find kiya hai wo string)
+
+// let text = "Please LoCaTE where 'locate' occurs!";
+// // let text = "Please locate where 'locate' occurs!";
+// const result = text.match("locate");
+// console.log("result", result);
+
+// let text = "Please LoCaTE where 'locate' occurs!";
+// // let text = "Please locate where 'locate' occurs!";
+// const result = text.match(/locate/gi);
+// console.log("result", result);
+
+// let text = "Please LoCaTE where 'locate' occurs!";
+// // let text = "Please locate where 'locate' occurs!";
+// const result = text.matchAll(/locate/gi);
+// console.log("result", result);
+
+// includes method sirf string leta hai.
+// Agar wo sub-string aap jis string me dhundh rahe hoo us me mil jati hai to includes true return karega, warna false return karega.
+// includes ko bhi do argument de sakte hoo, 1. Kya dhudhna hai, ("sub-string") 2. Kaha se dhundhna shuru karna hai, (starting index/position)
+
+// let text = "Please LoCaTE where 'locate' occurs!";
+// const result = text.includes("locate", 15);
+// console.log("result", result);
+
+// let text = "Please LoCaTE where 'locate' occurs!";
+// const result = text.startsWith("LoCaTE", 7);
+// console.log("result", result);
+
+let text = "Please LoCaTE where 'locate' occurs!";
+const result = text.endsWith("'locate'", 28);
+console.log("result", result);

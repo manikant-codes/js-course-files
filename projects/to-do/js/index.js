@@ -79,7 +79,13 @@ function handleDelete(id) {
 function handleCheck(id) {
   tasks = tasks.map((task) => {
     if (task.id === id) {
-      return { ...task, isCompleted: !task.isCompleted };
+      return {
+        ...task,
+        isCompleted: !task.isCompleted,
+        subTasks: task.subTasks.map((s) => {
+          return { ...s, isCompleted: !task.isCompleted };
+        }),
+      };
     } else {
       return task;
     }
