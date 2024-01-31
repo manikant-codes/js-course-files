@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#slider {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: all 1s smooth;
+}
+
+.slide {
+  height: 100%;
+  width: 100vw;
+  flex-shrink: 0;
+  transition: all 1s smooth;
+}
+
+.slide:nth-child(1) {
+  background-color: aquamarine;
+}
+.slide:nth-child(2) {
+  background-color: blueviolet;
+}
+.slide:nth-child(3) {
+  background-color: fuchsia;
+}
