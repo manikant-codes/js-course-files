@@ -35,29 +35,6 @@
 //   console.log(iterable.next().value);
 // }
 
-// Iterator Object
-
-const obj = {};
-
-obj[Symbol.iterator] = function () {
-  let value = 0;
-  let done = false;
-  return {
-    next() {
-      if (value < 10) {
-        value++;
-      } else {
-        done = true;
-      }
-      return { value, done };
-    },
-  };
-};
-
-// for (o of obj) {
-//   console.log(o);
-// }
-
 // const iterator = obj[Symbol.iterator]();
 
 // while (true) {
@@ -71,3 +48,41 @@ obj[Symbol.iterator] = function () {
 // let str = "Hello";
 // str += "\n";
 // str += "World";
+
+// Iterator Object
+
+const obj = {
+  fname: "Manikant",
+  lname: "Jha",
+  roll: 10,
+  asd: "asd",
+  sdf: "sdf",
+};
+
+obj[Symbol.iterator] = function () {
+  let index = 0;
+  let done = false;
+  let arrValues = Object.values(obj);
+  let result = { value: arrValues[0], done: false };
+  return {
+    next() {
+      if (index < arrValues.length) {
+        result = { value: arrValues[index], done: false };
+      } else {
+        result = { value: undefined, done: true };
+      }
+      index++;
+      return result;
+    },
+  };
+};
+
+for (o of obj) {
+  console.log(o);
+}
+
+const values = Object.values(obj);
+
+for (v of values) {
+  console.log(v);
+}
