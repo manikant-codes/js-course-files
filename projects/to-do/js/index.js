@@ -82,7 +82,7 @@ function handleCheck(id) {
       return {
         ...task,
         isCompleted: !task.isCompleted,
-        subTasks: task.subTasks.map((s) => {
+        subtasks: task.subtasks.map((s) => {
           return { ...s, isCompleted: !task.isCompleted };
         }),
       };
