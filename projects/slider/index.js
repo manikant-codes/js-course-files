@@ -3,17 +3,13 @@ const slides = Array.from(slider.children);
 
 let count = 0;
 
-slides.forEach((slide, index) => {
-  slide.style.transform = `translateX(${(index + 1) * 100}%)`;
-});
-
 const id = setInterval(function () {
   if (count > 100 * slides.length - 1) {
     count = 0;
   }
   console.log("Called");
   slides.forEach((slide, index) => {
-    slide.style.transform = `translateX(-${count * 1}%)`;
+    slide.style.transform = `translateX(-${count * 10}%)`;
   });
   count++;
 }, 10);

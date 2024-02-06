@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <script type="module" src="./js/index.mjs"></script>
+  </head>
+  <body>
+    <div id="container-outer">
+      <div id="container-inner">
+        <form name="add-product-form">
+          <div class="input-field">
+            <label for="id">Product ID</label>
+            <input type="text" id="id" required />
+          </div>
+
+          <div class="input-field">
+            <label for="title">Product Title</label>
+            <input type="text" id="title" minlength="2" required />
+          </div>
+
+          <div class="input-field">
+            <label for="purchase-price">Purchase Price</label>
+            <input type="number" min="0" id="purchase-price" />
+          </div>
+
+          <div class="input-field">
+            <label for="retail-price">Retail Price</label>
+            <input type="number" id="retail-price" min="0" required />
+          </div>
+
+          <div class="input-field">
+            <label for="brand">Brand</label>
+            <input type="text" id="brand" />
+          </div>
+
+          <div class="input-field">
+            <label for="manufacturer">Manufacturer</label>
+            <input type="text" id="manufacturer" />
+          </div>
+
+          <div class="input-field">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+              <option value="elctronics">Electronics</option>
+              <option value="mens-fashion">Men's Fashion</option>
+              <option value="womens-fashion">Women's Fashion</option>
+            </select>
+          </div>
+
+          <div>
+            <div class="input-field">
+              <label for="l">L</label>
+              <input type="number" name="l" id="l" min="0" />
+            </div>
+            <div class="input-field">
+              <label for="w">W</label>
+              <input type="number" name="w" id="w" min="0" />
+            </div>
+            <div class="input-field">
+              <label for="h">H</label>
+              <input type="number" name="h" id="h" min="0" />
+            </div>
+          </div>
+          <div class="input-field">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" min="0" />
+          </div>
+
+          <button type="submit">Add Product</button>
+        </form>
+
+        <p id="error-para"></p>
+      </div>
+    </div>
+  </body>
+</html>
