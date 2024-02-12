@@ -32,3 +32,8 @@ const div = document.getElementById("div");
 
 // div.addEventListener("click", divClickHandler, true);
 // div.removeEventListener("click", divClickHandler, true);
+
+function changeBg(p) {
+  var newRandomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  p.parentElement.style.backgroundColor = newRandomColor;
+}

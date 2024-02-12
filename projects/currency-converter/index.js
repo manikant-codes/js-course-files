@@ -9,7 +9,7 @@ function convertToINR() {
   let currencyInINR;
 
   if (currency === "USD") {
-    currencyInINR = (currencyInputValue * 83.17).toFixed(2);
+    currencyInINR = convert(currencyInputValue, 83.17);
   } else if (currency === "CAD") {
     currencyInINR = convert(currencyInputValue, 61.21);
   } else if (currency === "KWD") {
