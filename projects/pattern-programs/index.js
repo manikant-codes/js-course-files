@@ -37,9 +37,16 @@
 //   pattern = pattern + "\n";
 // }
 
-`
-    
-`;
+// `
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+// `
+
+// let N = 5;
+// let pattern = "";
 
 // for (let row = 1; row <= N; row++) {
 //   for (let col = 1; col <= N + (N - 1); col++) {
@@ -52,6 +59,8 @@
 //   pattern = pattern + "\n";
 // }
 
+// console.log(pattern);
+
 // for (let row = N; row >= 1; row--) {
 //   for (let col = 1; col <= row; col++) {
 //     pattern = pattern + "*";
@@ -59,34 +68,41 @@
 //   pattern = pattern + "\n";
 // }
 
-// console.log(pattern);
+// `
+// xxxxxxxx
+//  xxxxxx
+//   xxxx
+//    xx
+//    xx
+//   xxxx
+//  xxxxxx
+// xxxxxxxx
+// `;
 
-const N = 4;
+// const N = 8;
+// let center = Math.ceil(N / 2);
+// let pattern = "";
 
-const NUMBER_OF_ROWS = N % 2 === 0 ? N - 1 : N;
-
-let pattern = "";
-
-for (let row = N; row >= 1; row--) {
-  for (let col = 1; col <= N; col++) {
-    if (col <= N - row || col > row) {
-      pattern += " ";
-    } else {
-      pattern += "*";
-    }
-  }
-  pattern = pattern + "\n";
-}
+// let temp = N;
 
 // for (let row = 1; row <= N; row++) {
 //   for (let col = 1; col <= N; col++) {
-//     if (col <= N - row || col > row) {
-//       pattern += " ";
+//     if (row <= center) {
+//       if (col >= row && col <= temp) {
+//         pattern += "x";
+//       } else {
+//         pattern += " ";
+//       }
 //     } else {
-//       pattern += "*";
+//       if (col >= temp && col <= row) {
+//         pattern += "x";
+//       } else {
+//         pattern += " ";
+//       }
 //     }
 //   }
-//   pattern = pattern + "\n";
+//   temp--;
+//   pattern += "\n";
 // }
 
-console.log(pattern);
+// console.log(pattern);
