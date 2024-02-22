@@ -1,6 +1,12 @@
 // const arr = [2, "hello", false, { msg: "hello" }, [1, 3, 5]];
-const obj = { 0: 2, 1: 4, 2: 6, 3: 8 };
-const arr = [2, 4, 6, 8, 10];
+const obj = { name: 2, 1: 4, 2: 6, 3: 8 };
+// const arr = [2];
+// const arr2 = new Array(2);
+
+// const arr = ["asd"];
+// const arr2 = new Array("asd");
+
+// console.log(arr, arr2);
 
 // const arr2 = new Array(4);
 // arr[3] = 4;
@@ -22,3 +28,5 @@ const arr = [2, 4, 6, 8, 10];
 // }
 
 // console.log(arr[arr.length - 1]);
+
+let arr = [2, 4, 6, 8, 10, 12, 14, 16];
