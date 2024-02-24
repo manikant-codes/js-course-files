@@ -29,4 +29,4 @@ const obj = { name: 2, 1: 4, 2: 6, 3: 8 };
 
 // console.log(arr[arr.length - 1]);
 
-let arr = [2, 4, 6, 8, 10, 12, 14, 16];
+// let fruits = ["Banana", "Orange", "Apple", "Mango"];
