@@ -37,7 +37,6 @@ function addTask() {
   completedBtn.appendChild(completedBtnTextNode);
 
   completedBtn.onclick = () => {
-    console.log("called");
     cardsContainer.replaceChild(cardCompleted, card);
   };
 
@@ -46,10 +45,17 @@ function addTask() {
   card.appendChild(completedBtn);
   card.appendChild(deleteBtn);
 
-  cardCompleted.appendChild(title.cloneNode(true));
-  cardCompleted.appendChild(desc.cloneNode(true));
+  const cardCompletedTitle = title.cloneNode(true);
+  const cardCompletedDesc = desc.cloneNode(true);
+  const cardCompletedDeleteBtn = deleteBtn.cloneNode(true);
+  cardCompletedDeleteBtn.onclick = () => {
+    cardsContainer.removeChild(cardCompleted);
+  };
+
+  cardCompleted.appendChild(cardCompletedTitle);
+  cardCompleted.appendChild(cardCompletedDesc);
   cardCompleted.appendChild(taskCompleted);
-  cardCompleted.appendChild(deleteBtn.cloneNode(true));
+  cardCompleted.appendChild(cardCompletedDeleteBtn);
 
   cardsContainer.appendChild(card);
 }
