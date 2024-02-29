@@ -171,3 +171,30 @@ select:focus {
   background-color: #ff3d00 !important;
   color: white !important;
 }
+
+.fruitsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.fruitCard {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: antiquewhite;
+}
+
+.fruitCard img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.fruitCard p:nth-child(2) {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
