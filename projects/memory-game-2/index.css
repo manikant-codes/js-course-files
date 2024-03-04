@@ -1,0 +1,67 @@
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gameContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 16px;
+}
+
+.gameTile {
+  width: 100%;
+  height: 100px;
+  /* background-color: #d1c4e9; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.gameTile {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  /* perspective: 1000px; */
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.gameTileInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.gameTile:hover .gameTileInner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.tileFront,
+.tileBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.tileFront {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.tileBack {
+  transform: rotateY(180deg);
+}

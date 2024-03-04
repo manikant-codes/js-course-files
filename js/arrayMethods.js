@@ -18,7 +18,7 @@
 // Ab is function me se jo bhi return karoge use map ek naye array me store karega.
 // Aur jab sab elements ka turn pura hoojaye to aap ko wo naya array return kardega.
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // const table2 = [];
 // const table3 = [];
@@ -34,4 +34,19 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // console.log("3 table", table3);
 // console.log("paragraphs", paragraphs);
 
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// const newArr = fruits.with(1, "Kiwi");
 
+// for (const k of keys) {
+//   console.log(k);
+// }
+
+// const q1 = ["Jan", "Feb", "Mar"];
+// const q2 = ["Apr", "May", "Jun"];
+// const q3 = ["Jul", "Aug", "Sep"];
+// const q4 = ["Oct", "Nov", "Dec"];
+
+// const year = q1.concat(q2, q3, q4);
+// const year = [q1, q2, q3, q4].flat();
+
+// const year = [...q1, ...q2, ...q3, ...q4];
