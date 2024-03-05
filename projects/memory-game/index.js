@@ -56,8 +56,6 @@ function handleReveal(id) {
 function renderGame() {
   const shuffledGameGrid = shuffle(gameGrid);
 
-  console.log(shuffledGameGrid);
-
   const memoryGameContainer = document.getElementById("memoryGameContainer");
 
   memoryGameContainer.innerHTML = shuffledGameGrid
