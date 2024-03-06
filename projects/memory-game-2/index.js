@@ -17,6 +17,8 @@ let emojis = [
   "✨",
 ];
 
+let numberOfTries = 0;
+
 function shuffleEmojis() {
   emojis = emojis.sort(function (a, b) {
     return 0.5 - Math.random();
@@ -24,19 +26,16 @@ function shuffleEmojis() {
 }
 
 function showTile(tile) {
+  numberOfTries++;
   tile.classList.add("visible");
+
   const visibleTiles = Array.from(document.getElementsByClassName("visible"));
-  // const visibleTilesContent = visibleTiles.map(function (value) {
-  //   return value.children[1].innerText;
-  // });
 
   setTimeout(function () {
     if (visibleTiles.length === 2) {
       let isSame =
         visibleTiles[0].children[1].innerText ===
         visibleTiles[1].children[1].innerText;
-
-      console.log("isSame", isSame);
 
       if (isSame === false) {
         visibleTiles.forEach(function (value) {
@@ -46,12 +45,19 @@ function showTile(tile) {
         visibleTiles.forEach(function (value) {
           value.classList.replace("visible", "correct");
         });
+        const correctTiles = Array.from(
+          document.getElementsByClassName("correct")
+        );
+        if (correctTiles.length === 16) {
+          gameOver();
+        }
       }
     }
   }, 500);
 }
 
 function renderGameTiles() {
+  shuffleEmojis();
   const gameContainer = document.getElementById("gameContainer");
   let html = "";
   html = emojis
@@ -71,5 +77,24 @@ function renderGameTiles() {
   gameContainer.innerHTML = html;
 }
 
-shuffleEmojis();
+function gameOver() {
+  const scoreContainer = document.getElementById("scoreContainer");
+  scoreContainer.style.display = "flex";
+  calculateScore();
+}
+
+function calculateScore() {
+  let score = (numberOfTries * 100) / 16;
+  score = score - 100;
+  score = score / 10;
+  score = Math.round(100 - score);
+  document.getElementById("score").innerText = score;
+}
+
+function resetGame() {
+  renderGameTiles();
+  document.getElementById("scoreContainer").style.display = "none";
+  numberOfTries = 0;
+}
+
 renderGameTiles();

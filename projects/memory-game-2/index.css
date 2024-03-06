@@ -1,9 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .mainContainer {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 32px;
 }
 
 #gameContainer {
@@ -31,11 +39,6 @@
   transform-style: preserve-3d;
   cursor: pointer;
 }
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-/* .gameTile:hover .gameTileInner {
-  transform: rotateY(180deg);
-} */
 
 /* Position the front and back side */
 .tileFront,
@@ -67,4 +70,54 @@
 
 .correct {
   transform: rotateY(180deg);
+}
+
+#scoreContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.btnReset {
+  background-color: initial;
+  background-image: linear-gradient(#8614f8 0, #760be0 100%);
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(245, 244, 247, 0.25) 0 1px 1px inset;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 60px;
+  line-height: 60px;
+  margin-left: -4px;
+  outline: 0;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: bottom;
+  width: 190px;
+}
+
+.btnReset:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1000px) {
+  .btnReset {
+    font-size: 14px;
+    height: 55px;
+    line-height: 55px;
+    width: 150px;
+  }
+}
+
+#score {
+  font-size: 3rem;
 }
