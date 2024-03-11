@@ -3,9 +3,11 @@ const PI = 3.14;
 function area(radius) {
   return PI * radius * radius;
 }
+
 function circumference(radius) {
   return 2 * PI * radius;
 }
+
 function diameter(radius) {
   return 2 * radius;
 }
@@ -14,7 +16,7 @@ function calculate() {
   // Document me se wo element le ke aa rahe hai jiski id calculation ho.
   const selectElement = document.getElementById("calculation");
   // Usme se selected value access/nikaal kar rahe hai.
-  const calculation = selectElement.value;
+  const selectedOption = selectElement.value;
   // Document me se wo element le ke aa rahe hai jiski id radisInput ho.
   const radiusInput = document.getElementById("radiusInput");
   // Usme se inserted value access/nikaal kar rahe hai.
@@ -26,10 +28,10 @@ function calculate() {
 
   let result;
 
-  if (calculation === "area") {
+  if (selectedOption === "area") {
     // agar calculaton barabar "area" hoo to:
     result = area(radiusInNumber);
-  } else if (calculation === "diameter") {
+  } else if (selectedOption === "diameter") {
     // warna agar calculaton barabar "diameter" hoo to:
     result = diameter(radiusInNumber);
   } else {
@@ -38,5 +40,5 @@ function calculate() {
   }
 
   // outputPara ke andar ke HTML ko change kar rahe hain/
-  outputPara.innerHTML = calculation + " " + result;
+  outputPara.innerHTML = selectedOption + " " + result;
 }

@@ -60,6 +60,7 @@ function renderGameTiles() {
   shuffleEmojis();
   const gameContainer = document.getElementById("gameContainer");
   let html = "";
+
   html = emojis
     .map(function (emoji, index) {
       return `
@@ -74,6 +75,7 @@ function renderGameTiles() {
       `;
     })
     .join("");
+
   gameContainer.innerHTML = html;
 }
 
