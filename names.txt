@@ -3,7 +3,7 @@
 --------------------------------------------------
 krish state 50 times
 dhvani hooks and state 50 times
-meet trivedi hooks and state 50 times (monday) 
+meet trivedi hooks and state 50 times 
 
 // project
 deep + yug (stateful components missing) (toys + forest) (monday),
@@ -28,6 +28,19 @@ dhvani, (tomorrow) (penalty)
 jeel, (tomorrow) (penalty)
 vraj, (tomorrow) (penalty)
 
+----------
+Marks
+----------
+Deep Godhani 21.5
+Radadiya Vratik 12
+Trivedi Meet 1
+Mili Asodariya 3
+Isha Raval 3
+Naitik Kukadiya 2
+Hiren Koshiya 0
+Gondaliya Manisha 21
+Krupa Ladani 15.5
+Yash Gondaliya 27.5
 
 --------------------------------------------------
 6:00 PM Batch
@@ -37,11 +50,76 @@ PROJECTS
 --------------------
 anuj s. (shoe store) (18/3/24)
 vashishth ()
-price (interior-design) (11/3/24)
+prince (interior-design) (11/3/24)
 yash () (11/3/24)
 
 TEST
 --------------------
 (15/3/24) Upto useState Hook
+
+--------------------------------------------------
+2:00 PM Batch
+--------------------------------------------------
+
+----------
+Students
+----------
+01 Himanshu Kanani
+02 Yash Gondaliya
+03 Fenil Desai
+04 Fenil Pethani 10
+05 Vratik Radadiya
+06 Rushi Beladiya
+07 Deep Godhani
+08 Mayan Kakadiya
+09 Dhruv Moradiya 25
+10 Hasti Ramani 
+11 Mency Dhadok
+12 Urvi Kathrotiya
+13 Krupali Pethani
+14 Pooja Sutariya
+15 Tisha Sabhadiya
+16 Pinal Lakkad
+
+
+Hasti (FAQs + Tabs) (13/3/24)
+Urvi (FAQs + Tabs) (13/3/24)
+Urvi (FAQs + Tabs) (13/3/24)
+Krupali (16/3/24)
+Pinal (Ab.)
+Tisha (Ab.)
+Rushi (Tabs + FAQs) (13/3/24)
+Deep (Ok)
+Dhruv (Ok)
+Himanshu ()
+Yash (Tabs) (13/3/24)
+Fenil 
+
+--------------------------------------------------
+3:00 PM Batch
+--------------------------------------------------
+
+01 Roshan Thummar 
+02 Priyal Virani
+03 Pritesh Golakiya
+04 Rajan Shiroya
+05 Vivek Moradiya
+06 Jash Ghori 
+
+--------------------------------------------------
+4:00 PM Batch
+--------------------------------------------------
+
+01 Gopi Balar (Ok)
+02 Shweta Mulani (Ab.)
+03 Krevisha Lathiya(Ab.)
+04 Shruti Lathiya (Ab.)
+05 Ritu Kachhadiya (Ok)
+06 Princy Bhayani (Ok)
+07 Meet Narola (Ok)
+08 Priyank Shekhda (Ok)
+09 Dhruvin Palsana (Detail Page) (Friday)
+10 Kevin Savaliya (Detail Page) (Friday)
+11 Krish Moradiya(Ok)
 
 
