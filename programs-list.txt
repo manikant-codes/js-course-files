@@ -100,3 +100,14 @@ const budget = 60000;
 
 - Budget me ek phone aur 1 watch leni hai, is tarah se ke wo budget pura hojaye. 
 - Budget me ek phone aur 1 watch leni hai, is tarah se ke wo us budget me sabse mehngi watch aur phone hoo. Zada se zada budget use karna hai.
+
+- Projects Covered
+
+- Age Calculator
+- Area Calculator
+- Currency Converter
+- Guess the Number
+- Math Table Generator
+- Memory Game 2
+- Roll The Dice
+- Simple Calclator
