@@ -2,6 +2,9 @@
 9:45 AM Batch
 --------------------------------------------------
 
+Assignment 02/04/24
+useEffect, fetch and scroll examples and custom hook
+
 01 Naitik Koladiya [(3 Times OK)]
 02 Rishi Prajapati [(7 Times OK)]
 03 Meet Trivedi [(7 Times)]
@@ -29,6 +32,9 @@
 10:45 AM Batch
 --------------------------------------------------
 
+Assignment 02/04/24
+map, filter and reduce
+
 01 Satish Kikani
 02 Daksh Patel
 03 Kajal Makwana
@@ -37,6 +43,8 @@
 -------------------------------------------------
 2:00 PM Batch
 --------------------------------------------------
+
+Assignment 29/03/24
 
 01 Himanshu Kanani
 02 Yash Gondaliya
@@ -86,6 +94,9 @@
 --------------------------------------------------
 5:00 PM Batch
 --------------------------------------------------
+
+01 Drashti Padsala 
+02 Yashvi Dholakiya 
 
 --------------------------------------------------
 6:00 PM Batch
