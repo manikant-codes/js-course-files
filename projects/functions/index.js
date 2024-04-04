@@ -99,11 +99,17 @@ function execute() {
 
 // call, apply and bind
 
-const person = {
+const person1 = {
   fname: "John",
   lname: "Doe",
-  getFullName: function () {
-    console.log(this.fname + " " + this.lname);
+  getFullName: function (city, like, pronoun) {
+    console.log(
+      `
+      ${this.fname} ${this.lname}, 
+      ${pronoun} currently lives in ${city}. 
+      ${pronoun} likes ${like}.
+      `
+    );
   },
 };
 
@@ -117,7 +123,38 @@ const person3 = {
   lname: "Doe",
 };
 
-person.getFullName();
+// person1.getFullName("Surat", "Ice-cream", "He");
+// person1.getFullName.call(person2, "Pune", "Mango", "He");
+// person1.getFullName.call(person3, "Ahmedabad", "Cherry", "She");
 
-person.getFullName.call(person2);
-person.getFullName.call(person3);
+// person1.getFullName("Surat", "Ice-cream", "He");
+// person1.getFullName.apply(person2, ["Pune", "Mango", "He"]);
+// person1.getFullName.apply(person3, ["Ahmedabad", "Cherry", "She"]);
+
+// console.log("min", Math.min.apply(null, [1, 45, 99, -40]));
+// console.log("max", Math.max.apply(null, [1, 45, 99, -40]));
+
+// const getFullName2 = person1.getFullName.bind(person2);
+// const getFullName3 = person1.getFullName.bind(person3);
+
+// getFullName2("Pune", "Mango", "He");
+// getFullName3("Ahmedabad", "Cherry", "She");
+
+function counter() {
+  let count = 0;
+  function increment() {
+    count++;
+    console.log("count", count);
+  }
+  function decrement() {
+    count--;
+    console.log("count", count);
+  }
+
+  return { increment, decrement };
+}
+
+const obj = counter();
+obj.increment();
+obj.increment();
+obj.decrement();
