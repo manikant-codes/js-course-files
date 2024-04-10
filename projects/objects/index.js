@@ -34,19 +34,19 @@
 // Same As
 // delete person1["city"];
 
-const person1 = {
-  fname: "Manikant",
-  lname: "Jha",
-  address: {
-    city: "Surat",
-    state: "Gujarat",
-    pinCode: 394107,
-  },
-};
+// const person1 = {
+//   fname: "Manikant",
+//   lname: "Jha",
+//   address: {
+//     city: "Surat",
+//     state: "Gujarat",
+//     pinCode: 394107,
+//   },
+// };
 
-person1.getFullName = function () {
-  return this.fname + " " + this.lname;
-}.toString();
+// person1.getFullName = function () {
+//   return this.fname + " " + this.lname;
+// }.toString();
 // const var1 = "address";
 // const var2 = "city";
 
@@ -63,4 +63,106 @@ person1.getFullName = function () {
 // console.log(Object.values(person1));
 // console.log(Object.entries(person1));
 
-console.log(JSON.stringify(person1));
+// console.log(JSON.stringify(person1));
+
+// --------------------------------------------------
+// Getters & Setters
+// --------------------------------------------------
+
+// const person = {
+//   fname: "Manikant",
+//   lname: "Jha",
+//   address: {
+//     city: "Surat",
+//     state: "Gujarat",
+//     pinCode: 394107,
+//   },
+// get fullName() {
+//   return this.fname + " " + this.lname;
+// },
+// set fullName(obj) {
+//   this.fname = obj.fname;
+//   this.lname = obj.lname;
+// },
+// get fullAddress() {
+//   return `${this.address.city}, ${this.address.state}, ${this.address.pinCode}`;
+// },
+// };
+
+// Object.defineProperty(person, "fullName", {
+//   get: function () {
+//     return this.fname + " " + this.lname;
+//   },
+// });
+
+// Object.defineProperty(person, "setFullName", {
+//   set: function (obj) {
+//     this.fname = obj.fname;
+//     this.lname = obj.lname;
+//   },
+// });
+
+// console.log(person.fullName);
+// console.log((person.setFullName = { fname: "John", lname: "Doe" }));
+// console.log(person.fullName);
+// console.log(person);
+// console.log((person.fullAddress = "asd"));
+// console.log(person);
+
+// --------------------------------------------------
+// Constructors
+// --------------------------------------------------
+
+// const person1 = {
+//   fname: "Manikant",
+//   lname: "Jha",
+//   address: {
+//     city: "Surat",
+//     state: "Gujarat",
+//     pinCode: 394107,
+//   },
+// };
+
+// const person2 = {
+//   fname: "John",
+//   lname: "Doe",
+//   address: {
+//     city: "Surat",
+//     state: "Gujarat",
+//     pinCode: 394107,
+//   },
+// };
+
+// const person3 = {
+//   fname: "Jenny",
+//   lname: "Doe",
+//   address: {
+//     city: "Surat",
+//     state: "Gujarat",
+//     pinCode: 394107,
+//   },
+// };
+
+function Person(fname, lname, pinCode, salary) {
+  console.log("this", this);
+  this.fname = fname;
+  this.lname = lname;
+  this.address = {
+    city: "Surat",
+    state: "Gujarat",
+    pinCode,
+  };
+  this.getFullName = function () {
+    return this.fname + " " + this.lname;
+  };
+  this.salary = salary;
+}
+
+Person.salary = 1000;
+
+const person1 = new Person("Manikant", "Jha", 394107, 10000);
+
+console.log("person1", person1);
+
+// console.log("person2", person2);
+// console.log("person2", person2.getFullName());
