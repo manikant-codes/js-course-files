@@ -144,7 +144,6 @@
 // };
 
 function Person(fname, lname, pinCode, salary) {
-  console.log("this", this);
   this.fname = fname;
   this.lname = lname;
   this.address = {
@@ -152,17 +151,28 @@ function Person(fname, lname, pinCode, salary) {
     state: "Gujarat",
     pinCode,
   };
-  this.getFullName = function () {
-    return this.fname + " " + this.lname;
-  };
+  // this.getFullName = function () {
+  //   return this.fname + " " + this.lname;
+  // };
   this.salary = salary;
+  // this.numberOfLeaves = 3;
 }
 
-Person.salary = 1000;
+Person.prototype.numberOfLeaves = 3;
+Person.prototype.getFullName = function () {
+  return this.fname + " " + this.lname;
+};
 
 const person1 = new Person("Manikant", "Jha", 394107, 10000);
+person1.newProperty = "value";
+person1.newMethod = () => {
+  console.log("Hello");
+};
+
+const person2 = new Person("John", "Doe", 394107, 10000);
 
 console.log("person1", person1);
+console.log("person2", person2);
 
 // console.log("person2", person2);
 // console.log("person2", person2.getFullName());
