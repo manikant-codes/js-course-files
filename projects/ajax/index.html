@@ -23,12 +23,24 @@
     <div class="containerMain">
       <div class="containerInner">
         <div id="tableContainer"></div>
-        <button type="button" class="btn btn-primary" onclick="getData()">
+        <!-- <button type="button" class="btn btn-primary" onclick="getData()">
           Get Users
-        </button>
-        <button type="button" class="btn btn-primary" onclick="postData()">
-          Add User
-        </button>
+        </button> -->
+        <form id="my-form" onsubmit="handleSubmit(event)">
+          <div>
+            <label for="name-input">name</label>
+            <input id="name-input" type="text" name="name" />
+          </div>
+          <div>
+            <label for="email-input">email</label>
+            <input id="email-input" type="text" name="email" />
+          </div>
+          <div>
+            <label for="phone-input">phone</label>
+            <input id="phone-input" type="text" name="phone" />
+          </div>
+          <button type="submit" class="btn btn-primary">Add User</button>
+        </form>
       </div>
     </div>
   </body>

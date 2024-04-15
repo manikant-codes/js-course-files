@@ -39,24 +39,29 @@ function getData() {
       if (this.status === 200) {
         const response = JSON.parse(this.response);
 
-        html = `
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>${response[0].id}</td>
-                            <td>${response[0].name}</td>
-                        </tr>
-                        <tr>
-                            <td>${response[1].id}</td>
-                            <td>${response[1].name}</td>
-                        </tr>
-                        <tr>
-                            <td>${response[2].id}</td>
-                            <td>${response[2].name}</td>
-                        </tr>
-                    </tbody>
-                </table>
+        console.log("html 0", html);
+
+        html = html + `<table class="table"> <tbody>`;
+
+        console.log("html 1", html);
+
+        for (let i = 0; i < response.length; i++) {
+          response[i];
+          html =
+            html +
+            `
+              <tr>
+                <td>${response[i].id}</td>
+                <td>${response[i].name}</td>
+              </tr>
             `;
+        }
+
+        console.log("html 2", html);
+
+        html = html + `</tbody> </table>`;
+
+        console.log("html 3", html);
 
         tableContainer.innerHTML = html;
       } else {
@@ -70,22 +75,39 @@ function getData() {
   xhttp.send();
 }
 
-function postData() {
-  const xhttp = new XMLHttpRequest();
+// function postData() {
+//   const xhttp = new XMLHttpRequest();
+//   const data = {
+//     fname: "Henry",
+//     lname: "Ford",
+//     city: "Surat",
+//   };
+//   xhttp.onload = function () {
+//     console.log("this.response", this.response);
+//   };
+//   xhttp.open("POST", "https://jsonplaceholder.typicode.com/users", true);
+//   //   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   //   xhttp.send("fname=Henry&lname=Ford&city=Surat");
+//   xhttp.setRequestHeader("Content-type", "application/json");
+//   xhttp.send(JSON.stringify(data));
+// }
+
+function handleSubmit(event) {
+  event.preventDefault();
 
   const data = {
-    fname: "Henry",
-    lname: "Ford",
-    city: "Surat",
+    name: event.target.elements["name"].value,
+    email: event.target.elements["email"].value,
+    phone: event.target.elements["phone"].value,
   };
+
+  const xhttp = new XMLHttpRequest();
 
   xhttp.onload = function () {
     console.log("this.response", this.response);
   };
 
   xhttp.open("POST", "https://jsonplaceholder.typicode.com/users", true);
-  //   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  //   xhttp.send("fname=Henry&lname=Ford&city=Surat");
-  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.setRequestHeader("Content-Type", "application/json");
   xhttp.send(JSON.stringify(data));
 }
