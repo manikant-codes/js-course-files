@@ -95,19 +95,37 @@ function getData() {
 function handleSubmit(event) {
   event.preventDefault();
 
+  const phoneRegex =
+    /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
+
+  let name = event.target.name.value.trim();
+  let email = event.target.email.value.trim();
+  let phone = event.target.phone.value.toString();
+
+  if (name === "") {
+    alert("Please provide a valid name!");
+    return;
+  }
+
+  if (phoneRegex.test(phone) === false) {
+    alert("Please provide a valid phone number!");
+    return;
+  }
+
   const data = {
-    name: event.target.elements["name"].value,
-    email: event.target.elements["email"].value,
-    phone: event.target.elements["phone"].value,
+    name: name,
+    email: email,
+    phone: phone,
   };
 
   const xhttp = new XMLHttpRequest();
 
   xhttp.onload = function () {
-    console.log("this.response", this.response);
+    console.log(this.response);
+    event.target.reset();
   };
 
   xhttp.open("POST", "https://jsonplaceholder.typicode.com/users", true);
-  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.setRequestHeader("content-type", "application/json");
   xhttp.send(JSON.stringify(data));
 }

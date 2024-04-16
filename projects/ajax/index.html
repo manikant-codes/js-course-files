@@ -28,16 +28,16 @@
         </button> -->
         <form id="my-form" onsubmit="handleSubmit(event)">
           <div>
-            <label for="name-input">name</label>
-            <input id="name-input" type="text" name="name" />
+            <label for="name">name</label>
+            <input id="name" type="text" name="name" required />
           </div>
           <div>
             <label for="email-input">email</label>
-            <input id="email-input" type="text" name="email" />
+            <input id="email-input" type="email" name="email" required />
           </div>
           <div>
             <label for="phone-input">phone</label>
-            <input id="phone-input" type="text" name="phone" />
+            <input id="phone-input" type="number" name="phone" required />
           </div>
           <button type="submit" class="btn btn-primary">Add User</button>
         </form>
