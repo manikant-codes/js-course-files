@@ -7,22 +7,22 @@ const arr = [1, 1, 2, 2, 3, 3];
 
 const set = new Set([1, 1, 2, 2, 3, 3]);
 
-set.add(4);
-set.add(5);
-set.delete(4);
-console.log("has 5", set.has(5));
+// set.add(4);
+// set.add(5);
+// set.delete(4);
+// console.log("has 5", set.has(4));
 // set.clear();
 
-// set.forEach((value, index, set) => {
-//   console.log("value", value);
-//   console.log("index", index);
-// });
+set.forEach((value, key, set) => {
+  console.log("value", value);
+  console.log("key", key);
+});
 
 console.log("arr", arr);
 
 console.log("set", set);
 
-console.log("set", Array.from(set.values()));
-console.log("set", Array.from(set.keys()));
-console.log("set", Array.from(set.entries()));
-console.log("size", set.size);
+// console.log("set", Array.from(set.values()));
+// console.log("set", Array.from(set.keys()));
+// console.log("set", Array.from(set.entries()));
+// console.log("size", set.size);

@@ -143,36 +143,86 @@
 //   },
 // };
 
-function Person(fname, lname, pinCode, salary) {
-  this.fname = fname;
-  this.lname = lname;
-  this.address = {
-    city: "Surat",
-    state: "Gujarat",
-    pinCode,
-  };
-  // this.getFullName = function () {
-  //   return this.fname + " " + this.lname;
-  // };
-  this.salary = salary;
-  // this.numberOfLeaves = 3;
-}
+// function Person(fname, lname, pinCode, salary) {
+//   this.fname = fname;
+//   this.lname = lname;
+//   this.address = {
+//     city: "Surat",
+//     state: "Gujarat",
+//     pinCode,
+//   };
+//   // this.getFullName = function () {
+//   //   return this.fname + " " + this.lname;
+//   // };
+//   this.salary = salary;
+//   // this.numberOfLeaves = 3;
+// }
 
-Person.prototype.numberOfLeaves = 3;
-Person.prototype.getFullName = function () {
-  return this.fname + " " + this.lname;
-};
+// Person.prototype.numberOfLeaves = 3;
+// Person.prototype.getFullName = function () {
+//   return this.fname + " " + this.lname;
+// };
 
-const person1 = new Person("Manikant", "Jha", 394107, 10000);
-person1.newProperty = "value";
-person1.newMethod = () => {
-  console.log("Hello");
-};
+// const person1 = new Person("Manikant", "Jha", 394107, 10000);
+// person1.newProperty = "value";
+// person1.newMethod = () => {
+//   console.log("Hello");
+// };
 
-const person2 = new Person("John", "Doe", 394107, 10000);
+// const person2 = new Person("John", "Doe", 394107, 10000);
 
-console.log("person1", person1);
-console.log("person2", person2);
+// console.log("person1", person1);
+// console.log("person2", person2);
 
 // console.log("person2", person2);
 // console.log("person2", person2.getFullName());
+
+// Inheritance
+
+debugger;
+
+class TwoWheeler {
+  constructor(mileage, fuelCapacity, color, showRoomPrice, onRoadPrice) {
+    this.fuelCapacity = fuelCapacity;
+    this.color = "black";
+    this.showRoomPrice = showRoomPrice;
+    this.onRoadPrice = onRoadPrice;
+  }
+
+  get getDifference() {
+    return this.onRoadPrice - this.showRoomPrice;
+  }
+
+  static freeServiceDuration() {
+    return 1;
+  }
+}
+
+class Activa extends TwoWheeler {}
+
+class Shine extends TwoWheeler {
+  constructor(
+    mileage,
+    fuelCapacity,
+    color,
+    showRoomPrice,
+    onRoadPrice,
+    gears,
+    reserveCapacity
+  ) {
+    super(mileage, fuelCapacity, color, showRoomPrice, onRoadPrice);
+    this.gears = gears;
+    this.reserveCapacity = reserveCapacity;
+  }
+}
+
+class Dio extends TwoWheeler {}
+
+const activa = new Activa(30, 5, "grey", 77692, 84192);
+const shine = new Shine(45, 5, "black", 77692, 84192, 5, 1);
+const dio = new Dio(25, 4, "white", 77692, 84192);
+
+console.log("activa", activa, activa.getDifference);
+console.log("shine", shine, shine.getDifference);
+console.log("dio", dio, dio.getDifference);
+console.log("freeServiceDuration", TwoWheeler.freeServiceDuration());
