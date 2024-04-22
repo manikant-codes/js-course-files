@@ -1,39 +1,29 @@
-// click ek event (ghatna) hai.
-// onclick ek event listener hai, event listner ka kaam hoota hai event ke liye listen karna ya sun na, aur jab wo event hoo to use diya gaya event handler chalana.
-// event handler ek function hai jo aap event listener ko dete hoo.
-// html attribute ke case me element ko wo event handler milta hai. App use us event handler ke andar ka code dete hoo.
-// Aur is tarike se: document.getElementById("btn2").onclick = greetings;
-// aap pura event handler function dete hoo.
-// addEventListener se diye gaye event listener ki priority default event listener se zada hoogi.
+// console.log(document.getElementById("my-para").innerHTML);
+// document.getElementById("my-para").innerHTML = "Hello JavaScript";
 
-function greetings(message) {
-  alert(message);
+// document.getElementsByTagName("p")[0].innerHTML = "Hello JavaScript";
+// document.getElementsByTagName("p")[1].innerHTML = "Hello JavaScript";
+// document.getElementsByTagName("p")[2].innerHTML = "Hello JavaScript";
+// document.getElementsByTagName("p")[3].innerHTML = "Hello JavaScript";
+
+const paragraphs = document.getElementsByTagName("p");
+const paras = document.getElementsByClassName("para");
+
+let index = 1;
+
+for (const p of paragraphs) {
+  p.innerHTML = "Hello JS";
+  // p.className = "para-" + index;
+  p.onclick = function () {
+    alert(`You clicked on the paragraph`);
+  };
+  // p.setAttribute("onclick", "alert('Hello!')");
+  index++;
 }
 
-// const btn = document.getElementById("btn1");
-const div = document.getElementById("div");
-// const para = document.getElementById("para");
-
-// document.getElementById("btn1").onclick = function () {
-//   greetings("Hi");
-// };
-
-// para.addEventListener(
-//   "click",
-//   function () {
-//     greetings("Bye");
-//   },
-//   true
-// );
-
-// function divClickHandler() {
-//   greetings("Hello");
+// for (const p of paras) {
+//   p.innerHTML = "Hello World!";
+//   p.style.backgroundColor = "purple";
+//   p.style.color = "white";
+//   p.style.padding = "8px";
 // }
-
-// div.addEventListener("click", divClickHandler, true);
-// div.removeEventListener("click", divClickHandler, true);
-
-function changeBg(p) {
-  var newRandomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-  p.parentElement.style.backgroundColor = newRandomColor;
-}
