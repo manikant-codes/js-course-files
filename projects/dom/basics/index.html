@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
     <!-- <div> -->
@@ -16,9 +17,26 @@
     <p class="para">Hello World!</p> -->
     <!-- </div> -->
     <!-- asd -->
-    <div id="outer-div">
+    <!-- <div id="outer-div">
       <div id="inner-div"></div>
+    </div> -->
+
+    <!-- <div
+      id="events-div"
+      onmouseover="handleMouseOver()"
+      onmouseout="handleMouseOut()"
+    >
+      Hello!
+    </div> -->
+    <div
+      id="events-div"
+      onmousedown="handleMouseDown()"
+      onmouseup="handleMouseUp()"
+    >
+      Hello!
     </div>
-    <script src="index.js"></script>
+    <!-- <div id="events-div">Hello!</div> -->
+    <!-- <label for="name">Name:</label> -->
+    <!-- <input type="text" id="name" onchange="capitalize()" /> -->
   </body>
 </html>

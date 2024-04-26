@@ -34,18 +34,65 @@
 
 // document.write("Hello");
 
-const innerDiv = document.getElementById("inner-div");
+// const innerDiv = document.getElementById("inner-div");
 
-const intervalID = setInterval(() => {
-  console.log(innerDiv.style.left);
-  if (Number(innerDiv.style.left.split("px")[0]) < 350) {
-    innerDiv.style.left = Number(innerDiv.style.left.split("px")[0]) + 1 + "px";
-    innerDiv.style.top = Number(innerDiv.style.top.split("px")[0]) + 1 + "px";
-  } else {
-    clearInterval(intervalID);
-  }
-}, 0);
+// const intervalID = setInterval(() => {
+//   console.log(innerDiv.style.left);
+//   if (Number(innerDiv.style.left.split("px")[0]) < 350) {
+//     innerDiv.style.left = Number(innerDiv.style.left.split("px")[0]) + 1 + "px";
+//     innerDiv.style.top = Number(innerDiv.style.top.split("px")[0]) + 1 + "px";
+//   } else {
+//     clearInterval(intervalID);
+//   }
+// }, 0);
 
 // const timeoutID = setTimeout(() => {
 //   clearTimeout(timeoutID);
 // }, 1000);
+
+// const myDiv = document.getElementById("events-div");
+
+// myDiv.onclick = function () {
+//   handleClick();
+// };
+
+// // myDiv.onclick = handleClick;
+
+// function handleClick() {
+//   myDiv.innerHTML = "Clicked!";
+// }
+
+// document.onload = function () {
+//   console.log("Document Loaded!");
+// };
+
+// window.onload = () => {
+//   console.log("Loaded!");
+// };
+// const nameInput = document.getElementById("name");
+
+// nameInput.oninput = function () {
+//   capitalize();
+// };
+
+// function capitalize() {
+//   nameInput.value = nameInput.value.toUpperCase();
+// }
+
+const myDiv = document.getElementById("events-div");
+
+// function handleMouseOver() {
+//   myDiv.innerHTML = "Hovered!";
+// }
+
+// function handleMouseOut() {
+//   myDiv.innerHTML = "Hello!";
+// }
+
+function handleMouseDown() {
+  myDiv.innerHTML = "Mouse Down!";
+}
+
+function handleMouseUp() {
+  myDiv.innerHTML = "Mouse Up!";
+}
