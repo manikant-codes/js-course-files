@@ -79,7 +79,7 @@
 //   nameInput.value = nameInput.value.toUpperCase();
 // }
 
-const myDiv = document.getElementById("events-div");
+// const myDiv = document.getElementById("events-div");
 
 // function handleMouseOver() {
 //   myDiv.innerHTML = "Hovered!";
@@ -89,10 +89,51 @@ const myDiv = document.getElementById("events-div");
 //   myDiv.innerHTML = "Hello!";
 // }
 
-function handleMouseDown() {
-  myDiv.innerHTML = "Mouse Down!";
+// function handleMouseDown() {
+//   myDiv.innerHTML = "Mouse Down!";
+// }
+
+// function handleMouseUp() {
+//   myDiv.innerHTML = "Mouse Up!";
+// }
+
+// const btn = document.getElementById("btn");
+
+// btn.onclick = function () {
+//   console.log("Hello!");
+// };
+
+// btn.addEventListener("click", function () {
+//   console.log("Hello!");
+// });
+
+const outer = document.getElementById("outer");
+const inner = document.getElementById("inner");
+
+// outer.addEventListener(
+//   "click",
+//   function () {
+//     console.log("Outer!");
+//   },
+//   true
+// );
+
+// inner.onclick = function () {
+//   console.log("original onclick listener");
+//   inner.onclick = null;
+// };
+
+// function handleClick() {
+//   console.log("Clicked!");
+//   inner.removeEventListener("click", handleClick, true);
+// }
+
+// inner.addEventListener("click", handleClick, true);
+
+// console.log("inner.onclick", inner.onclick);
+
+function handleClick() {
+  console.log("Hello!");
 }
 
-function handleMouseUp() {
-  myDiv.innerHTML = "Mouse Up!";
-}
+handleClick();
