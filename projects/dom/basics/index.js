@@ -132,8 +132,61 @@ const inner = document.getElementById("inner");
 
 // console.log("inner.onclick", inner.onclick);
 
-function handleClick() {
-  console.log("Hello!");
-}
+// function handleClick() {
+//   console.log("Hello!");
+// }
 
-handleClick();
+// handleClick();
+
+// console.log(document.getElementById("child-1").parentNode);
+// document.getElementById("child-1").parentNode.style.backgroundColor = "red";
+
+// console.log(document.getElementById("parent").childNodes);
+// console.log(document.getElementById("parent").children);
+// Array.from(document.getElementById("parent").children).forEach((el) => {
+//   el.style.backgroundColor = "red";
+// });
+
+// console.log(document.getElementById("parent").firstChild);
+// console.log(document.getElementById("parent").firstElementChild);
+
+// console.log(document.getElementById("parent").lastChild);
+// console.log(document.getElementById("parent").lastElementChild);
+
+// console.log(document.getElementById("child-1").nextSibling);
+// console.log(document.getElementById("child-1").nextElementSibling);
+
+// console.log(document.getElementById("child-2").previousSibling);
+// console.log(document.getElementById("child-2").previousElementSibling);
+
+// console.log(document.getElementById("parent").childNodes[1].nodeType);
+// console.log(document.nodeType);
+// console.log(document.doctype.nodeType);
+
+const btn = document.getElementById("btn");
+
+btn.onclick = function () {
+  const parentDiv = document.getElementById("parent");
+  const num = parentDiv.children.length + 1;
+
+  const newInput = document.createElement("input");
+  newInput.type = "text";
+  newInput.placeholder = "New input";
+
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("child");
+  newDiv.id = `child-${num}`;
+  newDiv.onclick = function () {
+    // if (newDiv.style.backgroundColor === "red") {
+    //   newDiv.style.backgroundColor = "darkgoldenrod";
+    // } else {
+    //   newDiv.style.backgroundColor = "red";
+    // }
+    newDiv.replaceWith(newInput);
+  };
+  const newTextNode = document.createTextNode(num);
+
+  newDiv.appendChild(newTextNode);
+
+  parentDiv.appendChild(newDiv);
+};
