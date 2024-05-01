@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #bdbdbd;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #212121;
+}
+
+/* Generic */
+
+.my-input {
+  padding: 8px 16px;
+  border-radius: 32px;
+  border: solid 1px #bdbdbd;
+  font-size: 1rem;
+  height: 40px;
+}
+
+.my-input:focus {
+  outline: solid 2px #bdbdbd;
+  outline-offset: -2px;
+}
+
+/* End Generic */
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 32px;
+  background-color: #eeeeee;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.logo-img {
+  width: 55px !important;
+  height: 55px !important;
+}
+.company-name {
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding-right: 120px;
+}
+
+.search-btn {
+  border: none;
+  width: 120px !important;
+  background-color: #ffb300;
+  padding: 8px 16px;
+  border-radius: 32px;
+  position: absolute;
+  height: 40px;
+  right: 0;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #ff8f00;
+}
+
+/* End Navbar */
+
+/* Add Task Bar */
+
+.tasks-section {
+  padding: 32px;
+}
+
+.add-task-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.task-input {
+  width: 50%;
+}
+
+/* End Task Bar */
+
+/* Tasks Container */
+
+.tasks-container {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.task-card {
+  background-color: #eeeeee;
+  border: solid 1px #bdbdbd;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-desc {
+  max-height: 200px;
+  overflow: auto;
+}
+
+/* End Tasks Container */
