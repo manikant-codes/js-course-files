@@ -39,18 +39,20 @@
     <section class="tasks-section">
       <div class="add-task-container">
         <input
+          id="task-input"
           class="my-input task-input"
           type="text"
           placeholder="Take A Note..."
         />
-        <select name="priority" id="">
+        <select name="priority" id="task-priority-select">
           <option value="a">A</option>
           <option value="b">B</option>
           <option value="c">C</option>
           <option value="d">D</option>
         </select>
+        <button id="add-task-btn">Add Task</button>
       </div>
-      <div class="tasks-container">
+      <div id="task-list" class="tasks-container">
         <div class="task-card">
           <h3>Lorem ipsum dolor sit amet.</h3>
           <p class="task-desc">
@@ -58,55 +60,17 @@
             ipsa perspiciatis quia cumque qui dignissimos quisquam, impedit fuga
             eligendi facilis.
           </p>
-          <button><i class="fa-regular fa-pen-to-square"></i></button>
-          <button><i class="fa-solid fa-trash"></i></button>
-        </div>
-        <div class="task-card">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p class="task-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            ipsa perspiciatis quia cumque qui dignissimos quisquam, impedit fuga
-            eligendi facilis. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Maiores ipsa perspiciatis quia cumque qui dignissimos
-            quisquam, impedit fuga eligendi facilis. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Maiores ipsa perspiciatis quia cumque
-            qui dignissimos quisquam, impedit fuga eligendi facilis. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Maiores ipsa
-            perspiciatis quia cumque qui dignissimos quisquam, impedit fuga
-            eligendi facilis.
-          </p>
-        </div>
-        <div class="task-card">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p class="task-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            ipsa perspiciatis quia cumque qui dignissimos quisquam, impedit fuga
-            eligendi facilis. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Maiores ipsa perspiciatis quia cumque qui dignissimos
-            quisquam, impedit fuga eligendi facilis. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Maiores ipsa perspiciatis quia cumque
-            qui dignissimos quisquam, impedit fuga eligendi facilis. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Maiores ipsa
-            perspiciatis quia cumque qui dignissimos quisquam, impedit fuga
-            eligendi facilis.
-          </p>
-        </div>
-        <div class="task-card">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p class="task-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            ipsa perspiciatis quia cumque qui dignissimos quisquam, impedit fuga
-            eligendi facilis. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Maiores ipsa perspiciatis quia cumque qui dignissimos
-            quisquam, impedit fuga eligendi facilis. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Maiores ipsa perspiciatis quia cumque
-            qui dignissimos quisquam, impedit fuga eligendi facilis. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Maiores ipsa
-            perspiciatis quia cumque qui dignissimos quisquam, impedit fuga
-            eligendi facilis.
-          </p>
+          <div class="task-card-actions">
+            <button class="action-btn edit-action">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button class="action-btn delete-action">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
+    <script src="./js/index.js" defer></script>
   </body>
 </html>

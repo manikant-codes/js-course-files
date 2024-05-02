@@ -139,6 +139,41 @@
 .task-desc {
   max-height: 200px;
   overflow: auto;
+  flex-grow: 1;
+}
+
+.task-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.edit-action {
+  background-color: #1e88e5;
+}
+
+.delete-action {
+  background-color: #e53935;
+}
+
+.edit-action:hover {
+  background-color: #2979ff;
+}
+
+.delete-action:hover {
+  background-color: #c62828;
 }
 
 /* End Tasks Container */
