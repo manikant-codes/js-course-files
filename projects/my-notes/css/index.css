@@ -168,6 +168,12 @@
   background-color: #e53935;
 }
 
+.save-action {
+  background-color: #43a047;
+  color: white;
+  font-size: 1rem;
+}
+
 .edit-action:hover {
   background-color: #2979ff;
 }
@@ -176,4 +182,25 @@
   background-color: #c62828;
 }
 
+.save-action:hover {
+  background-color: #2e7d32;
+}
+
 /* End Tasks Container */
+
+/* Priority Classes */
+
+.priority-a {
+  background-color: #ffcdd2;
+}
+.priority-b {
+  background-color: #ffecb3;
+}
+.priority-c {
+  background-color: #d1c4e9;
+}
+.priority-d {
+  background-color: #bbdefb;
+}
+
+/* End Priority Classes */
