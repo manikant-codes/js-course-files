@@ -2,10 +2,38 @@ const taskInput = document.getElementById("task-input");
 const taskPrioritySelect = document.getElementById("task-priority-select");
 const tasksList = document.getElementById("task-list");
 
+const tasks = getTasks();
+
 const addTaskBtn = document.getElementById("add-task-btn");
 addTaskBtn.onclick = function () {
-  createAndAddTaskCard();
+  const task = {
+    id: Date.now(),
+    title: "Edit Task...",
+    desc: taskInput.value,
+    priority: taskPrioritySelect.value,
+  };
+  addTask(task, tasks);
+  renderTasksCards();
+
+  // createAndAddTaskCard(task);
 };
+
+// Local Storage Helpers
+
+function getTasks() {
+  const tasksJSONString = localStorage.getItem("tasks");
+  const tasks = JSON.parse(tasksJSONString);
+  return tasks || [];
+}
+
+function addTask(task, tasks) {
+  tasks.push(task);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function updateTask() {}
+
+function deleteTask() {}
 
 function handleEdit(title, descPara, editBtn) {
   const titleInput = document.createElement("input");
@@ -35,19 +63,36 @@ function handleEdit(title, descPara, editBtn) {
   descPara.replaceWith(descTextArea);
 }
 
-function createAndAddTaskCard() {
+// End Local Storage Helpers
+
+// Render Tasks Cards
+
+function renderTasksCards() {
+  tasksList.innerHTML = "";
+  for (const task of tasks) {
+    createAndAddTaskCard(task);
+  }
+}
+
+// End Render Tasks Cards
+
+// Create and Add Task Card
+
+function createAndAddTaskCard(task) {
   const mainContainer = document.createElement("div");
   mainContainer.classList.add(
     "task-card",
-    `priority-${taskPrioritySelect.value}`
+    `priority-${task.priority.toLowerCase()}`
   );
 
   const title = document.createElement("h3");
-  title.innerText = "Edit Title...";
+  // title.innerText = "Edit Title...";
+  title.innerText = task.title;
 
   const prioritySelect = document.createElement("select");
   prioritySelect.onchange = function (event) {
-    const oldClass = Array.from(mainContainer.classList.values())[1];
+    const oldClass = mainContainer.classList[1];
+    console.log("oldClass", oldClass);
     mainContainer.classList.replace(oldClass, `priority-${event.target.value}`);
   };
   // const optionA = document.createElement("option");
@@ -70,15 +115,17 @@ function createAndAddTaskCard() {
   // prioritySelect.appendChild(optionD);
 
   prioritySelect.innerHTML = `
-    <option value="a">A</option>
-    <option value="b">B</option>
-    <option value="c">C</option>
-    <option value="d">D</option>
+    <option value="a" ${task.priority === "a" ? "selected" : ""}>A</option>
+    <option value="b" ${task.priority === "b" ? "selected" : ""}>B</option>
+    <option value="c" ${task.priority === "c" ? "selected" : ""}>C</option>
+    <option value="d" ${task.priority === "d" ? "selected" : ""}>D</option>
   `;
+  // prioritySelect.value = task.priority;
 
   const descPara = document.createElement("p");
   descPara.classList.add("task-desc");
-  descPara.innerText = taskInput.value;
+  // descPara.innerText = taskInput.value;
+  descPara.innerText = task.desc;
 
   const btnContainer = document.createElement("div");
   btnContainer.classList.add("task-card-actions");
@@ -107,3 +154,7 @@ function createAndAddTaskCard() {
 
   tasksList.appendChild(mainContainer);
 }
+
+// End Create and Add Task Card
+
+renderTasksCards();
