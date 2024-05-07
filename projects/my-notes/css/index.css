@@ -81,20 +81,24 @@
   padding-right: 120px;
 }
 
-.search-btn {
+.btn {
   border: none;
-  width: 120px !important;
   background-color: #ffb300;
   padding: 8px 16px;
   border-radius: 32px;
-  position: absolute;
-  height: 40px;
-  right: 0;
   cursor: pointer;
 }
 
-.search-btn:hover {
+.btn:hover {
   background-color: #ff8f00;
+}
+
+.search-btn {
+  width: 120px !important;
+  padding: 8px 16px;
+  position: absolute;
+  height: 40px;
+  right: 0;
 }
 
 /* End Navbar */
@@ -204,3 +208,15 @@
 }
 
 /* End Priority Classes */
+
+.transparent-input {
+  padding: 4px 0px;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px #757575;
+}
+
+.transparent-input:focus {
+  outline: none;
+  border-bottom: solid 2px #424242;
+}

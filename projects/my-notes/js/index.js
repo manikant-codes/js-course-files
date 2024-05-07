@@ -2,8 +2,6 @@ const taskInput = document.getElementById("task-input");
 const taskPrioritySelect = document.getElementById("task-priority-select");
 const tasksList = document.getElementById("task-list");
 
-const tasks = getTasks();
-
 const addTaskBtn = document.getElementById("add-task-btn");
 addTaskBtn.onclick = function () {
   const task = {
@@ -12,7 +10,7 @@ addTaskBtn.onclick = function () {
     desc: taskInput.value,
     priority: taskPrioritySelect.value,
   };
-  addTask(task, tasks);
+  addTask(task);
   renderTasksCards();
 
   // createAndAddTaskCard(task);
@@ -20,28 +18,46 @@ addTaskBtn.onclick = function () {
 
 // Local Storage Helpers
 
+function updateTasksInLocalStrorage(newTasks) {
+  localStorage.setItem("tasks", JSON.stringify(newTasks));
+}
+
 function getTasks() {
   const tasksJSONString = localStorage.getItem("tasks");
   const tasks = JSON.parse(tasksJSONString);
   return tasks || [];
 }
 
-function addTask(task, tasks) {
+function addTask(task) {
+  const tasks = getTasks();
   tasks.push(task);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  updateTasksInLocalStrorage(tasks);
 }
 
 function updateTask() {}
 
-function deleteTask() {}
+function deleteTask(id) {
+  const tasks = getTasks();
+  const newTasks = tasks.filter((value, index, array) => {
+    if (value.id === id) {
+      return false;
+    }
+    return true;
+  });
+
+  updateTasksInLocalStrorage(newTasks);
+  renderTasksCards();
+}
 
 function handleEdit(title, descPara, editBtn) {
   const titleInput = document.createElement("input");
-  taskInput.type = "text";
+  titleInput.classList.add("transparent-input");
+  titleInput.type = "text";
   titleInput.value = title.innerText;
 
   const descTextArea = document.createElement("textarea");
-  descTextArea.rows = "4";
+  descTextArea.classList.add("transparent-input");
+  descTextArea.rows = "1";
   descTextArea.value = descPara.innerText;
 
   const saveBtn = document.createElement("button");
@@ -69,6 +85,7 @@ function handleEdit(title, descPara, editBtn) {
 
 function renderTasksCards() {
   tasksList.innerHTML = "";
+  const tasks = getTasks();
   for (const task of tasks) {
     createAndAddTaskCard(task);
   }
@@ -86,7 +103,6 @@ function createAndAddTaskCard(task) {
   );
 
   const title = document.createElement("h3");
-  // title.innerText = "Edit Title...";
   title.innerText = task.title;
 
   const prioritySelect = document.createElement("select");
@@ -95,24 +111,6 @@ function createAndAddTaskCard(task) {
     console.log("oldClass", oldClass);
     mainContainer.classList.replace(oldClass, `priority-${event.target.value}`);
   };
-  // const optionA = document.createElement("option");
-  // optionA.value = "a";
-  // optionA.innerText = "A";
-  // const optionB = document.createElement("option");
-  // optionB.value = "b";
-  // optionB.innerText = "B";
-  // const optionC = document.createElement("option");
-  // optionC.value = "c";
-  // optionC.innerText = "C";
-  // const optionD = document.createElement("option");
-  // optionD.value = "d";
-  // optionD.innerText = "D";
-  // prioritySelect.append(optionA, optionB, optionC, optionD);
-  // OR
-  // prioritySelect.appendChild(optionA);
-  // prioritySelect.appendChild(optionB);
-  // prioritySelect.appendChild(optionC);
-  // prioritySelect.appendChild(optionD);
 
   prioritySelect.innerHTML = `
     <option value="a" ${task.priority === "a" ? "selected" : ""}>A</option>
@@ -120,11 +118,10 @@ function createAndAddTaskCard(task) {
     <option value="c" ${task.priority === "c" ? "selected" : ""}>C</option>
     <option value="d" ${task.priority === "d" ? "selected" : ""}>D</option>
   `;
-  // prioritySelect.value = task.priority;
 
   const descPara = document.createElement("p");
   descPara.classList.add("task-desc");
-  // descPara.innerText = taskInput.value;
+
   descPara.innerText = task.desc;
 
   const btnContainer = document.createElement("div");
@@ -141,7 +138,7 @@ function createAndAddTaskCard(task) {
   btnDelete.innerHTML = `<i class="fa-solid fa-trash"></i>`;
   btnDelete.classList.add("action-btn", "delete-action");
   btnDelete.onclick = function () {
-    mainContainer.remove();
+    deleteTask(task.id);
   };
 
   btnContainer.appendChild(prioritySelect);
