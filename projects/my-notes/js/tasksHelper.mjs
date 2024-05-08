@@ -1,3 +1,10 @@
+import {
+  addTask,
+  deleteTask,
+  getTasks,
+  updateTask,
+} from "./localStorageHelper.mjs";
+
 const taskInput = document.getElementById("task-input");
 const taskPrioritySelect = document.getElementById("task-priority-select");
 const tasksList = document.getElementById("task-list");
@@ -12,44 +19,9 @@ addTaskBtn.onclick = function () {
   };
   addTask(task);
   renderTasksCards();
-
-  // createAndAddTaskCard(task);
 };
 
-// Local Storage Helpers
-
-function updateTasksInLocalStrorage(newTasks) {
-  localStorage.setItem("tasks", JSON.stringify(newTasks));
-}
-
-function getTasks() {
-  const tasksJSONString = localStorage.getItem("tasks");
-  const tasks = JSON.parse(tasksJSONString);
-  return tasks || [];
-}
-
-function addTask(task) {
-  const tasks = getTasks();
-  tasks.push(task);
-  updateTasksInLocalStrorage(tasks);
-}
-
-function updateTask() {}
-
-function deleteTask(id) {
-  const tasks = getTasks();
-  const newTasks = tasks.filter((value, index, array) => {
-    if (value.id === id) {
-      return false;
-    }
-    return true;
-  });
-
-  updateTasksInLocalStrorage(newTasks);
-  renderTasksCards();
-}
-
-function handleEdit(title, descPara, editBtn) {
+export function handleEdit(title, descPara, editBtn, id, priority) {
   const titleInput = document.createElement("input");
   titleInput.classList.add("transparent-input");
   titleInput.type = "text";
@@ -71,6 +43,15 @@ function handleEdit(title, descPara, editBtn) {
     descTextArea.replaceWith(descPara);
 
     saveBtn.replaceWith(editBtn);
+
+    const updatedTask = {
+      id,
+      title: titleInput.value,
+      desc: descTextArea.value,
+      priority,
+    };
+
+    updateTask(updatedTask);
   };
 
   editBtn.replaceWith(saveBtn);
@@ -79,23 +60,7 @@ function handleEdit(title, descPara, editBtn) {
   descPara.replaceWith(descTextArea);
 }
 
-// End Local Storage Helpers
-
-// Render Tasks Cards
-
-function renderTasksCards() {
-  tasksList.innerHTML = "";
-  const tasks = getTasks();
-  for (const task of tasks) {
-    createAndAddTaskCard(task);
-  }
-}
-
-// End Render Tasks Cards
-
-// Create and Add Task Card
-
-function createAndAddTaskCard(task) {
+export function createAndAddTaskCard(task) {
   const mainContainer = document.createElement("div");
   mainContainer.classList.add(
     "task-card",
@@ -110,14 +75,20 @@ function createAndAddTaskCard(task) {
     const oldClass = mainContainer.classList[1];
     console.log("oldClass", oldClass);
     mainContainer.classList.replace(oldClass, `priority-${event.target.value}`);
+    updateTask({
+      id: task.id,
+      title: task.title,
+      desc: task.desc,
+      priority: event.target.value,
+    });
   };
 
   prioritySelect.innerHTML = `
-    <option value="a" ${task.priority === "a" ? "selected" : ""}>A</option>
-    <option value="b" ${task.priority === "b" ? "selected" : ""}>B</option>
-    <option value="c" ${task.priority === "c" ? "selected" : ""}>C</option>
-    <option value="d" ${task.priority === "d" ? "selected" : ""}>D</option>
-  `;
+      <option value="a" ${task.priority === "a" ? "selected" : ""}>A</option>
+      <option value="b" ${task.priority === "b" ? "selected" : ""}>B</option>
+      <option value="c" ${task.priority === "c" ? "selected" : ""}>C</option>
+      <option value="d" ${task.priority === "d" ? "selected" : ""}>D</option>
+    `;
 
   const descPara = document.createElement("p");
   descPara.classList.add("task-desc");
@@ -131,7 +102,7 @@ function createAndAddTaskCard(task) {
   btnEdit.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>`;
   btnEdit.classList.add("action-btn", "edit-action");
   btnEdit.onclick = function () {
-    handleEdit(title, descPara, btnEdit);
+    handleEdit(title, descPara, btnEdit, task.id, task.priority);
   };
 
   const btnDelete = document.createElement("button");
@@ -152,6 +123,10 @@ function createAndAddTaskCard(task) {
   tasksList.appendChild(mainContainer);
 }
 
-// End Create and Add Task Card
-
-renderTasksCards();
+export function renderTasksCards() {
+  tasksList.innerHTML = "";
+  const tasks = getTasks();
+  for (const task of tasks) {
+    createAndAddTaskCard(task);
+  }
+}

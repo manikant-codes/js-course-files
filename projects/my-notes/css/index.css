@@ -220,3 +220,7 @@
   outline: none;
   border-bottom: solid 2px #424242;
 }
+
+select {
+  flex-shrink: 0;
+}
