@@ -32,9 +32,15 @@
       </div>
 
       <div class="search-container">
-        <input type="text" class="my-input search-input" placeholder="Search" />
-        <button class="btn search-btn">Search</button>
+        <input
+          type="text"
+          id="search-input"
+          class="my-input search-input"
+          placeholder="Search"
+        />
+        <button id="search-btn" class="btn search-btn">Search</button>
       </div>
+      <button id="clear-filter" class="btn" onclick="clearFilter()">Clear</button>
     </nav>
     <section class="tasks-section">
       <div class="add-task-container">
@@ -72,6 +78,7 @@
         </div>
       </div>
     </section>
-    <script src="./js/index.mjs" type="module"></script>
+    <script src="./js/searchHelper.mjs" type="module"></script>
+    <script src="./js/index.mjs" type="module" defer></script>
   </body>
 </html>

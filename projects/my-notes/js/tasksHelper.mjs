@@ -1,3 +1,5 @@
+import { myCreateElement } from "./elementsHelper.mjs";
+import { getDisplayTasks, tasks } from "./index.mjs";
 import {
   addTask,
   deleteTask,
@@ -18,7 +20,6 @@ addTaskBtn.onclick = function () {
     priority: taskPrioritySelect.value,
   };
   addTask(task);
-  renderTasksCards();
 };
 
 export function handleEdit(title, descPara, editBtn, id, priority) {
@@ -123,9 +124,21 @@ export function createAndAddTaskCard(task) {
   tasksList.appendChild(mainContainer);
 }
 
+function handleOnChange(event) {
+  const oldClass = mainContainer.classList[1];
+  console.log("oldClass", oldClass);
+  mainContainer.classList.replace(oldClass, `priority-${event.target.value}`);
+  updateTask({
+    id: task.id,
+    title: task.title,
+    desc: task.desc,
+    priority: event.target.value,
+  });
+}
+
 export function renderTasksCards() {
   tasksList.innerHTML = "";
-  const tasks = getTasks();
+  const tasks = getDisplayTasks();
   for (const task of tasks) {
     createAndAddTaskCard(task);
   }
