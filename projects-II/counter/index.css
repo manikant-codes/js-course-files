@@ -1,0 +1,10 @@
+.container-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+#output-para {
+  font-size: 1.5rem;
+}
