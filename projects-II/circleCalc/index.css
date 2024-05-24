@@ -1,0 +1,43 @@
+#title {
+  color: #ffa000;
+}
+
+.select-container {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-container p {
+  font-size: 0.85rem;
+}
+
+.select-container select {
+  padding: 6px;
+  border-radius: 4px;
+  border: solid 1px #ffc107;
+}
+
+.select-container select:focus {
+  outline: solid 2px #ff8f00;
+}
+
+#formula {
+  margin-top: 16px;
+  font-size: 2rem;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+#radius {
+  margin-top: 16px;
+  padding: 6px;
+  width: 100%;
+  border-radius: 4px;
+  border: solid 1px #ffc107;
+}
+
+#radius:focus {
+  outline: solid 2px #ff8f00;
+}
