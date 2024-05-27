@@ -20,6 +20,7 @@ function calculate() {
 
 function handleChange() {
   const calculation = calcSelect.value;
+  console.log("calculation", calculation);
   if (calculation === "area") {
     outputPara.innerHTML = "A = <span id='result'>πr<sup>2</sup></span>";
   } else if (calculation === "diameter") {
