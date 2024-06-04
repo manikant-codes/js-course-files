@@ -62,7 +62,7 @@ const fan = {
   switchOff: function () {
     this.isOn = false;
     console.log("Fan is off!");
-  }
+  },
 };
 
 fan.switchOn();

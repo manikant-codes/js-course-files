@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .container-child {
@@ -20,6 +21,7 @@
   background-color: #ffecb3;
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
   border: solid 1px #ffc107;
+  overflow: hidden;
 }
 
 .project-title {

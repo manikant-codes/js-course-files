@@ -1,0 +1,17 @@
+#fan-img {
+  height: 300px;
+  width: auto;
+  object-fit: cover;
+}
+
+.container-child {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-container {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 4px;
+}
