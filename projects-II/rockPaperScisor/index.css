@@ -1,0 +1,32 @@
+.container-options {
+  display: grid;
+  margin-top: 16px;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container-options div {
+  background-color: rgb(255, 145, 0);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container-options div:hover {
+  background-color: rgb(255, 111, 0);
+}
+
+.container-output {
+  margin-top: 32px;
+  /* display: none; */
+}
+
+.container-output p {
+  text-align: center;
+  background-color: rgba(255, 170, 0, 0.383);
+  padding: 8px;
+  border-radius: 8px;
+}
