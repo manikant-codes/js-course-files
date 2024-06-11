@@ -13,12 +13,20 @@
         <div class="form-container">
           <input type="text" id="num1" />
           <input type="text" id="num2" />
-          <div class="button-container">
+          <select name="calculation" id="calculation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+          </select>
+          <button onclick="calculate()">Calculate</button>
+          <button onclick="backspace()">Backspace</button>
+          <!-- <div class="button-container">
             <button onclick="add()">Add</button>
             <button onclick="subtract()">Subtract</button>
             <button onclick="multiply()">Multiply</button>
             <button onclick="divide()">Divide</button>
-          </div>
+          </div> -->
           <p id="output">Output</p>
         </div>
       </div>
