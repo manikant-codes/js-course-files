@@ -1,0 +1,19 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container-input {
+  display: flex;
+  gap: 8px;
+}
+
+#btn-convert {
+  margin-top: 8px;
+  width: 100%;
+}
+
+#output {
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 8px;
+}

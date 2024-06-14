@@ -1,0 +1,43 @@
+* {
+}
+
+.container-outer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-inner {
+  padding: 32px;
+  background-color: #e1bee7;
+  border-radius: 16px;
+}
+
+button {
+  background-color: #9c27b0;
+  border: none;
+  color: white;
+  border-radius: 32px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #7b1fa2;
+}
+
+input,
+select {
+  border-radius: 32px;
+  border: none;
+  padding: 4px 8px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: solid 2px #7b1fa2;
+}
