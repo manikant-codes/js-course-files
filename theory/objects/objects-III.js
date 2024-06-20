@@ -93,20 +93,20 @@
 
 // console.log(student.address.city);
 
-const fan = {
-  name: "Bajaj Pygmy Mini Fan",
-  color: "white",
-  price: "1,099",
-  company: "Bajaj",
-  start: function () {
-    console.log(this.name + " started!");
-    return "started!";
-  },
-  stop: function () {
-    console.log(this.name + " stopped!");
-    return "stopped!";
-  },
-};
+// const fan = {
+//   name: "Bajaj Pygmy Mini Fan",
+//   color: "white",
+//   price: "1,099",
+//   company: "Bajaj",
+//   start: function () {
+//     console.log(this.name + " started!");
+//     return "started!";
+//   },
+//   stop: function () {
+//     console.log(this.name + " stopped!");
+//     return "stopped!";
+//   },
+// };
 
 // for (const key in fan) {
 //   console.log(fan[key]);
@@ -119,3 +119,42 @@ const fan = {
 
 // console.log("x", x);
 // console.log("y", y);
+
+// const student = new Object({
+//   name: "Manikant",
+//   roll: 10,
+//   isGraduate: true,
+// });
+
+// student.city = "Surat";
+
+// console.log("student", student);
+
+const student = {
+  fname: "Manikant",
+  lname: "Jha",
+  roll: 10,
+  isGraduate: true,
+  address: {
+    state: "Gujarat",
+    city: "Surat",
+  },
+};
+student.getFullName = function () {
+  return this.fname + " " + this.lname;
+};
+
+// student.city = "Surat";
+// student.state = "Gujarat";
+// const key = "roll";
+// student[key] = student[key] + 10;
+// delete student.state;
+// console.log(student.address.city);
+// console.log(student["address"]["city"]);
+// function getFullName() {
+//   return student.fname + " " + student.lname;
+// }
+
+// console.log(getFullName());
+// console.log(student.getFullName());
+console.log(student["getFullName"]());
