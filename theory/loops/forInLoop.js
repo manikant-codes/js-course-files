@@ -33,16 +33,48 @@
 
 // list.innerHTML = html;
 
-let n = 4;
+let n = 10;
 
 let pattern = "";
 
+// for (let row = 1; row <= n; row++) {
+//   for (let col = 1; col <= n * 2 - 1; col++) {
+//     if (row < n) {
+//       if (col === n - (row - 1) || col === n + (row - 1)) {
+//         pattern += "x";
+//       } else {
+//         pattern += " ";
+//       }
+//     } else {
+//       if (col % 2 === 0) {
+//         pattern += " ";
+//       } else {
+//         pattern += "x";
+//       }
+//     }
+//   }
+//   pattern += "\n";
+// }
+
+let center = Math.ceil(n / 2);
+
 for (let row = 1; row <= n; row++) {
-  for (let col = 1; col <= n * 2 - 1; col++) {
-    if (col === n - (row - 1) || col === n + (row - 1)) {
-      pattern += "x";
+  if (n % 2 === 0 && row === n / 2) {
+    continue;
+  }
+  for (let col = 1; col <= n; col++) {
+    if (row <= center) {
+      if (col === center - (row - 1) || col === center + (row - 1)) {
+        pattern += "x";
+      } else {
+        pattern += "_";
+      }
     } else {
-      pattern += "-";
+      if (col === center - (n - row) || col === center + (n - row)) {
+        pattern += "x";
+      } else {
+        pattern += "_";
+      }
     }
   }
   pattern += "\n";
