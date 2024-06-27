@@ -1,4 +1,4 @@
-const studentObj = { 0: "Manikant", 1: 10, 2: "Surat" };
+const studentObj = { name: "Manikant", roll: 10, math: 45 };
 
 const studentArr = [
   "Manikant",
@@ -7,7 +7,7 @@ const studentArr = [
   true,
   false,
   { name: "Manikant" },
-  [1, 2, 3],
+  [1, 2, 3, [2, 4, 6, {0: [0, 4, 6]}]],
   function () {},
   /[a-z0-9]/,
   new Date(),
@@ -24,6 +24,6 @@ const arr = new Array(1, 2, 3);
 
 // studentArr[451] = "ABC";
 
-studentArr.someProperty = "Some Value";
+// studentArr.someProperty = "Some Value";
 
 console.log(studentArr);
