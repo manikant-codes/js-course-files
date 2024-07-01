@@ -7,7 +7,7 @@ const studentArr = [
   true,
   false,
   { name: "Manikant" },
-  [1, 2, 3, [2, 4, 6, {0: [0, 4, 6]}]],
+  [1, 2, 3, [2, 4, 6, { 0: [0, 4, 6] }]],
   function () {},
   /[a-z0-9]/,
   new Date(),
