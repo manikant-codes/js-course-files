@@ -68,22 +68,26 @@
 
 // console.log("fruits", fruits);
 
-const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+// const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
 
-function mySplice(pos, element) {
-  let temp = [];
+// function mySplice(pos, element) {
+//   let temp = [];
 
-  for (let i = 0; i <= fruits.length; i++) {
-    if (i < pos) {
-      temp[i] = fruits[i];
-    } else if (i === pos) {
-      temp[i] = element;
-    } else {
-      temp[i] = fruits[i - 1];
-    }
-  }
+//   for (let i = 0; i <= fruits.length; i++) {
+//     if (i < pos) {
+//       temp[i] = fruits[i];
+//     } else if (i === pos) {
+//       temp[i] = element;
+//     } else {
+//       temp[i] = fruits[i - 1];
+//     }
+//   }
 
-  return temp;
-}
+//   return temp;
+// }
 
-const newArr = mySplice(2, "Jamun");
+// const newArr = mySplice(2, "Jamun");
+
+const fruits = ["Apple", "Cherry", "Banana", "Date", "Cherry", "Elderberry"];
+
+const points = [40, 100, "asd", 5, 25, 10];
