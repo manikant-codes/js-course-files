@@ -1,58 +1,31 @@
+const rank = 1;
+
+// If else me sare comparision operators aur logical operators ka use kar sakte hoo.
+
 // debugger;
 
-// if (marks >= 90) {
-//   console.log("Gold medal!");
-// } else if (marks >= 80) {
-//   console.log("Silver medal!");
-// } else if (marks >= 70) {
-//   console.log("Bronze medal!");
+// if (rank == 1) {
+//   console.log("Gold Medal");
+// } else if (rank == 2) {
+//   console.log("Silver Medal");
+// } else if (rank == 3) {
+//   console.log("Bronze Medal");
 // } else {
-//   console.log("No medal!");
+//   console.log("No Medal");
 // }
 
-// const marks = 90;
-
-// function getGrade() {
-//   if (marks >= 90) {
-//     return "A";
-//   } else if (marks >= 80) {
-//     return "B";
-//   } else if (marks >= 70) {
-//     return "C";
-//   } else {
-//     return "D";
-//   }
-// }
-
-// const grade = getGrade();
-
-// ===
-// >
-// <
-// >=
-// <=
-// !==
-// !=
-// ==
-// &&
-// ||
-// !
-
-debugger;
-
-const rank = 4;
-
+// Switch case me sirf === ka comparision hota hai.
 switch (rank) {
   case 1:
-  case 2:
-  case 3:
-    console.log("Gold medal!");
+    console.log("Gold Medal");
     break;
-  case 4:
-  case 5:
-  case 6:
-    console.log("Silver medal!");
+  case 1:
+    console.log("Silver Medal");
+    break;
+  case 3:
+    console.log("Bronze Medal");
     break;
   default:
-    console.log("No medal!");
+    console.log("No Medal");
+    break;
 }
