@@ -11,6 +11,9 @@ const words = [
   "lemon",
 ];
 
+const wordPara = document.getElementById("word");
+const input = document.getElementById("input");
+
 // Words array me se ek random word chahiye. - OK
 // Jo random word mila hai usme decide karna hai ke kitne letters ke jagah pe underscore rakhna hai.
 // Uske baad decide karna hai ke konse positions pe underscore rakhna hai, ye positions har baar radom rakhni hai.
@@ -21,8 +24,7 @@ function getRandomIndex(length) {
   return Math.floor(Math.random() * length);
 }
 
-function getRandomWord() {
-  const randomIndex = getRandomIndex(words.length);
+function getRandomWord(randomIndex) {
   const randomWord = words[randomIndex];
   return randomWord;
 }
@@ -57,9 +59,39 @@ function getUnderscoreString(randomWord, positions) {
   return str;
 }
 
-const randomWord = getRandomWord();
-const numberOfUnderscore = getNumberOfUnderscore(randomWord);
-const positions = getPositionsOfUnderscore(randomWord, numberOfUnderscore);
-const underscoreStr = getUnderscoreString(randomWord, positions);
+let randomWord;
 
-console.log(randomWord, numberOfUnderscore, positions, underscoreStr);
+function check() {
+  if (input.value === "") {
+    alert("Please insert a word.");
+    return;
+  }
+
+  if (input.value === randomWord) {
+    alert("Correct!");
+    render();
+    input.value = "";
+  } else {
+    alert("Incorrect!");
+  }
+}
+
+function removeWordFromArray(index) {
+  words.splice(index, 1);
+}
+
+function render() {
+  if (words.length > 0) {
+    const randomIndex = getRandomIndex(words.length);
+    randomWord = getRandomWord(randomIndex);
+    const numberOfUnderscore = getNumberOfUnderscore(randomWord);
+    const positions = getPositionsOfUnderscore(randomWord, numberOfUnderscore);
+    const underscoreStr = getUnderscoreString(randomWord, positions);
+    wordPara.innerText = underscoreStr;
+    removeWordFromArray(randomIndex);
+  } else {
+    alert("Game Over!");
+  }
+}
+
+render();
