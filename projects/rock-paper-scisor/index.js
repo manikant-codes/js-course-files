@@ -1,55 +1,80 @@
-let score = 0;
-let computerScore = 0;
+// Winning conditions
 
-function rockPaperScisor(userChoice) {
-  const computerChoice = getComputerChoice();
-  const outputPara = document.getElementById("output");
-  const scorePara = document.getElementById("score");
-  const computerScorePara = document.getElementById("computerScore");
+// rock - rock - draw
+// rock - paper - computer
+// rock - scisor - you
 
-  console.log(userChoice, computerChoice);
+// paper - rock - you
+// paper - paper - draw
+// paper - scisor - computer
 
-  let message;
+// scisor - rock - computer
+// scisor - paper - you
+// scisor - scisor - draw
 
-  if (userChoice === computerChoice) {
-    message = "DRAW";
-  } else if (userChoice === 0) {
-    if (computerChoice === 1) {
-      message = "🤖 COMPUTER WON 🤖";
-      ++computerScore;
-    } else {
-      message = "🏆 VICTORY 🏆";
-      ++score;
-    }
-  } else if (userChoice === 1) {
-    if (computerChoice === 0) {
-      message = "🏆 VICTORY 🏆";
-      ++score;
-    } else {
-      message = "🤖 COMPUTER WON 🤖";
-      ++computerScore;
-    }
-  } else {
-    if (computerChoice === 0) {
-      message = "🤖 COMPUTER WON 🤖";
-      ++computerScore;
-    } else {
-      message = "🏆 VICTORY 🏆";
-      ++score;
-    }
-  }
+// 0 - rock
+// 1 - paper
+// 2 - scisor
 
-  outputPara.style.display = "block";
-  outputPara.innerHTML = message;
-  scorePara.innerHTML = "You: " + score;
-  computerScorePara.innerHTML = "Computer: " + computerScore;
-}
-
-function getComputerChoice() {
+function getComputerInput() {
   return Math.floor(Math.random() * 3);
 }
 
-// 0 - 0 , 1 - 1, 2 - 2 (Draw Cases)
-// 0 - 0 (Draw), 0 - 1 (1 Wins), 0 - 2 (0 Wins)
-// 1 - 0 (1 Wins), 1 - 1 (Draw), 1 - 2 (2 Wins)
-// 2 - 0 (0 Wins), 2 - 1 (2 Wins), 2 - 2 (Draw)
+const outputPara = document.getElementById("output");
+const yourScoreSpan = document.getElementById("your-score");
+const computerScoreSpan = document.getElementById("computer-score");
+
+let yourScore = 0;
+let computerScore = 0;
+
+function play(userInput) {
+  const computerInput = getComputerInput();
+
+  let result = "";
+
+  if (userInput === 0) {
+    if (computerInput === 0) {
+      result = "Draw";
+    } else if (computerInput === 1) {
+      result = "Computer Wins";
+      computerScore++;
+    } else {
+      result = "You Win";
+      yourScore++;
+    }
+  } else if (userInput === 1) {
+    if (computerInput === 0) {
+      result = "You Win";
+      yourScore++;
+    } else if (computerInput === 1) {
+      result = "Draw";
+    } else {
+      result = "Computer Wins";
+      computerScore++;
+    }
+  } else {
+    if (computerInput === 0) {
+      result = "Computer Wins";
+      computerScore++;
+    } else if (computerInput === 1) {
+      result = "You Win";
+      yourScore++;
+    } else {
+      result = "Draw";
+    }
+  }
+
+  let victoryEmoji = "";
+
+  if (result.includes("Computer")) {
+    victoryEmoji = "🤖";
+  } else if (result.includes("You")) {
+    victoryEmoji = "🎉";
+  } else {
+    victoryEmoji = "😬";
+  }
+
+  outputPara.innerHTML = victoryEmoji + " " + result + " " + victoryEmoji;
+  yourScoreSpan.innerText = "You: " + yourScore;
+  computerScoreSpan.innerText = "Computer: " + computerScore;
+}

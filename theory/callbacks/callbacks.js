@@ -1,75 +1,41 @@
-const one = [1, 2, 3, 4, 5];
+const ones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// const two = [2, 4, 6, 8, 10];
-// const three = [3, 6, 9, 12, 15];
-// const elements = ["<p>3</p>", "<p>6</p>", "<p>9</p>", "<p>12</p>", "<p>15</p>"];
+// const twos = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+// const threes = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30];
+// const elements = ["<p>3</p>", "<p>6</p>", "<p>9</p>", "<p>12</p>", "<p>15</p>", "<p>18</p>", "<p>21</p>", "<p>24</p>", "<p>27</p>", "<p>30</p>"];
 
-// const two = [];
-// const three = [];
-// const elements = [];
+// const stars = ["*", "**", "***", "****", "*****", "******", "*******", "********", "*********", "**********"];
+// const multiples = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], [3, 6, 9, 12, 15, 18, 21, 24, 27, 30], [4, 8, 12, 16, 20, 24, 28, 32, 36, 40], [5, 10, 15, 20, 25, 30, 35, 40, 45, 50], [6, 12, 18, 24, 30, 36, 42, 48, 54, 60], [7, 14, 21, 28, 35, 42, 49, 56, 63, 70], [8, 16, 24, 32, 40, 48, 56, 64, 72, 80], [9, 18, 27, 36, 45, 54, 63, 72, 81, 90], [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]];
 
-// for (let i = 0; i < one.length; i++) {
-//   two.push(one[i] * 2);
-// }
+const twos = [];
+const threes = [];
+const elements = [];
 
-// for (let i = 0; i < one.length; i++) {
-//   three.push(one[i] * 3);
-// }
+for (let index = 0; index < ones.length; index++) {
+  // const result = ones[index] * 2;
+  // twos.push(result);
+  // OR
+  twos.push(ones[index] * 2);
+}
 
-// for (let i = 0; i < one.length; i++) {
-//   elements.push("<p>" + one[i] * 3 + "</p>");
-// }
+for (let index = 0; index < ones.length; index++) {
+  threes.push(ones[index] * 3);
+}
 
-// console.log(two);
-// console.log(three);
-// console.log(elements);
+for (let index = 0; index < ones.length; index++) {
+  elements.push("<p>" + ones[index] * 3 + "</p>");
+}
 
-// function myMap(array, fn) {
-//   const newArray = [];
-
-//   for (let i = 0; i < array.length; i++) {
-//     const value = fn(array[i], i, array);
-//     newArray.push(value);
-//   }
-
-//   return newArray;
-// }
-
-// const two = myMap(one, function (element, index, array) {
-//   return element * 2;
-// });
-
-// const three = myMap(one, function (element, index, array) {
-//   return element * 3;
-// });
-
-// const elements = myMap(one, function (element, index, array) {
-//   return "<p>" + element * 3 + "</p>";
-// });
-
-Array.prototype.myMap = function (fn) {
+function transform(number) {
   const newArray = [];
 
-  for (let i = 0; i < this.length; i++) {
-    const value = fn(this[i], i, this);
-    newArray.push(value);
+  for (let index = 0; index < ones.length; index++) {
+    newArray.push(ones[index] * number);
   }
 
   return newArray;
-};
+}
 
-const two = one.myMap(function (element, index, array) {
-  return element * 2;
-});
-
-const three = one.myMap(function (element, index, array) {
-  return element * 3;
-});
-
-const elements = one.myMap(function (element, index, array) {
-  return "<p>" + element * 3 + "</p>";
-});
-
-console.log(two);
-console.log(three);
-console.log(elements);
+console.log("twos", transform(10));
+// console.log("threes", threes);
+// console.log("elements", elements);
