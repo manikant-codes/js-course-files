@@ -6,17 +6,17 @@
 const totalRows = 20;
 const totalColumns = totalRows * 2 - 1;
 
-let str = "";
+let pattern = "";
 
 for (let row = 1; row <= totalRows; row++) {
   for (let col = 1; col <= totalColumns; col++) {
     if (col >= row && col <= totalColumns + 1 - row) {
-      str += "*";
+      pattern += "*";
     } else {
-      str += " ";
+      pattern += " ";
     }
   }
-  str += "\n";
+  pattern += "\n";
 }
 
-console.log(str);
+console.log(pattern);
