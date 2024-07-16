@@ -27,11 +27,11 @@ const ones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // debugger;
 
-function transform(fn) {
+function transform(fn, array) {
   const newArray = [];
 
-  for (let index = 0; index < ones.length; index++) {
-    const element = fn(ones[index]);
+  for (let index = 0; index < array.length; index++) {
+    const element = fn(array[index]);
     newArray.push(element);
   }
 
@@ -42,21 +42,21 @@ console.log(
   "twos",
   transform(function (value) {
     return value * 2;
-  })
+  }, ones)
 );
 
 console.log(
   "threes",
   transform(function (value) {
     return value * 3;
-  })
+  }, ones)
 );
 
 console.log(
   "elements",
   transform(function (value) {
     return "<p>" + value * 3 + "</p>";
-  })
+  }, ones)
 );
 
 // let multiples = [];
