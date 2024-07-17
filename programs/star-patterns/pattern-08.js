@@ -1,11 +1,32 @@
 let pattern = "";
 
-const totalRow = 8;
-const totalCol = totalRow + 1;
+const totalRow = 18;
+let totalCol;
 
-let rowCenter = totalRow / 2;
-const centerRow = totalRow / 2 - 1;
+const isRowEven = totalRow % 2 === 0;
+
+if (isRowEven) {
+  totalCol = totalRow + 1;
+} else {
+  totalCol = totalRow + 2;
+}
+
+let centerRow;
+
+if (isRowEven) {
+  centerRow = totalRow / 2 - 1;
+} else {
+  centerRow = Math.floor(totalRow / 2) - 1;
+}
+
 const centerCol = Math.ceil(totalCol / 2);
+
+let rowCenter;
+if (isRowEven) {
+  rowCenter = totalRow / 2;
+} else {
+  rowCenter = Math.floor(totalRow / 2) + 1;
+}
 
 console.log("totalRow", totalRow);
 console.log("totalCol", totalCol);
