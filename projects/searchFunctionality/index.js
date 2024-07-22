@@ -135,17 +135,50 @@ const movies = [
 ];
 
 const moviesList = document.getElementById("movies-list");
+const searchInput = document.getElementById("search-input");
 
-const moviesListItems = movies.map(function (element) {
-  return `<li class="movie">
-    <p class="movie-id">${element.id}</p>
-    <h3 class="movie-name">${element.name}</h3>
+// function toggleDesc(btn) {
+//   const display = btn.previousElementSibling.style.display;
 
-    <p class="movie-desc">
-      ${element.desc}
-    </p>
-    <p class="movie-genre">${element.genre}</p>
-  </li>`;
-});
+//   if (display === "block") {
+//     btn.innerText = "View More";
+//     btn.previousElementSibling.style.display = "-webkit-box";
+//   } else {
+//     btn.innerText = "View Less";
+//     btn.previousElementSibling.style.display = "block";
+//   }
+// }
 
-moviesList.innerHTML = moviesListItems.join("");
+function displayList(list) {
+  const moviesListItems = list.map(function (element) {
+    return `<li class="movie">
+      <p class="movie-id">${element.id}</p>
+      <h3 class="movie-name">${element.name}</h3>
+  
+      <p class="movie-desc">
+        ${element.desc}
+      </p>
+      <!--<button onclick="toggleDesc(this)" class="view-more-btn">View More</button>-->
+      <p class="movie-genre">${element.genre}</p>
+    </li>`;
+  });
+
+  moviesList.innerHTML = moviesListItems.join("");
+}
+
+function search() {
+  const inputValue = searchInput.value.toLowerCase();
+
+  let filteredList;
+
+  filteredList = movies.filter(function (element, index, array) {
+    if (element.name.toLowerCase().includes(inputValue)) {
+      return true;
+    }
+    return false;
+  });
+
+  displayList(filteredList);
+}
+
+displayList(movies);
