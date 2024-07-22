@@ -1,0 +1,25 @@
+// console.log("Math.PI", Math.PI);
+// console.log("Math.E", Math.E);
+// console.log("Math.SQRT2", Math.SQRT2);
+// console.log("Math.SQRT2", Math.SQRT2);
+// console.log("Math.SQRT1_2", Math.SQRT1_2);
+// console.log("Math.LN2", Math.LN2);
+// console.log("Math.LN10", Math.LN10);
+// console.log("Math.LOG2E", Math.LOG2E);
+// console.log("Math.LOG10E", Math.LOG10E);
+
+// console.log(Math.round(2.9));
+// console.log(Math.ceil(2.1));
+// console.log(Math.floor(2.9));
+// console.log(Math.floor(2.1));
+// console.log(Math.sign(0));
+// console.log(Math.sign(0));
+// console.log(Math.pow(3, 3));
+// console.log(Math.sqrt(64));
+// console.log(Math.abs(-64));
+// console.log(Math.sin(3.14 / 2));
+// console.log(Math.cos(3.14 / 2));
+// console.log(Math.min(0, 150, 30, 20, -8, -200));
+// console.log(Math.max(0, 150, 30, 20, -8, -200));
+// console.log(Math.log(2));
+// console.log(Math.log10(100));
