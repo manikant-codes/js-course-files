@@ -134,6 +134,24 @@ const movies = [
   },
 ];
 
+const genres = [
+  "Drama",
+  "Crime",
+  "Action",
+  "Psychological Thriller",
+  "Mystery",
+  "Sci-Fi",
+  "Thriller",
+  "Animation",
+  "Adventure",
+  "Family",
+  "Musical",
+  "Fantasy",
+  "Horror",
+  "Romance",
+  "War",
+];
+
 const moviesList = document.getElementById("movies-list");
 const searchInput = document.getElementById("search-input");
 
@@ -158,25 +176,40 @@ function displayList(list) {
       <p class="movie-desc">
         ${element.desc}
       </p>
+      <p class="movie-rating">
+        Rating: <span>${element.rating}</span>
+      </p>
       <!--<button onclick="toggleDesc(this)" class="view-more-btn">View More</button>-->
       <p class="movie-genre">${element.genre}</p>
     </li>`;
   });
+
+  console.log(moviesListItems);
 
   moviesList.innerHTML = moviesListItems.join("");
 }
 
 function search() {
   const inputValue = searchInput.value.toLowerCase();
+  const isNaN = Number.isNaN(inputValue);
 
   let filteredList;
 
-  filteredList = movies.filter(function (element, index, array) {
-    if (element.name.toLowerCase().includes(inputValue)) {
-      return true;
-    }
-    return false;
-  });
+  if (isNaN) {
+    filteredList = movies.filter(function (element) {
+      if (element.name.toLowerCase().includes(inputValue)) {
+        return true;
+      }
+      return false;
+    });
+  } else {
+    filteredList = movies.filter(function (element) {
+      if (element.rating >= inputValue) {
+        return true;
+      }
+      return false;
+    });
+  }
 
   displayList(filteredList);
 }

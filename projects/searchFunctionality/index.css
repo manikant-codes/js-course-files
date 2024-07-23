@@ -76,3 +76,7 @@ nav {
 .view-more-btn {
   width: fit-content;
 }
+
+.movie-rating span {
+  font-weight: bold;
+}
