@@ -135,21 +135,21 @@ const movies = [
 ];
 
 const genres = [
-  "Drama",
-  "Crime",
-  "Action",
-  "Psychological Thriller",
-  "Mystery",
-  "Sci-Fi",
-  "Thriller",
-  "Animation",
-  "Adventure",
-  "Family",
-  "Musical",
-  "Fantasy",
-  "Horror",
-  "Romance",
-  "War",
+  "drama",
+  "crime",
+  "action",
+  "psychological thriller",
+  "mystery",
+  "sci-fi",
+  "thriller",
+  "animation",
+  "adventure",
+  "family",
+  "musical",
+  "fantasy",
+  "horror",
+  "romance",
+  "war",
 ];
 
 const moviesList = document.getElementById("movies-list");
@@ -184,24 +184,31 @@ function displayList(list) {
     </li>`;
   });
 
-  console.log(moviesListItems);
-
   moviesList.innerHTML = moviesListItems.join("");
 }
 
 function search() {
   const inputValue = searchInput.value.toLowerCase();
-  const isNaN = Number.isNaN(inputValue);
+  const isNotANumber = isNaN(inputValue);
 
   let filteredList;
 
-  if (isNaN) {
-    filteredList = movies.filter(function (element) {
-      if (element.name.toLowerCase().includes(inputValue)) {
-        return true;
-      }
-      return false;
-    });
+  if (isNotANumber) {
+    if (genres.includes(inputValue.toLowerCase())) {
+      filteredList = movies.filter(function (element) {
+        if (element.genre.toLowerCase().includes(inputValue.toLowerCase())) {
+          return true;
+        }
+        return false;
+      });
+    } else {
+      filteredList = movies.filter(function (element) {
+        if (element.name.toLowerCase().includes(inputValue)) {
+          return true;
+        }
+        return false;
+      });
+    }
   } else {
     filteredList = movies.filter(function (element) {
       if (element.rating >= inputValue) {
