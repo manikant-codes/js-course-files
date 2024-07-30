@@ -1,3 +1,6 @@
 // let name = "Meet said, \"Hello\"";
 // let name = 'Meet said, \'Hello\'';
-let name = 'asd \n hello';
+// let name = " \"\" ";
+// let name = ' \'\' ';
+// let name = ` \`\` `;
+let name = ` \\ `;
