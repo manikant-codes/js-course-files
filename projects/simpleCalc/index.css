@@ -1,0 +1,21 @@
+.container-outer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container-btn {
+  display: flex;
+  gap: 8px;
+}
+
+.container-btn button {
+  flex-grow: 1;
+}
