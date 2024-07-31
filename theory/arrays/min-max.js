@@ -7,6 +7,8 @@ const points = [40, 100, 1, 5, 25, 10];
 // console.log(points[0]);
 // console.log(points[points.length - 1]);
 
+debugger;
+
 function getMinMax(points) {
   let min = points[0];
   let max = points[0];
