@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find and Replace</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container-main">
+      <div class="container-input">
+        <input type="text" id="input-find" oninput="find()" />
+        <!-- <button onclick="find()">Find</button> -->
+        <input type="text" id="input-replace" />
+        <button onclick="replace()">Replace</button>
+      </div>
+      <div class="text-Container">
+        <p id="text"></p>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
