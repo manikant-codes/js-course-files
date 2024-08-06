@@ -1,14 +1,29 @@
 const fruits = ["Apple", "Banana", "Cherry", "Dragon-Fruit", "Elderberry"];
 
-// let temp = [];
-// let temp2 = [];
-
-// fruits.forEach(function (value, index, array) {
-//   temp.push(value.toUpperCase());
-//   temp2.push(value.toLowerCase());
+// const upperCase = fruits.map(function (value, index, array) {
+//   if (value !== "Cherry") {
+//     return value.toUpperCase();
+//   }
 // });
 
-// console.log("temp", temp);
-// console.log("temp", temp2);
+// const lowerCase = fruits.map(function (value, index, array) {
+//   if (value !== "Cherry") {
+//     return value.toLowerCase();
+//   }
+// });
 
-console.log(Array.from(fruits.keys()));
+// console.log("upperCase", upperCase);
+// console.log("lowerCase", lowerCase);
+
+// const upperCase = [];
+// const lowerCase = [];
+
+// fruits.forEach(function (value, index, array) {
+//   if (value !== "Cherry") {
+//     upperCase.push(value.toUpperCase());
+//     lowerCase.push(value.toLowerCase());
+//   }
+// });
+
+// console.log("upperCase", upperCase);
+// console.log("lowerCase", lowerCase);
