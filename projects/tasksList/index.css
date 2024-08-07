@@ -1,0 +1,33 @@
+.container-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.container-input input {
+  flex-grow: 1;
+}
+
+.container-list {
+  border: solid 1px #bdbdbd;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.container-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px #bdbdbd;
+  padding-bottom: 8px;
+}
