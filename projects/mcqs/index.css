@@ -1,0 +1,46 @@
+.para-que {
+  font-size: 1rem;
+  line-height: 22px;
+}
+
+.que-no {
+  font-weight: bold;
+}
+
+.container-options {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.option label {
+  font-size: 1rem;
+  line-height: 22px;
+}
+
+.btns-container {
+  display: flex;
+  margin-top: 32px;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btns-container button {
+  flex-grow: 1;
+}
+
+.btn-next {
+  /* display: block;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px; */
+}
+
+.progress {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  margin-bottom: 16px;
+}

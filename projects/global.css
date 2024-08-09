@@ -42,6 +42,14 @@ button:hover {
   background-color: #e53935;
 }
 
+.btn-success {
+  background-color: #81c784;
+}
+
+.btn-success:hover {
+  background-color: #66bb6a;
+}
+
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -59,5 +67,5 @@ button:hover {
   padding: 16px;
   border-radius: 8px;
   border: solid 1px #bdbdbd;
-  min-width: 640px;
+  width: 640px;
 }
