@@ -23,51 +23,52 @@ function getAge() {
   const todaysDate = today.getDate();
   const dobDate = dob.getDate();
 
-  // Years
-  // let years = todaysYear - dobYear;
-  // let months = todaysMonth - dobMonth;
-  // let days = todaysDate - dobDate;
+  let diffYears = todaysYear - dobYear;
+  let diffMonths = todaysMonth - dobMonth;
+  let diffDates = todaysDate - dobDate;
 
-  // console.log(todaysDate);
-  // console.log(dobDate);
-  // console.log(days);
+  let years = diffYears;
+  let months = diffMonths;
+  let dates = diffDates;
 
-  // if (days < 0) {
-  //   months++;
-  // }
+  if (diffMonths < 0) {
+    years--;
+    months = 12 + diffMonths;
+  }
 
-  // if (months < 0) {
-  //   years--;
-  // }
+  if (diffDates < 0) {
+    months--;
+    let currentMonthDays;
+    if (month30s.includes(todaysMonth)) {
+      currentMonthDays = 30;
+    } else if (month31s.includes(todaysMonth)) {
+      currentMonthDays = 31;
+    } else {
+      if (todaysYear % 4 === 0) {
+        currentMonthDays = 29;
+      } else {
+        currentMonthDays = 28;
+      }
+    }
 
-  // months = Math.abs(months);
+    dates = currentMonthDays + diffDates;
+  }
 
-  // let totalDaysInMonth = 0;
+  const totalMonths = years * 12 + months;
 
-  // if (month30s.includes(todaysMonth)) {
-  //   totalDaysInMonth = 30;
-  // } else if (month31s.includes(todaysMonth)) {
-  //   totalDaysInMonth = 31;
-  // } else {
-  //   if (todaysYear % 4 === 0) {
-  //     totalDaysInMonth = 29;
-  //   } else {
-  //     totalDaysInMonth = 28;
-  //   }
-  // }
-
-  // const outputYear = `${years} Years, ${months} Months, ${days} Days`;
-  // output-years.innerHTML = outputYear;
-
-  // Get time difference in miliseconds.
   const miliseconds = today.getTime() - dob.getTime();
   const seconds = Math.round(miliseconds / 1000);
   const minutes = Math.round(seconds / 60);
   const hours = Math.round(minutes / 60);
   const days = Math.round(hours / 24);
+  const weeks = Math.floor(days / 7);
+  const extraWeekDays = days % 7;
 
-  outputHours.innerText = hours + " Hours";
   outputSeconds.innerText = seconds + " Seconds";
   outputMinutes.innerText = minutes + " Minutes";
+  outputHours.innerText = hours + " Hours";
   outputDays.innerText = days + " Days";
+  outputWeeks.innerText = weeks + " Weeks, " + extraWeekDays + " Days";
+  outputMonths.innerText = `${totalMonths} Months, ${dates} Days`;
+  outputYears.innerText = `${years} Years, ${months} Months, ${dates} Days`;
 }
