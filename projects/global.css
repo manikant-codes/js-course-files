@@ -29,3 +29,21 @@ button:hover {
     rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   background-color: #8db9ff;
 }
+
+.container-outer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 32px;
+  border: solid 1px #e0e0e0;
+  border-radius: 16px;
+  max-width: 720px;
+}

@@ -1,0 +1,16 @@
+.container-input {
+  display: flex;
+  gap: 12px;
+}
+
+.container-input input {
+  flex-grow: 1;
+}
+
+.container-text {
+  margin-top: 16px;
+}
+
+.found-text {
+  background-color: #afffaf;
+}
