@@ -16,24 +16,23 @@
 // let name = `Ram said, "I won't come \` tomorrow."`;
 // console.log(name);
 
-
 // Escape Characters
 // const str = "Hey \\ ";
 // console.log(str);
 
 // Long Lines
 
-// const str = 
-// "Lorem ipsum, dolor sit amet consectetur adipisicing elit." + 
-// " Fugit sint dolore, laboriosam quis maiores perferendis" + 
-// " et ipsa voluptate reiciendis, asperiores, pariatur" + 
+// const str =
+// "Lorem ipsum, dolor sit amet consectetur adipisicing elit." +
+// " Fugit sint dolore, laboriosam quis maiores perferendis" +
+// " et ipsa voluptate reiciendis, asperiores, pariatur" +
 // " rem eos aspernatur! Iste a saepe architecto ipsa odio?";
 // console.log(str);
 
-// const str = `Lorem ipsum, dolor sit amet consectetur 
-// adipisicing elit. Ipsam id omnis, perspiciatis enim 
-// sapiente et esse illum reiciendis quisquam 
-// laudantium sit, voluptates, tempora asperiores fuga 
+// const str = `Lorem ipsum, dolor sit amet consectetur
+// adipisicing elit. Ipsam id omnis, perspiciatis enim
+// sapiente et esse illum reiciendis quisquam
+// laudantium sit, voluptates, tempora asperiores fuga
 // consequuntur. Ex temporibus vel dolores.`;
 // console.log(str)
 
@@ -45,4 +44,3 @@
 // const str1 = "maggi";
 // const str3 = new String("maggi");
 // const str4 = new String("maggi");
-
