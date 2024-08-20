@@ -1,3 +1,16 @@
+// Function code ka ek block hai, code block yane { some code } curly brackets aur uske andar ka code.
+// Agar aap ko koi code ek se zada bar likh na padraha hai, to aap function bana ke wo code uske andar rakh do ge.
+// Function banane ke liye ye syntax hai:
+/* 
+function functionName(param1, param2, parm3, ...) {
+    // some code
+}
+*/
+// function keyword se ham JS ko ye bata rahe hai ke function banana hai.
+// functionName se ham function ko ek naam derahe hai. Ye naam kuch bhi hosakta hai, bas camel case me rakhna hai.
+// (param1, param2, parm3, ...) function ko apna kaam karne ke liye agar kuch value chahiye to wo ham round brackets me variable bana ke unhe store karte hain. In variables ko parameters kehte hain.
+// Parameters function ke local variable hote hain, yane ye sirf is function tak hi available hain, function ke bahar nahi milenge.
+
 function makeTea(pani, milk, chayPatti, chini, adrak) {
   let x = 10;
 
