@@ -44,3 +44,10 @@
 // const str1 = "maggi";
 // const str3 = new String("maggi");
 // const str4 = new String("maggi");
+
+let text = `The quick
+brown fox 
+jumps over
+the lazy dog.`.replaceAll("\n", "");
+
+console.log(text);
