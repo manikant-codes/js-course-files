@@ -54,14 +54,69 @@
 // parameterizeStr("Ram Ram");
 // parameterizeStr("Manikant Jha");
 
-function protectEmail(email) {
-  const splittedEmail = email.split("@");
-  const userName = splittedEmail[0];
-  const domain = splittedEmail[1];
-  const userNameSliced = userName.slice(0, userName.length / 2);
-  const userNamePadded = userNameSliced.padEnd(userName.length, "*");
-  console.log(userNamePadded + "@" + domain);
+// function protectEmail(email) {
+//   const splittedEmail = email.split("@");
+//   const userName = splittedEmail[0];
+//   const domain = splittedEmail[1];
+//   const userNameSliced = userName.slice(0, userName.length / 2);
+//   const userNamePadded = userNameSliced.padEnd(userName.length, "*");
+//   console.log(userNamePadded + "@" + domain);
+// }
+
+// protectEmail("robin_singh@example.com");
+// protectEmail("manikant@example.com");
+
+// function capitalizeFirstWord(str) {
+//   const firstChar = str.slice(0, 1);
+//   const remainingChars = str.slice(1);
+//   console.log(firstChar.toUpperCase() + remainingChars);
+// }
+
+// capitalizeFirstWord("hare ram");
+// capitalizeFirstWord("hare krishna");
+
+// function capitalizeEachWord(str) {
+//   // const words = str.split(" ");
+//   // let temp = [];
+//   // for (const word of words) {
+//   //   const firstChar = word.slice(0, 1);
+//   //   const remainingChars = word.slice(1);
+//   //   temp.push(firstChar.toUpperCase() + remainingChars);
+//   // }
+//   // console.log(temp.join(" "));
+
+//   const newStr = str.replace(/\w+\S/g, function (text) {
+//     const firstChar = text.slice(0, 1);
+//     const remainingChars = text.slice(1);
+//     return firstChar.toUpperCase() + remainingChars;
+//   });
+
+//   console.log(newStr);
+// }
+
+// capitalizeEachWord("hare ram");
+// capitalizeEachWord("hare krishna");
+
+// function swapCase(str) {
+//   const newStr = str.replace(/[A-Z,a-z]/g, function (text) {
+//     if (text.charCodeAt() <= 90) {
+//       return text.toLowerCase();
+//     } else {
+//       return text.toUpperCase();
+//     }
+//   });
+//   console.log(newStr);
+// }
+
+// swapCase("RaM0");
+// swapCase("AaM");
+
+function unCamelize(str, join) {
+  const newStr = str.replace(/[A-Z]/g, function (match) {
+    return join + match.toLowerCase();
+  });
+
+  console.log(newStr);
 }
 
-protectEmail("robin_singh@example.com");
-protectEmail("manikant@example.com");
+unCamelize("ramRam", "-");
