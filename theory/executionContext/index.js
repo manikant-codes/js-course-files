@@ -1,5 +1,7 @@
 debugger;
 
+// Scope yane ek aisi jagah jiske andar jis context/jagah ke andar aap ka code chal raha hai uske variables/functions store kiye jate hai.
+
 // console.log(a);
 let a = 30;
 let b = 20;
