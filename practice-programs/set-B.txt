@@ -1,0 +1,20 @@
+01. Write a JavaScript program to create one string of specified copies (positive numbers) of a given string.  
+
+02. Write a JavaScript program to create an updated string of 4 copies of the last 3 characters of a given original string. The string length must be 3 and above. 
+
+03. Write a JavaScript program to create a new string without the first and last characters of a given string.
+
+04. Write a JavaScript program to concatenate two strings except for their first character.
+
+05. Write a JavaScript program to move the last three characters to the start of a given string. The string length must be greater than or equal to three.
+
+06. Write a JavaScript program to create a string using the middle three characters of a given string of odd length. The string length must be greater than or equal to three.
+
+07. Write a JavaScript program to test whether a string ends with "Script". The string length must be greater than or equal to 6.
+
+08. Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise return blank.
+
+09. Write a JavaScript program to create a new string from a given string. This program removes the first and last characters of the string if the first or last character is 'P'. Return the original string if the condition is not satisfied.  
+
+10. Write a JavaScript program to replace each character in a given string with the next in the English alphabet. 
+E.g. "ram" -> "sbn"

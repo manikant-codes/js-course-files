@@ -36,17 +36,15 @@
 
 19. Write a JavaScript program that checks whether the last digit of three positive integers is the same.
 
-20. Write a JavaScript program that checks whether the last digit of three positive integers is the same.
+20. Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80.  
 
-21. Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80.  
+21. Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8.  
 
-22. Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8.  
+22. Write a JavaScript program to check a set of three numbers; if the three numbers are the same return 30; otherwise return 20; and if two numbers are the same return 40.  
 
-23. Write a JavaScript program to check a set of three numbers; if the three numbers are the same return 30; otherwise return 20; and if two numbers are the same return 40.  
+23. Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit. 
 
-24. Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit. 
-
-25. Write a JavaScript program to count the number of vowels in a given string.
+24. Write a JavaScript program to count the number of vowels in a given string.
 
 
 
