@@ -111,3 +111,300 @@
 // }
 
 // printNestedArrays(array);
+
+// 11. Write a JavaScript program to find the sum of squares of a numerical vector.
+
+// const array = [1, 2, 3];
+
+// function sumOfSquares(array) {
+//   let temp = 0;
+
+//   for (const value of array) {
+//     temp += value * value;
+//   }
+
+//   console.log(temp);
+// }
+
+// sumOfSquares(array);
+
+// 12. Write a JavaScript program to compute the sum and product of an array of integers.
+
+// const array = [1, 2, 3];
+
+// function sumAndProduct(array) {
+//   let sum = 0;
+//   let product = 1;
+
+//   for (const value of array) {
+//     sum += value;
+//     product *= value;
+//   }
+
+//   console.log(sum, product);
+// }
+
+// sumAndProduct(array);
+
+// 14. Write a JavaScript program to remove duplicate items from an array (ignore case sensitivity).
+
+const array = [
+  "Apple",
+  "apple",
+  "Mango",
+  "banana",
+  "Coconut",
+  "apple",
+  "coconut",
+];
+
+// function removeDuplicate(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       if (array[i].toLowerCase() === array[j].toLowerCase()) {
+//         array.splice(j, 1);
+//       }
+//     }
+//   }
+
+//   console.log(array);
+// }
+
+// function removeDuplicate(array) {
+//   let temp = [];
+
+//   for (let i = 0; i < array.length; i++) {
+//     let isPresentInTemp = false;
+
+//     for (let j = 0; j < temp.length; j++) {
+//       if (temp[j].toLowerCase() === array[i].toLowerCase()) {
+//         isPresentInTemp = true;
+//       }
+//     }
+
+//     if (!isPresentInTemp) {
+//       temp.push(array[i]);
+//     }
+//   }
+
+//   console.log(temp);
+// }
+
+// removeDuplicate(array);
+
+// Q15. Write a JavaScript program to display the colors in the following way :
+// "1st choice is Blue ."
+// "2nd choice is Green."
+// "3rd choice is Red."
+
+// const color = [
+//   "Blue ",
+//   "Green",
+//   "Red",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+//   "Orange",
+//   "Violet",
+//   "Indigo",
+//   "Yellow ",
+// ];
+
+// function positionsOfColors(array) {
+//   let temp = "";
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (i + 1 === 11 || i + 1 === 12 || i + 1 === 13 || i + 1 === 19) {
+//       temp += `${i + 1}th choice is ${array[i]}. \n`;
+//     } else if ((i + 1) % 10 === 1) {
+//       temp += `${i + 1}st choice is ${array[i]}. \n`;
+//     } else if ((i + 1) % 10 === 2) {
+//       temp += `${i + 1}nd choice is ${array[i]}. \n`;
+//     } else if ((i + 1) % 10 === 3) {
+//       temp += `${i + 1}rd choice is ${array[i]}. \n`;
+//     } else if ([4, 5, 6, 7, 8, 9, 0].includes((i + 1) % 10)) {
+//       temp += `${i + 1}th choice is ${array[i]}. \n`;
+//     }
+//   }
+
+//   console.log(temp);
+// }
+
+// positionsOfColors(color);
+
+// Q29. 29. Write a JavaScript function to fill an array with values (numeric, string with one character) within supplied bounds.
+
+function numStringRange(start = "a", end = "z", n = 1) {
+  const isNumericRange = typeof start === "number" && typeof end === "number";
+  const startingCode = isNumericRange ? start : start.charCodeAt();
+  const endingCode = isNumericRange ? end : end.charCodeAt();
+
+  const temp = [];
+
+  let j = 0;
+
+  for (let i = startingCode; i <= endingCode; i++) {
+    console.log(i, j);
+    if (i === startingCode) {
+      temp.push(isNumericRange ? i : String.fromCharCode(i));
+    } else if (j % n === 0) {
+      temp.push(isNumericRange ? i : String.fromCharCode(i));
+    }
+    j++;
+  }
+
+  console.log(temp);
+}
+
+numStringRange(undefined, undefined, 5);
