@@ -1,0 +1,11 @@
+.container-dice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.container-dice img {
+  height: 100px;
+  width: 100px;
+}
