@@ -1,0 +1,24 @@
+.score-card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.container-game {
+  display: flex;
+  gap: 8px;
+}
+
+.option {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#output {
+  margin-top: 8px;
+  text-align: center;
+}

@@ -18,3 +18,26 @@
 
 10. Write a JavaScript program to replace each character in a given string with the next in the English alphabet. 
 E.g. "ram" -> "sbn"
+
+// For Monday
+
+11. Write a JavaScript program to find the types of a given angle. 
+
+12. Write a JavaScript program to check whether it is possible to replace $ in a given expression x $ y = z with one of the four signs +, -, * or / to obtain a correct expression. 
+
+13. Write a JavaScript program to divide an integer by another integer as long as the result is an integer and return the result. 
+
+14. Write a JavaScript program to check whether all the digits in a given number are the same or not.
+
+15. Write a JavaScript function that reverses a number.
+
+16. Write a JavaScript function that checks whether a passed string is a palindrome or not?
+A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.
+
+17. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
+
+18. Write a JavaScript program to list the properties of a JavaScript object.
+
+19. Write a JavaScript program to calculate circle area and perimeter.
+
+20. Write a JavaScript function to check whether an object contains a given property.
