@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modules</title>
+    <link rel="stylesheet" href="../../projects/common.css" />
+  </head>
+  <body>
+      <div class="container-outer">
+        <div class="container-inner" style="display: flex; flex-direction: column; gap: 8px;">
+          <p id="output"></p>
+            <input id="num1" type="number" />
+          <input id="num2" type="number" />
+          <select id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+          </select>
+          <button id="calculate">Calculate</button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.mjs" type="module"></script>
+  </body>
+</html>
