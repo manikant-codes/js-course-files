@@ -16,6 +16,8 @@
 
 // OR
 
+const IMP_CONSTANT = "465asd65423174s";
+
 function add(num1, num2) {
   return Number(num1) + Number(num2);
 }
@@ -41,3 +43,5 @@ function exponentiation(num1, num2) {
 }
 
 export { add, subtract, multiply, divide };
+
+export default IMP_CONSTANT;

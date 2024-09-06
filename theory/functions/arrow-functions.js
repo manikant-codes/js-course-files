@@ -1,3 +1,4 @@
+"use strict";
 // Functions banane ke 2 tarike hai, function declaration aur function assignment.
 
 // Function Declaration
@@ -20,3 +21,6 @@
 
 // Agar ek hu parameter hai to round-brackets bhi likhne ki jarurat nahi hai.
 // const add5 = a => a + 5;
+
+// const fn = () => {};
+// [].map((value, index, array) => {});

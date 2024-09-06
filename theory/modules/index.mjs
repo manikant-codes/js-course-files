@@ -4,7 +4,8 @@ const operationSelect = document.getElementById("operation");
 const outputPara = document.getElementById("output");
 const calculateBtn = document.getElementById("calculate");
 
-import { add, subtract, multiply, divide } from "./calc.mjs";
+import { add, subtract, multiply } from "./calc.mjs";
+import IMP_CONSTANT from "./calc.mjs";
 
 function calculate() {
   switch (operationSelect.value) {
