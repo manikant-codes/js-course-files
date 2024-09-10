@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modules</title>
+  </head>
+  <style>
+    input,
+    select,
+    button {
+      padding: 4px;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container-main {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
+  <body>
+    <div class="container-main">
+      <p id="output">Output</p>
+      <input id="num1" type="number" />
+      <input id="num2" type="number" />
+      <select id="calculation">
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+      </select>
+      <button id="calcBtn">Calculate</button>
+    </div>
+    <script src="./index.mjs" type="module"></script>
+  </body>
+</html>
