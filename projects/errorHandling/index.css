@@ -1,0 +1,17 @@
+.container-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#num1-err,
+#num2-err {
+  display: none;
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+#num1-err::before,
+#num2-err::before {
+  content: "*";
+}
