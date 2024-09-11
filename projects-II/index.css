@@ -53,7 +53,7 @@ select {
   border: solid 1px #ffc107;
 }
 
-input[type="number"] {
+input {
   margin-top: 16px;
   padding: 6px;
   width: 100%;
@@ -61,7 +61,7 @@ input[type="number"] {
   border: solid 1px #ffc107;
 }
 
-input[type="number"]:focus {
+input:focus {
   outline: solid 2px #ff8f00;
 }
 
