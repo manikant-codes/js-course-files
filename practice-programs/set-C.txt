@@ -1,0 +1,7 @@
+1. Write a JavaScript program that displays the largest integer among two integers.
+
+2. Write a JavaScript conditional statement to find the sign of the product of three numbers. Display an alert box with the specified sign.
+
+3. Write a JavaScript conditional statement to sort three numbers. Display an alert box to show the results.
+
+4. Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the results.
