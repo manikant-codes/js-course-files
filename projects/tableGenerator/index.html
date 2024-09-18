@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Table Generator</title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>Math Table Generator</h1>
+      <div>
+        <input id="number" type="text" placeholder="Get table of..." />
+        <button onclick="getTable()">Get Table</button>
+      </div>
+    </nav>
+    <div class="table-container">
+      <p id="no-number">Please insert a number!</p>
+      <table id="table">
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
