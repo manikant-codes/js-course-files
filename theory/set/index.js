@@ -33,3 +33,17 @@ function add() {
   });
   fruitsList.innerHTML = html;
 }
+
+const student = { name: "lakshman" };
+const arr = ["apple"];
+
+const mySet2 = new Set([
+  10,
+  10,
+  { name: "ram" },
+  { name: "ram" },
+  student,
+  student,
+]);
+
+console.log("mySet2", mySet2);
