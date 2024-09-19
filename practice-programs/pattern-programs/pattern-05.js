@@ -1,17 +1,16 @@
-const totalRows = 4;
+const totalColumns = 4;
+const totalRows = totalColumns * 2 - 1;
 
 let pattern = ``;
 
-for (let row = 1; row <= totalRows; row++) {
-  for (let col = 1; col <= totalRows + 1 - row; col++) {
+for (let row = 1, temp = 4; row <= totalRows; row++) {
+  for (let col = 1; col <= temp; col++) {
     pattern += "* ";
   }
-  pattern += "\n";
-}
-
-for (let row = 2; row <= totalRows; row++) {
-  for (let col = 1; col <= row; col++) {
-    pattern += "* ";
+  if (row < totalColumns) {
+    temp--;
+  } else {
+    temp++;
   }
   pattern += "\n";
 }
