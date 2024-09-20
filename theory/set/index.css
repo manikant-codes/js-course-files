@@ -1,0 +1,7 @@
+ul {
+  list-style-type: none;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
