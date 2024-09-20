@@ -1,9 +1,9 @@
-const totalColumns = 4;
+const totalColumns = 7;
 const totalRows = totalColumns * 2 - 1;
 
 let pattern = ``;
 
-for (let row = 1, temp = 4; row <= totalRows; row++) {
+for (let row = 1, temp = totalColumns; row <= totalRows; row++) {
   for (let col = 1; col <= temp; col++) {
     pattern += "* ";
   }
