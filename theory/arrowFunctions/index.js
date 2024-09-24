@@ -4,16 +4,16 @@ function add(a, b) {
 }
 
 // Function Assignment
-const subtract = function (a, b) {
-  return a - b;
+const product = function (a, b) {
+  return a * b;
 };
 
-// Arrow Function
-// const multiply = (a, b) => {
-//   return a * b;
+// const difference = (a, b) => {
+//   return a - b;
 // };
-const multiply = (a, b) => a * b;
 
-console.log("add: ", add(2, 2));
-console.log("subtract: ", subtract(4, 2));
-console.log("multiply: ", multiply(4, 2));
+const difference = (a, b) => a - b;
+
+// console.log(add(2, 2));
+// console.log(product(4, 2));
+console.log(difference(4, 2));
