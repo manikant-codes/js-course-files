@@ -7,6 +7,6 @@ try {
 
   console.log(newArr);
 } catch (error) {
-  //   console.log(error);
+  console.log(error.message);
   alert("something went wrong!");
 }
