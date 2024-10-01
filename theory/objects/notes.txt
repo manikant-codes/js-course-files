@@ -1,0 +1,5 @@
+# Object: 
+- Collection (group) of key-value pair.
+
+# Encapsulation:
+- Logical grouping of related data.
