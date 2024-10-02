@@ -68,6 +68,5 @@ Array.prototype.map = undefined;
 const arr = [];
 
 console.log(arr.map);
-
 console.log(stud1);
 console.log(stud2.city);
