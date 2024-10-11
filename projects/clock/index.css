@@ -1,0 +1,16 @@
+#time {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.colon {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#hours,
+#minutes,
+#seconds {
+  display: inline-block;
+}

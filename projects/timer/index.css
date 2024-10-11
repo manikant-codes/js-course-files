@@ -1,0 +1,37 @@
+.time-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  font-size: 8px;
+  padding: 4px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#time {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.colon {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#hours,
+#minutes,
+#seconds {
+  display: inline-block;
+}
