@@ -1,0 +1,15 @@
+.container-outer {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(255, 204, 0);
+  position: relative;
+}
+
+#container-inner {
+  height: 50px;
+  width: 50px;
+  background-color: rebeccapurple;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
