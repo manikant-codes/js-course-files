@@ -18,8 +18,8 @@ const student2 = {
   lastYearPercentage: 80,
   address: {
     city: "Surat",
-    pin: 123456,
-  },
+    pin: 123456
+  }
 };
 
 // --------------------------------------------------
