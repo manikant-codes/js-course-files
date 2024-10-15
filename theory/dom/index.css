@@ -1,7 +1,15 @@
-.red {
-  color: red;
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-p:first-child {
-  color: aqua;
+.list-item button {
+  height: fit-content;
+  padding: 8px;
+  margin: 0px;
+}
+
+.checked {
+  text-decoration: line-through;
 }

@@ -4,9 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
+    <link rel="stylesheet" href="../../projects/common.css" />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+    <div class="container-outer">
+      <div class="container-inner">
+        <input id="task-input" type="text" />
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="tasks-list"></ul>
+      </div>
+    </div>
     <!-- <p id="my-para">Para 1</p>
     <p class="para">Para 2</p>
     <p class="para">Para 3</p>
@@ -20,6 +29,6 @@
       <li class="para">List 2</li>
     </ul>
     <p>Para 4</p> -->
-    <script src="./index.js"></script>
+    <script src="./todos.js"></script>
   </body>
 </html>
