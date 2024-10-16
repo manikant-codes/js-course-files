@@ -43,21 +43,26 @@
 //   }
 // };
 
-function Student(fname, lname, standard, division, city) {
-  this.fname = fname;
-  this.lname = lname;
-  this.std = standard;
-  this.div = division;
-  this.city = "Surat";
-  this.getFullName = function () {
-    return this.fname + " " + this.lname;
-  };
-}
+// function Student(fname, lname, standard, division, city) {
+//   this.fname = fname;
+//   this.lname = lname;
+//   this.standard = standard;
+//   this.division = division;
+//   this.city = city;
+//   // this.getFullName = function () {
+//   //   return this.fname + " " + this.lname;
+//   // };
+// }
 
-const student4 = new Student("Rajkumar", "Rao", 10, "A");
-const student5 = new Student("Boman", "Irani", 11, "A");
-const student6 = new Student("Juhi", "Chawala", 12, "A");
+// Student.prototype.city = "Surat";
+// Student.prototype.getFullName = function () {
+//   return this.fname + " " + this.lname;
+// };
 
-console.log(student4);
-console.log(student5);
-console.log(student6);
+// const student4 = new Student("Rajkumar", "Rao", 10, "A");
+// const student5 = new Student("Boman", "Irani", 11, "A");
+// const student6 = new Student("Juhi", "Chawala", 12, "A");
+
+// console.log(student4);
+// console.log(student5);
+// console.log(student6);
