@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Handling</title>
+    <link rel="stylesheet" href="../../projects/global.css" />
+  </head>
+  <body>
+    <div class="container-outer">
+      <form onsubmit="handleSubmit(event)"  class="container-inner">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="example@gmail.com"
+        />
+        <p id="email-error"></p>
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" placeholder="******" />
+
+        <label for="label">Label</label>
+        <input oninput="this.value = this.value.toLowerCase().replaceAll(' ', '-')" type="text" id="label" name="label" placeholder="" />
+
+        <p id="password-error"></p>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+  <script src="./index.js"></script>
+</html>
