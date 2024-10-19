@@ -44,4 +44,4 @@
 
 // console.log(num);
 
-console.log((10.2356).toPrecision(500));
+// console.log((10.2356).toPrecision(500));
