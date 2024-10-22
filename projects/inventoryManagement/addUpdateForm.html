@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add/Update Inventory</title>
     <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/addUpdateForm.css" />
   </head>
   <body>
     <nav id="navbar">
@@ -25,9 +26,33 @@
         </ul>
       </aside>
       <section id="content">
-        <div>
-          <h2>Add/Update Inventory</h2>
-        </div>
+        <h2>Add/Update Inventory</h2>
+
+        <form onsubmit="handleSubmit(event)" id="inventory-form">
+          <div class="form-field">
+            <label for="img">Image URL</label>
+            <input id="img" name="img" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="desc">Description</label>
+            <textarea id="desc" name="desc"></textarea>
+          </div>
+          <div class="form-field-group">
+            <div class="form-field">
+              <label for="price">Price</label>
+              <input id="price" name="price" type="number" min="0" />
+            </div>
+            <div class="form-field">
+              <label for="qty">Quantity</label>
+              <input id="qty" name="qty" type="number" min="0" />
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </section>
     </div>
     <footer id="footer">
@@ -41,5 +66,6 @@
         </li>
       </ul>
     </footer>
+    <script src="./js/addUpdateForm.js"></script>
   </body>
 </html>

@@ -63,3 +63,17 @@
   display: flex;
   gap: 16px;
 }
+
+button {
+  border: none;
+  background-color: #009688;
+  padding: 16px;
+  font-size: 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00796b;
+  color: white;
+}
