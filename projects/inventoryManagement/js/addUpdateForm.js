@@ -15,6 +15,7 @@ function handleSubmit(event) {
 
   const product = {};
 
+  product.id = Date.now();
   product.img = event.target["img"].value;
   product.name = event.target["name"].value;
   product.desc = event.target["desc"].value;
